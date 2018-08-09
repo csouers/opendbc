@@ -308,6 +308,12 @@ BO_ 1569 FOB1: 8 XXX
 BO_ 1570 FOB2: 8 XXX
  SG_ BEEPER : 47|8@0+ (1,0) [0|255] "" XXX
 
+BO_ 1568 NEW_MSG_2: 8 XXX
+ SG_ F_PASS_OPEN : 44|1@0+ (1,0) [0|1] "" XXX
+ SG_ F_DRIVER_OPEN : 45|1@0+ (1,0) [0|1] "" XXX
+ SG_ R_DRIVER_OPEN : 42|1@0+ (1,0) [0|1] "" XXX
+ SG_ R_PASS_OPEN : 43|1@0+ (1,0) [0|1] "" XXX
+
 
 
 
