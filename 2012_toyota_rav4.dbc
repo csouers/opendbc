@@ -303,6 +303,7 @@ BO_ 37 NEW_MSG_1: 8 XXX
  SG_ NEW_SIGNAL_1 : 8|8@1+ (1,0) [0|255] "" XXX
 
 BO_ 1569 FOB1: 8 XXX
+ SG_ LOCK_ACTION : 23|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 1570 FOB2: 8 XXX
  SG_ BEEPER : 47|8@0+ (1,0) [0|255] "" XXX
@@ -310,6 +311,7 @@ BO_ 1570 FOB2: 8 XXX
 
 
 
+CM_ SG_ 1569 LOCK_ACTION "169=DRIVER UNLOCK, 161=OTHER UNLOCK, 33=LOCKALL";
 CM_ SG_ 1570 BEEPER "17=SINGLE BEEP, 33 DOUBLE BEEP, 239=CONTINUOUS";
 VAL_ 662 CRUISE_BUTTONS 7 "tbd" 6 "tbd" 5 "tbd" 4 "accel_res" 3 "decel_set" 2 "cancel" 1 "main" 0 "none" ;
 VAL_ 662 CRUISE_SETTING 3 "distance_adj" 2 "tbd" 1 "lkas_button" 0 "none" ;
