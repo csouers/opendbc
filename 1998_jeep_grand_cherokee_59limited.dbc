@@ -147,6 +147,10 @@ BO_ 98 DDM: 3 XXX
  SG_ LR : 21|2@0+ (1,0) [0|1] "" XXX
  SG_ RR : 23|2@0+ (1,0) [0|3] "1 = IDLE, 0 = DOWN, 3 = UP" XXX
 
+BO_ 164 BRAKE: 3 XXX
+ SG_ USER_BRAKE : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_1 : 18|2@1+ (1,0) [0|3] "" XXX
+
 
 
 
