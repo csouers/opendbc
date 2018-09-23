@@ -139,12 +139,12 @@ BO_ 12 NEW_MSG_1: 8 XXX
  SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 98 DDM: 3 XXX
- SG_ LOCKOUT : 18|1@0+ (1,0) [0|1] "" XXX
  SG_ LF_DOWN : 0|1@0+ (1,0) [0|1] "" XXX
  SG_ LF_UP : 1|1@1+ (1,0) [0|1] "" XXX
- SG_ RF_UP : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ RF_DOWN : 2|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_1 : 21|3@0+ (1,0) [0|7] "" XXX
+ SG_ RF_UP : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ LOCKOUT : 18|1@0+ (1,0) [0|1] "" XXX
+ SG_ LR : 21|2@0+ (1,0) [0|1] "" XXX
 
 
 
@@ -166,3 +166,9 @@ CM_ SG_ 318260272 RF_WINDOWSTATE "1 = CLOSED, 0 = OPEN";
 CM_ SG_ 318260272 LF_WINDOWSTATE "1 = CLOSED, 0 = OPEN";
 CM_ SG_ 318263632 DRIVE_MODE "0 = DRIVE, 4 = S, 1 = L";
 CM_ SG_ 184054040 REAR_WIPER "0 = OFF, 4 = INT, 1 = ON";
+CM_ SG_ 98 LF_DOWN "0 = active";
+CM_ SG_ 98 LF_UP "0 = active";
+CM_ SG_ 98 RF_DOWN "0 = active";
+CM_ SG_ 98 RF_UP "0 = active";
+CM_ SG_ 98 LOCKOUT "1 = active";
+CM_ SG_ 98 LR "0 = active";
