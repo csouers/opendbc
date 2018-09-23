@@ -138,6 +138,14 @@ BO_ 130 STEERING_WHEEL: 4 XXX
 BO_ 12 NEW_MSG_1: 8 XXX
  SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
 
+BO_ 98 DDM: 3 XXX
+ SG_ LOCKOUT : 18|1@0+ (1,0) [0|1] "" XXX
+ SG_ LF_DOWN : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ LF_UP : 1|1@1+ (1,0) [0|1] "" XXX
+ SG_ RF_UP : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ RF_DOWN : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_1 : 21|3@0+ (1,0) [0|7] "" XXX
+
 
 
 
