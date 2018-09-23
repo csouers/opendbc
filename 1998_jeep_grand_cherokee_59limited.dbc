@@ -148,8 +148,8 @@ BO_ 98 DDM: 3 XXX
  SG_ RR : 23|2@0+ (1,0) [0|3] "1 = IDLE, 0 = DOWN, 3 = UP" XXX
 
 BO_ 164 BRAKE: 3 XXX
+ SG_ USER_BRAKE2 : 18|2@1+ (1,0) [0|3] "" XXX
  SG_ USER_BRAKE : 2|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_1 : 18|2@1+ (1,0) [0|3] "" XXX
 
 
 
@@ -177,3 +177,4 @@ CM_ SG_ 98 RF_DOWN "0 = active";
 CM_ SG_ 98 RF_UP "0 = active";
 CM_ SG_ 98 LOCKOUT "1 = active";
 CM_ SG_ 98 LR "2 = IDLE, 1 = DOWN, 0 = UP";
+CM_ SG_ 164 USER_BRAKE2 "1 = IDLE, 2 = APPLIED";
