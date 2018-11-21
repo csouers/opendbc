@@ -322,7 +322,7 @@ BO_ 1592 LOCK_STATUS: 8 XXX
  SG_ ACTUATOR_REQUEST : 15|1@0+ (1,0) [0|1] "" XXX
  SG_ LOCKS : 20|5@0+ (1,0) [0|31] "" XXX
 
-BO_ 856 LOCKS_1: 8 XXX
+BO_ 856 SECURITY_1: 8 XXX
  SG_ IGN_UNLOCKED1 : 0|1@0+ (1,0) [0|1] "" XXX
  SG_ LF_DOOR1 : 24|1@0+ (1,0) [0|1] "" XXX
  SG_ DOOR2 : 1|1@0+ (1,0) [0|1] "" XXX
@@ -330,6 +330,11 @@ BO_ 856 LOCKS_1: 8 XXX
  SG_ ALL_DOOR1 : 31|1@0+ (1,0) [0|1] "" XXX
  SG_ ALL_UNLOCK1 : 25|1@0+ (1,0) [0|1] "" XXX
  SG_ LOCK_STATUS1 : 40|2@1+ (1,0) [0|3] "" XXX
+
+BO_ 1549 NEW_MSG_2: 8 XXX
+ SG_ LOW_BEAM_1 : 1|1@0+ (1,0) [0|1] "" XXX
+ SG_ PARK_LIGHTS1 : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ HI_BEAM_1 : 11|1@0+ (1,0) [0|1] "" XXX
 
 
 
