@@ -335,6 +335,7 @@ BO_ 1549 NEW_MSG_2: 8 XXX
  SG_ LOW_BEAM_1 : 1|1@0+ (1,0) [0|1] "" XXX
  SG_ PARK_LIGHTS1 : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ HI_BEAM_1 : 11|1@0+ (1,0) [0|1] "" XXX
+ SG_ INTERIOR_1 : 4|1@0+ (1,0) [0|1] "" XXX
 
 
 
