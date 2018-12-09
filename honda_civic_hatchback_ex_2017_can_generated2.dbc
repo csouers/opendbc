@@ -310,7 +310,7 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ ACTIVE_2 : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_5 : 15|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_4 : 0|3@1+ (1,0) [0|15] "" XXX
- SG_ COMMAND_1 : 16|7@1- (1,0) [0|255] "" XXX
+ SG_ COMMAND_1 : 16|7@1- (1,0) [-127|127] "" XXX
 
 
 
