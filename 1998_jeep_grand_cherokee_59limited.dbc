@@ -172,6 +172,9 @@ BO_ 36 SPEED: 3 XXX
  SG_ MPH : 7|8@0+ (1,0) [0|255] "" XXX
  SG_ KPH : 15|8@0+ (1,0) [0|255] "" XXX
 
+BO_ 206 ODOMETER: 5 XXX
+ SG_ NEW_SIGNAL_1 : 7|32@0+ (1,0) [0|4294967295] "" XXX
+
 
 
 
