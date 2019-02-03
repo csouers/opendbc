@@ -148,12 +148,10 @@ BO_ 98 DDM: 3 XXX
  SG_ RR : 23|2@0+ (1,0) [0|3] "1 = IDLE, 0 = DOWN, 3 = UP" XXX
 
 BO_ 164 PEDALS: 3 XXX
- SG_ USER_BRAKE2 : 18|2@1+ (1,0) [0|3] "" XXX
  SG_ THROTTLE_APPLIED1 : 1|1@0+ (1,0) [0|1] "" XXX
- SG_ THROTTLE_APPLIED2 : 17|1@0+ (1,0) [0|1] "" XXX
  SG_ USER_BRAKE1 : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ OD_OFF1 : 5|1@0+ (1,0) [0|1] "" XXX
- SG_ OD_OFF2 : 22|2@0+ (1,0) [0|3] "" XXX
+ SG_ CHECKSUM : 23|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 53 NEW_MSG_2: 8 XXX
  SG_ HI_BEAM : 9|1@0+ (1,0) [0|1] "" XXX
@@ -184,5 +182,3 @@ CM_ SG_ 98 RF_DOWN "0 = active";
 CM_ SG_ 98 RF_UP "0 = active";
 CM_ SG_ 98 LOCKOUT "1 = active";
 CM_ SG_ 98 LR "2 = IDLE, 1 = DOWN, 0 = UP";
-CM_ SG_ 164 USER_BRAKE2 "1 = IDLE, 2 = APPLIED";
-CM_ SG_ 164 OD_OFF2 "1 = ENABLED, 2, DISABLED";
