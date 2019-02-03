@@ -155,6 +155,9 @@ BO_ 164 PEDALS: 3 XXX
  SG_ OD_OFF1 : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ OD_OFF2 : 22|2@0+ (1,0) [0|3] "" XXX
 
+BO_ 53 NEW_MSG_2: 8 XXX
+ SG_ HI_BEAM : 9|1@0+ (1,0) [0|1] "" XXX
+
 
 
 
