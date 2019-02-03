@@ -152,7 +152,6 @@ BO_ 164 PEDALS: 3 XXX
  SG_ USER_BRAKE1 : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ OD_OFF1 : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ CHECKSUM : 23|8@0+ (1,0) [0|255] "" XXX
- SG_ PARK/NEUTRAL : 6|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 53 NEW_MSG_2: 3 XXX
  SG_ HI_BEAM : 9|1@0+ (1,0) [0|1] "" XXX
@@ -164,6 +163,10 @@ BO_ 109 VIN: 3 XXX
 
 BO_ 228 TACH: 3 XXX
  SG_ RPM : 7|24@0+ (0.0005,0) [0|16777215] "" XXX
+
+BO_ 36 SPEED: 3 XXX
+ SG_ MPH : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ KPH : 15|8@0+ (1,0) [0|255] "" XXX
 
 
 
