@@ -57,9 +57,9 @@ BO_ 304 GAS_PEDAL_2: 8 PCM
  SG_ CAR_GAS : 39|8@0+ (1,0) [0|255] "" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" EON
- SG_ CLUTCHENGAGED_1 : 50|1@0+ (1,0) [0|1] "" XXX
- SG_ REVERSE_1 : 49|1@0+ (1,0) [0|1] "" XXX
- SG_ NEUTRAL_1 : 48|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEUTRAL : 48|1@0+ (1,0) [0|1] "" XXX
+ SG_ REVERSE : 49|1@0+ (1,0) [0|1] "" XXX
+ SG_ CLUTCH_ENGAGED : 50|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 330 STEERING_SENSORS: 8 EPS
  SG_ STEER_ANGLE : 7|16@0- (-0.1,0) [-500|500] "deg" EON
