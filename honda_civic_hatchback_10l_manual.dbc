@@ -303,6 +303,9 @@ BO_ 1029 DOORS_STATUS: 8 BDY
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" EON
 
+BO_ 428 NEW_MSG_1: 8 XXX
+ SG_ REVERSE : 26|1@0+ (1,0) [0|1] "" XXX
+
 
 
 
