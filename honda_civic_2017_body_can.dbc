@@ -165,6 +165,15 @@ BO_ 385449300 NEW_MSG_2: 8 XXX
  SG_ NEW_SIGNAL_1 : 48|8@1+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_2 : 56|8@1+ (1,0) [0|255] "" XXX
 
+BO_ 385376848 VIN: 8 XXX
+ SG_ DIGIT_A : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_B : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_C : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_D : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_E : 47|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_F : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ INDEX : 7|8@0+ (1,0) [0|255] "" XXX
+
 
 
 
