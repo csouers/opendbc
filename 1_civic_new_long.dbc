@@ -120,13 +120,13 @@ BO_ 479 ACC_CONTROL: 8 EON
  SG_ SET_TO_1 : 20|5@0+ (1,0) [0|1] "" PCM
  SG_ CONTROL_ON : 23|3@0+ (1,0) [0|5] "" XXX
  SG_ STATE_FLAG : 7|5@0+ (1,0) [0|0] "" XXX
- SG_ GAS_COMMAND : 2|11@0+ (1,0) [0|0] "" PCM
  SG_ GAS_BRAKE : 31|13@0- (1,0) [0|0] "" XXX
  SG_ BRAKE_LIGHTS : 62|1@0+ (1,0) [0|1] "" XXX
  SG_ BRAKE_PUMP_REQUEST : 34|1@0+ (1,0) [0|1] "" XXX
  SG_ ZEROS_BOH : 33|18@0+ (1,0) [100|100] "" XXX
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
+ SG_ GAS_COMMAND : 2|11@0+ (0.002,0) [0|0] "m/s2" PCM
 
 BO_ 495 ACC_CONTROL_ON: 8 XXX
  SG_ SET_TO_75 : 31|8@0+ (1,0) [0|255] "" XXX
@@ -314,7 +314,7 @@ BO_ 1029 DOORS_STATUS: 8 BDY
 
 
 
-
+CM_ SG_ 479 GAS_COMMAND "";
 VAL_ 399 STEER_STATUS 6 "tmp_fault" 5 "fault_1" 4 "no_torque_alert_2" 3 "low_speed_lockout" 2 "no_torque_alert_1" 0 "normal" ;
 VAL_ 662 CRUISE_BUTTONS 7 "tbd" 6 "tbd" 5 "tbd" 4 "accel_res" 3 "decel_set" 2 "cancel" 1 "main" 0 "none" ;
 VAL_ 662 CRUISE_SETTING 3 "distance_adj" 2 "tbd" 1 "lkas_button" 0 "none" ;
