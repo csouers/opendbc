@@ -168,6 +168,11 @@ BO_ 53 LIGHTING: 3 XXX
 
 BO_ 142 PARK_BRAKE: 2 XXX
  SG_ PARK_BRAKE : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ LF_DOOR : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ LR_DOOR : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ HATCH : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ RR_DOOR : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ RF_DOOR : 1|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 109 VIN: 3 XXX
 
