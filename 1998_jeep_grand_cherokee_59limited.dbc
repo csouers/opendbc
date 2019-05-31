@@ -210,6 +210,9 @@ BO_ 170 NEW_MSG_2: 8 XXX
  SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_2 : 15|8@0+ (1,0) [0|255] "" XXX
 
+BO_ 154 VIC: 2 XXX
+ SG_ IMPERIAL : 7|1@0+ (1,0) [0|1] "" XXX
+
 
 
 
