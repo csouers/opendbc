@@ -231,3 +231,4 @@ CM_ SG_ 98 RF_UP "0 = active";
 CM_ SG_ 98 LOCKOUT "1 = active";
 CM_ SG_ 98 LR "2 = IDLE, 1 = DOWN, 0 = UP";
 CM_ SG_ 37 FUEL_LEVEL "0 = SHORT, 255 = OPEN, RANGE = 1-253";
+CM_ SG_ 254 DIMMER_SLIDER "fd = max w lights on, ff= max lights off/lights off";
