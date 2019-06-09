@@ -35,6 +35,11 @@ BS_:
 
 BU_: EBCM EON CAM RADAR PCM EPS VSA SCM BDY XXX EPB EO E
 
+BO_ 148 KINEMATICS: 8 XXX
+ SG_ LAT_ACCEL : 7|10@0+ (0.02,-512) [-20|20] "m/s2" EON
+ SG_ LONG_ACCEL : 24|9@0- (-0.02,0) [-20|20] "m/s2" EON
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
+ SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
 
 BO_ 228 STEERING_CONTROL: 5 EON
  SG_ STEER_TORQUE_REQUEST : 23|1@0+ (1,0) [0|1] "" EPS
@@ -359,7 +364,7 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc star";
@@ -375,7 +380,7 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc start";
@@ -383,11 +388,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -407,7 +412,7 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc start";
@@ -415,11 +420,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -431,11 +436,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -443,7 +448,7 @@ CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts h";
 CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -471,7 +476,7 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc start";
@@ -479,11 +484,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -495,11 +500,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -507,7 +512,7 @@ CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts h";
 CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -527,11 +532,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -539,7 +544,7 @@ CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts h";
 CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -555,7 +560,7 @@ CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts he";
 CM_ "Imported file _bosch_2018.dbc starts her
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -599,7 +604,7 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc start";
@@ -607,11 +612,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -623,11 +628,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -635,7 +640,7 @@ CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts h";
 CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -655,11 +660,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -667,7 +672,7 @@ CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts h";
 CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -683,7 +688,7 @@ CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts he";
 CM_ "Imported file _bosch_2018.dbc starts her
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -719,11 +724,11 @@ CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc start";
 CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -731,7 +736,7 @@ CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts h";
 CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -747,7 +752,7 @@ CM_ "Imported file _bosch_2018.dbc starts he
 CM_ "Imported file _bosch_2018.dbc starts he";
 CM_ "Imported file _bosch_2018.dbc starts her
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -779,7 +784,7 @@ CM_ "Imported file _bosch_2018.dbc starts her
 CM_ "Imported file _bosch_2018.dbc starts her";
 CM_ "Imported file _bosch_2018.dbc starts here
 CM_ "Imported file _bosch_2018.dbc starts";
-CM_ "Imported file _bosch_2018.dbc starts 
+CM_ "Imported file _bosch_2018.dbc starts
 CM_ "Imported file _bosch_2018.dbc starts ";
 CM_ "Imported file _bosch_2018.dbc starts h
 CM_ "Imported file _bosch_2018.dbc starts ";
@@ -848,11 +853,11 @@ CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc start";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts";
-CM_ "honda_civic_hatchback_ex_2017_can.dbc starts 
+CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts";
-CM_ "honda_civic_hatchback_ex_2017_can.dbc starts 
+CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
@@ -860,7 +865,7 @@ CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts he
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts";
-CM_ "honda_civic_hatchback_ex_2017_can.dbc starts 
+CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
@@ -876,7 +881,7 @@ CM_ "honda_civic_hatchback_ex_2017_can.dbc starts he
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts he";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts her
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts";
-CM_ "honda_civic_hatchback_ex_2017_can.dbc starts 
+CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
@@ -908,7 +913,7 @@ CM_ "honda_civic_hatchback_ex_2017_can.dbc starts her
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts her";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts here
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts";
-CM_ "honda_civic_hatchback_ex_2017_can.dbc starts 
+CM_ "honda_civic_hatchback_ex_2017_can.dbc starts
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts h
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts ";
@@ -978,6 +983,6 @@ CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_
 CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE ";
 CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1
 CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1";
-CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1 
+CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1
 CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1 ";
 CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1 0";
