@@ -131,8 +131,8 @@ BO_ 479 ACC_CONTROL: 8 EON
  SG_ BRAKE_LIGHTS : 62|1@0+ (1,0) [0|1] "" XXX
  SG_ STATE_FLAG : 7|5@0+ (1,0) [0|0] "" XXX
  SG_ CONTROL_ON : 23|3@0+ (1,0) [0|5] "" XXX
- SG_ ACCEL_REQUEST : 31|13@0- (0.003,0) [0|0] "" XXX
- SG_ GAS_TORQUE_REQUEST : 2|11@0+ (1,0) [0|0] "Nm" PCM
+ SG_ ACCEL_CMD : 31|13@0- (0.003,0) [0|0] "m/s2" XXX
+ SG_ FORWARD_TORQUE_CMD : 2|11@0+ (1,0) [0|0] "Nm" PCM
 
 BO_ 495 ACC_CONTROL_ON: 8 XXX
  SG_ SET_TO_75 : 31|8@0+ (1,0) [0|255] "" XXX
@@ -320,8 +320,8 @@ BO_ 441 WHEEL_TICKS: 5 XXX
 
 
 
-CM_ SG_ 479 ACCEL_REQUEST "ms2";
-CM_ SG_ 479 GAS_TORQUE_REQUEST "";
+CM_ SG_ 479 ACCEL_CMD "";
+CM_ SG_ 479 FORWARD_TORQUE_CMD "";
 VAL_ 399 STEER_STATUS 6 "tmp_fault" 5 "fault_1" 4 "no_torque_alert_2" 3 "low_speed_lockout" 2 "no_torque_alert_1" 0 "normal" ;
 VAL_ 662 CRUISE_BUTTONS 7 "tbd" 6 "tbd" 5 "tbd" 4 "accel_res" 3 "decel_set" 2 "cancel" 1 "main" 0 "none" ;
 VAL_ 662 CRUISE_SETTING 3 "distance_adj" 2 "tbd" 1 "lkas_button" 0 "none" ;
