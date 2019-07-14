@@ -61,13 +61,13 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ FLAG_A_4_ZERO : 4|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_5_RIGHTLANE : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_B_7 : 15|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAGS_B_3 : 11|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAGS_B_0 : 8|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAGS_B_1 : 9|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAGS_B_2 : 10|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_B_4 : 12|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_B_5 : 13|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_B_6 : 14|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_0_ZERO : 8|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_1_ZERO : 9|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_2_ZERO : 10|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_3_ZERO : 11|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 232 BRAKE_HOLD: 7 XXX
  SG_ XMISSION_SPEED : 7|14@0- (1,0) [1|0] "" XXX
