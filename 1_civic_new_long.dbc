@@ -300,6 +300,7 @@ BO_ 884 STALK_STATUS: 8 XXX
  SG_ WIPER_SWITCH : 53|2@0+ (1,0) [0|3] "" XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
+ SG_ NEW_SIGNAL_1 : 32|8@1+ (1,0) [0|255] "" XXX
 
 BO_ 891 STALK_STATUS_2: 8 XXX
  SG_ WIPERS : 17|2@0+ (1,0) [0|3] "" EON
@@ -364,6 +365,7 @@ BO_ 441 WHEEL_TICKS: 5 XXX
 CM_ SG_ 479 ACCEL_CMD "";
 CM_ SG_ 479 FORWARD_TORQUE_CMD "";
 CM_ SG_ 806 CMBS_BUTTON "0=UP,3=DOWN";
+CM_ SG_ 506 CHIME "160=LONG,128=DOUBLEBEEP";
 VAL_ 399 STEER_STATUS 6 "tmp_fault" 5 "fault_1" 4 "no_torque_alert_2" 3 "low_speed_lockout" 2 "no_torque_alert_1" 0 "normal" ;
 VAL_ 662 CRUISE_BUTTONS 7 "tbd" 6 "tbd" 5 "tbd" 4 "accel_res" 3 "decel_set" 2 "cancel" 1 "main" 0 "none" ;
 VAL_ 662 CRUISE_SETTING 3 "distance_adj" 2 "tbd" 1 "lkas_button" 0 "none" ;
