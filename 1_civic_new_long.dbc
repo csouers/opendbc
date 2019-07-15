@@ -258,9 +258,10 @@ BO_ 806 SCM_FEEDBACK: 8 SCM
  SG_ MAIN_ON : 28|1@0+ (1,0) [0|1] "" EON
  SG_ RIGHT_BLINKER : 27|1@0+ (1,0) [0|1] "" EON
  SG_ LEFT_BLINKER : 26|1@0+ (1,0) [0|1] "" EON
- SG_ CMBS_STATES : 22|2@0+ (1,0) [0|3] "" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
+ SG_ CMBS_BUTTON : 22|2@0+ (1,0) [0|3] "" EON
+ SG_ VSA_BUTTON : 31|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 829 LKAS_HUD: 5 ADAS
  SG_ CAM_TEMP_HIGH : 7|1@0+ (1,0) [0|255] "" BDY
@@ -362,6 +363,7 @@ BO_ 441 WHEEL_TICKS: 5 XXX
 
 CM_ SG_ 479 ACCEL_CMD "";
 CM_ SG_ 479 FORWARD_TORQUE_CMD "";
+CM_ SG_ 806 CMBS_BUTTON "0=UP,3=DOWN";
 VAL_ 399 STEER_STATUS 6 "tmp_fault" 5 "fault_1" 4 "no_torque_alert_2" 3 "low_speed_lockout" 2 "no_torque_alert_1" 0 "normal" ;
 VAL_ 662 CRUISE_BUTTONS 7 "tbd" 6 "tbd" 5 "tbd" 4 "accel_res" 3 "decel_set" 2 "cancel" 1 "main" 0 "none" ;
 VAL_ 662 CRUISE_SETTING 3 "distance_adj" 2 "tbd" 1 "lkas_button" 0 "none" ;
