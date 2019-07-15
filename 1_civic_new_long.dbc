@@ -52,7 +52,6 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ FLAG_A_2 : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ LDW_CORRECTING_1 : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ LDW_WOBBLING_1 : 7|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAG_A_0_ONE : 0|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_1_ZERO : 1|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_3_ZERO : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_4_ZERO : 4|1@0+ (1,0) [0|1] "" XXX
@@ -75,6 +74,7 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ FLAGS_D_5_ZERO : 29|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_D_6_ZERO : 30|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_D_7_ZERO : 31|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_0_ONE_USUAL : 0|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 232 BRAKE_HOLD: 7 XXX
  SG_ XMISSION_SPEED : 7|14@0- (1,0) [1|0] "" XXX
