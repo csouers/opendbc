@@ -274,13 +274,14 @@ BO_ 829 LKAS_HUD: 5 ADAS
  SG_ LDW_RIGHT : 9|1@0+ (1,0) [0|1] "" BDY
  SG_ STEERING_REQUIRED : 8|1@0+ (1,0) [0|1] "" BDY
  SG_ LDW_PROBLEM : 21|1@0+ (1,0) [0|1] "" BDY
- SG_ BEEP : 17|2@0+ (1,0) [0|1] "" BDY
- SG_ LDW_ON : 28|1@0+ (1,0) [0|1] "" BDY
  SG_ LDW_OFF : 27|1@0+ (1,0) [0|1] "" BDY
  SG_ CLEAN_WINDSHIELD : 26|1@0+ (1,0) [0|1] "" BDY
- SG_ SET_ME_X48 : 31|8@0+ (1,0) [0|255] "" BDY
  SG_ COUNTER : 37|2@0+ (1,0) [0|3] "" BDY
  SG_ CHECKSUM : 35|4@0+ (1,0) [0|15] "" BDY
+ SG_ LDW_ON_1 : 28|1@0+ (1,0) [0|1] "" BDY
+ SG_ BEEP : 17|2@0+ (1,0) [0|1] "" BDY
+ SG_ LDW_ON_2 : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ LDW_ON_3 : 28|1@0+ (1,0) [0|255] "" BDY
 
 BO_ 862 CAMERA_MESSAGES: 8 CAM
  SG_ ZEROS_BOH : 7|50@0+ (1,0) [0|127] "" BDY
