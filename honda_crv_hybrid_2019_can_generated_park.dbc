@@ -305,7 +305,7 @@ BO_ 388 NEW_MSG_3: 8 XXX
 
 BO_ 408 NEW_MSG_4: 8 XXX
  SG_ NEW_SIGNAL_2 : 8|8@1+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_1 : 0|8@1- (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_1 : 0|8@1- (-1,0) [0|255] "" XXX
 
 
 
