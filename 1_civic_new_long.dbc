@@ -359,6 +359,9 @@ BO_ 441 WHEEL_TICKS: 5 XXX
  SG_ NEW_SIGNAL_3 : 23|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_4 : 24|8@1+ (1,0) [0|255] "" XXX
 
+BO_ 1024 NEW_MSG_1: 8 XXX
+ SG_ Radar_Fault : 3|2@0+ (1,0) [0|255] "" XXX
+
 
 
 
