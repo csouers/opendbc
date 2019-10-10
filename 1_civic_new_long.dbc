@@ -267,14 +267,11 @@ BO_ 806 SCM_FEEDBACK: 8 SCM
 
 BO_ 829 LKAS_HUD: 5 ADAS
  SG_ CAM_TEMP_HIGH : 7|1@0+ (1,0) [0|255] "" BDY
- SG_ SET_ME_X41 : 6|7@0+ (1,0) [0|127] "" BDY
- SG_ BOH : 23|2@0+ (1,0) [0|4] "" BDY
  SG_ DASHED_LANES : 14|1@0+ (1,0) [0|1] "" BDY
  SG_ DTC : 13|1@0+ (1,0) [0|1] "" BDY
  SG_ LKAS_PROBLEM : 12|1@0+ (1,0) [0|1] "" BDY
  SG_ LKAS_OFF : 11|1@0+ (1,0) [0|1] "" BDY
  SG_ SOLID_LANES : 10|1@0+ (1,0) [0|1] "" BDY
- SG_ LDW_RIGHT : 9|1@0+ (1,0) [0|1] "" BDY
  SG_ STEERING_REQUIRED : 8|1@0+ (1,0) [0|1] "" BDY
  SG_ LDW_PROBLEM : 21|1@0+ (1,0) [0|1] "" BDY
  SG_ LDW_OFF : 27|1@0+ (1,0) [0|1] "" BDY
@@ -285,6 +282,9 @@ BO_ 829 LKAS_HUD: 5 ADAS
  SG_ BEEP : 17|2@0+ (1,0) [0|1] "" BDY
  SG_ LDW_ON_2 : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ LDW_ON_3 : 28|1@0+ (1,0) [0|255] "" BDY
+ SG_ LDW_ACTIVE : 9|1@0+ (1,0) [0|1] "" BDY
+ SG_ SET_ME_X41 : 6|7@0+ (1,0) [0|127] "" BDY
+ SG_ SET_2_IF_LDW : 23|2@0+ (1,0) [0|4] "" BDY
 
 BO_ 862 CAMERA_MESSAGES: 8 CAM
  SG_ ZEROS_BOH : 7|50@0+ (1,0) [0|127] "" BDY
