@@ -339,16 +339,15 @@ BO_ 892 CRUISE_PARAMS: 8 PCM
 
 BO_ 927 RADAR_HUD: 8 RADAR
  SG_ ZEROS_BOH : 7|10@0+ (1,0) [0|127] "" BDY
- SG_ CMBS_OFF : 12|1@0+ (1,0) [0|1] "" BDY
  SG_ ZEROS_BOH3 : 31|32@0+ (1,0) [0|4294967295] "" XXX
  SG_ RESUME_INSTRUCTION : 21|1@0+ (1,0) [0|1] "" XXX
- SG_ SET_TO_1 : 13|1@0+ (1,0) [0|1] "" BDY
  SG_ ZEROS_BOH2 : 11|4@0+ (1,0) [0|1] "" XXX
  SG_ APPLY_BRAKES_FOR_CANC : 23|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_ALERTS : 20|5@0+ (1,0) [0|1] "" BDY
  SG_ SET_TO_0 : 22|1@0+ (1,0) [0|1] "" XXX
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
+ SG_ FCW_DISTANCE : 13|2@0+ (1,0) [0|1] "" BDY
 
 BO_ 1029 DOORS_STATUS: 8 BDY
  SG_ DOOR_OPEN_FL : 37|1@0+ (1,0) [0|1] "" EON
@@ -377,6 +376,7 @@ BO_ 929 HEADUNIT_ADAS_SETTING: 8 XXX
 CM_ SG_ 479 FORWARD_TORQUE_CMD "";
 CM_ SG_ 806 CMBS_BUTTON "0=UP,3=DOWN";
 CM_ SG_ 506 CHIME "160=LONG,128=DOUBLEBEEP";
+CM_ SG_ 927 FCW_DISTANCE "0 = NORMAL, 1 = SHORT, 2 = LONG";
 VAL_ 399 STEER_STATUS 6 "tmp_fault" 5 "fault_1" 4 "no_torque_alert_2" 3 "low_speed_lockout" 2 "no_torque_alert_1" 0 "normal" ;
 VAL_ 662 CRUISE_BUTTONS 7 "tbd" 6 "tbd" 5 "tbd" 4 "accel_res" 3 "decel_set" 2 "cancel" 1 "main" 0 "none" ;
 VAL_ 662 CRUISE_SETTING 3 "distance_adj" 2 "tbd" 1 "lkas_button" 0 "none" ;
