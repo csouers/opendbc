@@ -141,10 +141,10 @@ BO_ 130 STEERING_WHEEL: 4 XXX
  SG_ CENTER : 16|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 12 GAUGES: 5 XXX
- SG_ OIL_PRESSURE : 15|8@0+ (0.5,0) [0|255] "psi" XXX
  SG_ CAR_VOLTAGE : 7|8@0+ (0.125,0) [0|255] "volts" XXX
- SG_ NEW_SIGNAL_1 : 23|1@0+ (1,0) [0|1] "" XXX
- SG_ COOLANT : 22|7@0- (1,0) [0|255] "f" XXX
+ SG_ OIL_PRESSURE : 15|8@0+ (0.5,0) [0|255] "psi" XXX
+ SG_ COOLANT : 16|8@1- (1,0) [0|255] "f" XXX
+ SG_ idk1 : 24|8@1+ (1,0) [0|255] "" XXX
 
 BO_ 98 DDM: 3 XXX
  SG_ LF_DOWN : 0|1@0+ (1,0) [0|1] "" XXX
