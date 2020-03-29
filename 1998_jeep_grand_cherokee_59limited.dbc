@@ -144,7 +144,7 @@ BO_ 12 GAUGES: 5 XXX
  SG_ idk1 : 24|8@1+ (1,0) [0|255] "" XXX
  SG_ OIL_PRESSURE : 15|8@0+ (0.5,0) [0|255] "psi" XXX
  SG_ CAR_VOLTAGE : 7|8@0+ (0.125,0) [0|255] "volts" XXX
- SG_ COOLANT : 23|8@0- (1,-64) [0|255] "f" XXX
+ SG_ COOLANT : 23|8@0+ (1,-64) [0|255] "c" XXX
 
 BO_ 98 DDM: 3 XXX
  SG_ LF_DOWN : 0|1@0+ (1,0) [0|1] "" XXX
