@@ -220,6 +220,10 @@ BO_ 100 TRANS: 4 XXX
  SG_ NEW_SIGNAL_5 : 0|1@0+ (1,0) [0|1] "" XXX
  SG_ PARK_NEUTRAL : 1|1@0+ (1,0) [0|1] "" XXX
 
+BO_ 238 NEW_MSG_2: 8 XXX
+ SG_ NEW_SIGNAL_3 : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ MAYBE_TRIP1 : 15|16@0+ (1,0) [0|255] "" XXX
+
 
 
 
