@@ -138,7 +138,6 @@ BO_ 130 STEERING_WHEEL: 4 XXX
  SG_ R_DOWN : 14|1@0+ (1,0) [0|1] "" XXX
  SG_ L_UP : 10|1@0+ (1,0) [0|1] "" XXX
  SG_ L_DOWN : 11|1@0+ (1,0) [0|1] "" XXX
- SG_ L-CENTER : 16|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 12 GAUGES: 5 XXX
  SG_ OIL_PRESSURE : 15|8@0+ (0.5,0) [0|255] "psi" XXX
@@ -177,11 +176,12 @@ BO_ 142 PARK_BRAKE: 2 XXX
  SG_ HATCH : 4|1@0+ (1,0) [0|1] "" XXX
  SG_ RR_DOOR : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ RF_DOOR : 1|1@0+ (1,0) [0|1] "" XXX
+ SG_ CHECKSUM : 15|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 109 VIN: 3 XXX
- SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_2 : 15|8@0+ (1,0) [0|255] "" XXX
  SG_ CHECKSUM : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ INDEX : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ VALUE : 15|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 228 TACH: 3 XXX
  SG_ MAP : 15|8@0+ (1,0) [0|255] "" XXX
