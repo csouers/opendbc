@@ -160,6 +160,8 @@ BO_ 164 PEDALS: 3 XXX
  SG_ USER_BRAKE1 : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ OD_OFF1 : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ CHECKSUM : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ NOT_PARKNEUTRAL : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ IDK : 4|1@1+ (1,0) [0|3] "" XXX
 
 BO_ 53 LIGHTING: 3 XXX
  SG_ HI_BEAM : 9|1@0+ (1,0) [0|1] "" XXX
@@ -198,8 +200,8 @@ BO_ 206 ODOMETER: 5 XXX
  SG_ ODO1 : 0|32@1+ (0.000124355,0) [0|1] "" XXX
 
 BO_ 37 FUEL: 2 XXX
- SG_ FUEL_LEVEL : 7|8@0+ (0.395,0) [0|255] "" XXX
  SG_ CHECKSUM : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ FUEL_LEVEL : 7|8@0+ (0.395,0) [0|255] "" XXX
 
 BO_ 254 DIMMER: 2 XXX
  SG_ DIMMER_SLIDER : 0|8@1+ (1,0) [0|255] "" XXX
@@ -218,9 +220,9 @@ BO_ 68 NEW_MSG_1: 8 XXX
  SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 170 IGN: 4 XXX
- SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
- SG_ IGN_SWITCH : 13|6@0+ (1,0) [0|255] "" XXX
  SG_ CHECKSUM : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ IDKIGN_SWITCH : 12|5@0+ (1,0) [0|255] "" XXX
+ SG_ IDK2 : 13|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 154 VIC: 2 XXX
  SG_ IMPERIAL : 7|1@0+ (1,0) [0|1] "" XXX
@@ -273,4 +275,4 @@ CM_ SG_ 98 LOCKOUT "1 = active";
 CM_ SG_ 98 LR "2 = IDLE, 1 = DOWN, 0 = UP";
 CM_ SG_ 37 FUEL_LEVEL "0 = SHORT, 255 = OPEN, RANGE = 1-253";
 CM_ SG_ 254 DIMMER_SLIDER "fd = max w lights on, ff= max lights off/lights off";
-CM_ SG_ 170 IGN_SWITCH "32 OFF/UNLOCKED, 33 ?, 34 ACC, 35 RUN";
+CM_ SG_ 170 IDKIGN_SWITCH "32 OFF/UNLOCKED, 33 ?, 34 ACC, 35 RUN";
