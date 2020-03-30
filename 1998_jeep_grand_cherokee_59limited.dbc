@@ -168,6 +168,10 @@ BO_ 53 LIGHTING: 3 XXX
  SG_ STARTER : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ METRIC_SETTING : 1|1@0+ (1,0) [0|1] "" XXX
  SG_ CHECKSUM : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_2 : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_3 : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_4 : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_1 : 3|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 142 PARK_BRAKE: 2 XXX
  SG_ PARK_BRAKE : 7|1@0+ (1,0) [0|1] "" XXX
