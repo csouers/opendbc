@@ -50,8 +50,6 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
  SG_ ZEROS_BOH_2 : 63|2@0+ (1,0) [0|3] "" XXX
  SG_ ZEROS_BOH_1 : 39|24@0+ (1,0) [0|16777215] "" XXX
- SG_ LDW_CORRECTING_1 : 6|1@0+ (1,0) [0|1] "" XXX
- SG_ LDW_WOBBLING_1 : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_1_ZERO : 1|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_B_0_ZERO : 8|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_B_1_ZERO : 9|1@0+ (1,0) [0|1] "" XXX
@@ -65,15 +63,17 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ FLAGS_D_6_ZERO : 30|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_D_7_ZERO : 31|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_2 : 2|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAG_A_0_LDWON : 0|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAGS_D_0_LDWON2 : 24|1@1+ (1,0) [0|255] "" XXX
  SG_ FLAG_A_3 : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_4 : 4|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAGS_D_5 : 29|1@0+ (1,0) [0|1] "" XXX
  SG_ LANES_QUAL : 15|2@0+ (1,0) [0|1] "" XXX
  SG_ IDK : 13|2@0+ (-1,0) [0|1] "" XXX
- SG_ FLAGS_D_4_FAULT : 28|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_5_DECEL_REQ : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_0_LANES_IDK2 : 24|1@1+ (1,0) [0|255] "" XXX
+ SG_ FLAGS_D_4_INITFAULTIDK : 28|1@0+ (1,0) [0|1] "" XXX
+ SG_ RDM_CORRECTING_1 : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ RDM_WOBBLING_1 : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_0_RDMON : 0|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 232 BRAKE_HOLD: 7 XXX
  SG_ XMISSION_SPEED : 7|14@0- (1,0) [1|0] "" XXX
@@ -274,21 +274,21 @@ BO_ 829 LKAS_HUD: 5 ADAS
  SG_ LKAS_PROBLEM : 12|1@0+ (1,0) [0|1] "" BDY
  SG_ LKAS_OFF : 11|1@0+ (1,0) [0|1] "" BDY
  SG_ SOLID_LANES : 10|1@0+ (1,0) [0|1] "" BDY
- SG_ LDW_PROBLEM : 21|1@0+ (1,0) [0|1] "" BDY
- SG_ LDW_OFF : 27|1@0+ (1,0) [0|1] "" BDY
  SG_ CLEAN_WINDSHIELD : 26|1@0+ (1,0) [0|1] "" BDY
  SG_ COUNTER : 37|2@0+ (1,0) [0|3] "" BDY
  SG_ CHECKSUM : 35|4@0+ (1,0) [0|15] "" BDY
  SG_ BEEP : 17|2@0+ (1,0) [0|1] "" BDY
  SG_ SET_ME_X1 : 0|1@0+ (1,0) [0|127] "" BDY
- SG_ LDW_ON_0 : 28|1@0+ (1,0) [0|1] "" BDY
- SG_ LDW_ON_2 : 28|1@0+ (1,0) [0|255] "" BDY
  SG_ LANE_ASSIST_BEEP_OFF : 30|1@0+ (1,0) [0|1] "" XXX
- SG_ LDW_ON_1 : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ RDM_0 : 9|1@0+ (1,0) [0|1] "" BDY
  SG_ RDM_1 : 23|1@0+ (1,0) [0|1] "" XXX
- SG_ LDW_HUD : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ STEERING_REQUIRED : 8|1@0+ (1,0) [0|1] "" BDY
+ SG_ RDM_HUD : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ RDM_ON_1 : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ RDM_PROBLEM : 21|1@0+ (1,0) [0|1] "" BDY
+ SG_ RDM_OFF : 27|1@0+ (1,0) [0|1] "" BDY
+ SG_ RDM_ON_0 : 28|1@0+ (1,0) [0|1] "" BDY
+ SG_ RDM_ON_2 : 28|1@0+ (1,0) [0|255] "" BDY
 
 BO_ 862 CAMERA_MESSAGES: 8 CAM
  SG_ ZEROS_BOH : 7|50@0+ (1,0) [0|127] "" BDY
