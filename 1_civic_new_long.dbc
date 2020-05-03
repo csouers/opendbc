@@ -66,7 +66,6 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ FLAG_A_2 : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_3 : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_4 : 4|1@0+ (1,0) [0|1] "" XXX
- SG_ FLAGS_D_5 : 29|1@0+ (1,0) [0|1] "" XXX
  SG_ LANES_QUAL : 15|2@0+ (1,0) [0|1] "" XXX
  SG_ IDK : 13|2@0+ (-1,0) [0|1] "" XXX
  SG_ FLAG_A_5_DECEL_REQ : 5|1@0+ (1,0) [0|1] "" XXX
@@ -75,6 +74,7 @@ BO_ 229 STEER_CONTROL_2: 8 XXX
  SG_ RDM_CORRECTING_1 : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ RDM_WOBBLING_1 : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ FLAG_A_0_RDMON : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_5_FAULT : 29|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 232 BRAKE_HOLD: 7 XXX
  SG_ XMISSION_SPEED : 7|14@0- (1,0) [1|0] "" XXX
@@ -389,6 +389,12 @@ BO_ 1039 NEW_MSG_3: 8 XXX
 
 BO_ 477 NEW_MSG_4: 8 XXX
  SG_ NEW_SIGNAL_1 : 35|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 1104 BOSCH_FAULT_1: 8 XXX
+ SG_ RADAR_DISCO1 : 37|1@0+ (1,0) [0|255] "" XXX
+ SG_ RADAR_DISCO2 : 43|4@0+ (1,0) [0|255] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|255] "" XXX
 
 
 
