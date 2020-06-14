@@ -261,6 +261,20 @@ BO_ 13275 LKAS_HUD_B: 8 ADAS
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" BDY
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" BDY
 
+BO_ 384899312 IOC_BCM_REQ: 8 DIAG
+ SG_ D0 : 7|8@0+ (1,0) [0|255] "" BCM
+ SG_ D1 : 15|8@0+ (1,0) [0|255] "" BCM
+ SG_ D2 : 23|8@0+ (1,0) [0|255] "" BCM
+ SG_ D3 : 31|8@0+ (1,0) [0|255] "" BCM
+ SG_ D4 : 39|8@0+ (1,0) [0|255] "" BCM
+ SG_ D5 : 47|8@0+ (1,0) [0|255] "" BCM
+ SG_ D6 : 55|8@0+ (1,0) [0|255] "" BCM
+ SG_ D7 : 63|8@0+ (1,0) [0|255] "" BCM
+
+BO_ 384954392 IOC_BCM_FDBK: 8 BCM
+ SG_ D0 : 7|8@0+ (1,0) [0|255] "" DIAG,OP
+ SG_ D1 : 14|8@0+ (1,0) [0|255] "" DIAG,OP
+
 CM_ SG_ 450 EPB_STATE "3: On, 2: Disengaging, 1: Engaging, 0: Off";
 CM_ SG_ 479 CONTROL_ON "Set to 5 when car is being controlled";
 CM_ SG_ 479 AEB_STATUS "set for the duration of AEB event";

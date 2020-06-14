@@ -1,0 +1,311 @@
+CM_ "honda_body_2017.dbc starts here";
+VERSION ""
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_:
+
+BU_: XXX
+
+BO_ 2049 OP_STATE: 8 OP
+ SG_ IGNITION : 0|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ CONTROLS_ALLOWED : 1|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ HEARTBEAT : 2|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ POWERSAVE : 3|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ SAFETY_MODE : 7|4@0+ (1,0) [0|1] "" OPGTW
+ SG_ IDX_32 : 15|8@0+ (1,0) [0|1] "" OPGTW
+ SG_ DATA_32 : 23|32@0+ (1,0) [0|1] "" OPGTW
+ SG_ AUX_4 : 55|4@0+ (1,0) [0|1] "" OPGTW
+ SG_ COUNTER_GW : 51|4@0+ (1,0) [0|15] "" OPGTW
+ SG_ CHECKSUM_GW : 63|8@0+ (1,0) [0|255] "" OPGTW
+
+BO_ 2050 GATEWAY_STATE: 8 OPGTW
+ SG_ IGNITION : 0|1@0+ (1,0) [0|1] "" OP
+ SG_ CONTROLS_ALLOWED : 1|1@0+ (1,0) [0|1] "" OP
+ SG_ HEARTBEAT : 2|1@0+ (1,0) [0|1] "" OP
+ SG_ POWERSAVE : 3|1@0+ (1,0) [0|1] "" OP
+ SG_ SAFETY_MODE : 7|4@0+ (1,0) [0|1] "" OP
+ SG_ IDX_32 : 15|8@0+ (1,0) [0|1] "" OP
+ SG_ DATA_32 : 23|32@0+ (1,0) [0|1] "" OP
+ SG_ AUX_4 : 55|4@0+ (1,0) [0|1] "" OP
+ SG_ COUNTER_GW : 51|4@0+ (1,0) [0|15] "" OP
+ SG_ CHECKSUM_GW : 63|8@0+ (1,0) [0|255] "" OP
+
+BO_ 384899312 IOC_BCM_REQ: 8 DIAG
+ SG_ D0 : 7|8@0+ (1,0) [0|255] "" BCM
+ SG_ D1 : 15|8@0+ (1,0) [0|255] "" BCM
+ SG_ D2 : 23|8@0+ (1,0) [0|255] "" BCM
+ SG_ D3 : 31|8@0+ (1,0) [0|255] "" BCM
+ SG_ D4 : 39|8@0+ (1,0) [0|255] "" BCM
+ SG_ D5 : 47|8@0+ (1,0) [0|255] "" BCM
+ SG_ D6 : 55|8@0+ (1,0) [0|255] "" BCM
+ SG_ D7 : 63|8@0+ (1,0) [0|255] "" BCM
+
+BO_ 384954392 IOC_BCM_FDBK: 8 BCM
+ SG_ D0 : 7|8@0+ (1,0) [0|255] "" DIAG,OP
+ SG_ D1 : 14|8@0+ (1,0) [0|255] "" DIAG,OP
+
+BO_ 318246936 LIGHTING_3: 6 XXX
+ SG_ HAZARDS_ENABLE : 21|1@0+ (1,0) [0|1] "" XXX
+ SG_ RIGHTSIGNAL : 19|1@0+ (1,0) [0|1] "" XXX
+ SG_ LEFTSIGNAL : 20|1@0+ (1,0) [0|3] "" XXX
+ SG_ AUTORIGHT : 38|1@0+ (1,0) [0|1] "" XXX
+ SG_ AUTOLEFT : 39|1@0+ (1,0) [0|1] "" XXX
+ SG_ BRAKES : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ REVERSE : 31|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_C0 : 47|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_1_1 : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_1_3 : 23|1@0+ (1,0) [0|3] "" XXX
+ SG_ SET_TO_1_2 : 5|1@0+ (1,0) [0|3] "" XXX
+
+BO_ 251138584 KEYFOB: 2 XXX
+ SG_ UNLOCK2 : 1|1@0+ (1,0) [0|1] "" XXX
+ SG_ UNLOCK1 : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ TRUNKBUTTON2 : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ TRUNKBUTTON1 : 13|1@0+ (1,0) [0|1] "" XXX
+ SG_ LOCK : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ REMOTESTART1 : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ REMOTESTART2 : 7|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 318255664 RF_DOOR: 1 XXX
+ SG_ LOCK_BUTTON : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ UNLOCK_BUTTON : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ UNLOCKED : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 7|2@0+ (1,0) [0|3] "" XXX
+ SG_ SET_TO_0_1 : 0|3@1+ (1,0) [0|7] "" XXX
+
+BO_ 318255408 LF_DOOR: 8 XXX
+ SG_ LF_UNLOCKED : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ LF_LOCKED : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 0|2@1+ (1,0) [0|3] "" XXX
+ SG_ SET_TO_0_1 : 7|4@0+ (1,0) [0|15] "" XXX
+ SG_ SET_TO_1 : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0_3 : 23|32@0+ (1,0) [0|4294967295] "" XXX
+ SG_ _CHECKSUM_ : 56|8@1+ (1,0) [0|255] "" XXX
+ SG_ _COUNTER_ : 48|8@1+ (1,0) [0|255] "" XXX
+
+BO_ 318264400 LIGHTING_4: 8 XXX
+ SG_ PARKING_LIGHTS : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_21 : 5|6@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_54 : 15|8@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 23|16@0+ (1,0) [0|65535] "" XXX
+ SG_ SET_TO_X55 : 47|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_XB0 : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0_3 : 55|16@0+ (1,0) [0|65535] "" XXX
+
+BO_ 184029464 LIGHTING_1: 6 XXX
+ SG_ HIGH_BEAMS : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_X64 : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0_1 : 23|32@0+ (1,0) [0|4294967295] "" XXX
+ SG_ SET_TO_33 : 7|7@0+ (1,0) [0|255] "" XXX
+
+BO_ 184053784 LIGHTING_2_STALK: 3 XXX
+ SG_ NEW_SIGNAL_1 : 0|2@1+ (1,0) [0|3] "" XXX
+ SG_ HIGH_BEAMS : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_X2 : 7|5@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_X4 : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0_1 : 23|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 318259736 RR_DOOR: 1 XXX
+ SG_ UNLOCKED : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|1] "" XXX
+
+BO_ 318288034 HEATED_SEATS: 2 XXX
+ SG_ PASS_SEAT : 2|2@0+ (1,0) [0|3] "" XXX
+ SG_ DRIVER_SEAT : 6|2@0+ (1,0) [0|3] "" XXX
+
+BO_ 251231057 CLIMATE_1: 8 XXX
+ SG_ PASS_TEMP_SETTING : 16|8@1+ (1,0) [0|255] "" XXX
+ SG_ DRIVER_TEMP_SETTING : 8|8@1+ (1,0) [0|255] "" XXX
+ SG_ FAN_SPEED : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_X60 : 31|8@0+ (1,0) [0|1099511627775] "" XXX
+ SG_ SET_TO_0_1 : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_X80_1 : 47|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_X80_2 : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0_2 : 63|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 251142168 DOOR_LOCKS: 1 XXX
+ SG_ LOCKACTION_STATUS : 7|2@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_ : 5|6@0+ (1,0) [0|63] "" XXX
+
+BO_ 318339668 CLIMATE_COMMAND: 8 XXX
+ SG_ FAN : 0|3@1+ (1,0) [0|7] "" XXX
+ SG_ AC_SWITCH : 34|2@1+ (1,0) [0|3] "" XXX
+ SG_ MODE : 31|3@0+ (1,0) [0|7] "" XXX
+
+BO_ 251139608 KEYFOB2: 4 XXX
+ SG_ UNLOCKED : 13|1@0+ (1,0) [0|1] "" XXX
+ SG_ LOCKED : 16|1@0+ (1,0) [0|1] "" XXX
+ SG_ AUTOLOCKED : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ DRIVERDOORUNLOCKED : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ ALLDOORSUNLOCKED : 1|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 318260272 FRONT_WINDOWS: 2 XXX
+ SG_ RF_WINDOWSTATE : 14|1@0+ (1,0) [0|1] "" XXX
+ SG_ LF_WINDOWSTATE : 15|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_XA1 : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_1_1 : 8|1@0+ (1,0) [0|1] "" XXX
+ SG_ SUNROOF_CLOSED : 11|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 9|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_0 : 13|2@0+ (1,0) [0|3] "" XXX
+ SG_ SET_TO_1_0 : 10|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 318263376 CONSOLE_SWITCHES: 6 XXX
+ SG_ ENGINE_RPM : 15|16@0+ (1,0) [0|65535] "" XXX
+ SG_ CAR_SPEED_1 : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ ECO_SWITCH : 29|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 28|5@0+ (1,0) [0|31] "" XXX
+ SG_ SET_TO_0_3 : 31|2@0+ (1,0) [0|3] "" XXX
+ SG_ SET_TO_0_1 : 39|16@0+ (1,0) [0|255] "" XXX
+
+BO_ 318263632 SHIFTER: 5 XXX
+ SG_ REVERSE : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEUTRAL : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ DRIVE_MODE : 14|3@0+ (1,0) [0|7] "" XXX
+ SG_ PARKBRAKE_ENGAGE : 9|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 7|3@0+ (1,0) [0|7] "" XXX
+ SG_ SET_TO_1_1 : 8|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_3 : 10|2@1+ (1,0) [0|3] "" XXX
+ SG_ RELATED_TEMP_1 : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0_4 : 15|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_5 : 23|8@0+ (1,0) [0|16777215] "" XXX
+ SG_ SET_TO_X60 : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ MB_RELATED_DOORLOCKS : 1|2@0+ (1,0) [0|1] "" XXX
+
+BO_ 318275608 TRUNK_1: 1 XXX
+ SG_ RELEASE_BUTTON : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|127] "" XXX
+
+BO_ 318337360 STEERING_1: 3 XXX
+ SG_ STEER_ANGLE : 15|16@0- (1,0) [0|255] "" XXX
+ SG_ SET_TO_XE0 : 7|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 184054040 WIPER_STALK: 3 XXX
+ SG_ SWIPE : 1|1@0+ (1,0) [0|1] "" XXX
+ SG_ OFF : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ REAR_WIPER : 23|3@0+ (1,0) [0|7] "" XXX
+ SG_ INTERMITTENT_SLIDER : 15|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 318265680 SPEED2: 7 XXX
+ SG_ KPH_1 : 15|16@0+ (0.01,0) [0|65535] "" XXX
+ SG_ KPH_2 : 31|16@0+ (0.01,0) [0|65535] "" XXX
+ SG_ SET_TO_0_2 : 47|16@0+ (1,0) [0|65535] "" XXX
+ SG_ SET_TO_0_1 : 7|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 318259480 LR_DOOR: 1 XXX
+ SG_ UNLOCKED : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|1] "" XXX
+
+BO_ 318259224 RIGHT_DOORS: 1 XXX
+ SG_ RF_OPEN : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ RR_OPEN : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 3|4@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_3 : 7|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 318255128 LEFT_DOORS: 1 XXX
+ SG_ LR_OPEN : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ LF_OPEN : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_2 : 4|5@0+ (1,0) [0|31] "" XXX
+ SG_ SET_TO_0_1 : 6|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 318259992 TRUNK_2: 1 XXX
+ SG_ TRUNK_OPEN : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|1] "" XXX
+
+BO_ 385376848 VIN: 8 XXX
+ SG_ DIGIT_A : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_B : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_C : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_D : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_E : 47|8@0+ (1,0) [0|255] "" XXX
+ SG_ DIGIT_F : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ INDEX : 7|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 251159376 SPEED1: 8 XXX
+ SG_ LF_WHEELSPEED_COARSE : 0|8@1+ (1,0) [0|255] "" XXX
+ SG_ RF_WHEELSPEED_COARSE : 8|8@1+ (1,0) [0|255] "" XXX
+ SG_ LR_WHEELSPEED_COARSE : 16|8@1+ (1,0) [0|255] "" XXX
+ SG_ RR_WHEELSPEED_COARSE : 24|8@1+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_X55 : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ _COUNTER_ : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ _CHECKSUM_ : 63|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 318338128 STEERING_2: 2 XXX
+ SG_ RELATED_STEER_ANGLE : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ MAYBE_STEER_DIRECTION : 15|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 251142936 SEATBELT_1: 2 XXX
+ SG_ DRIVER_SEATBELT : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_TO_X2 : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_TO_0 : 7|7@0+ (1,0) [0|255] "" XXX
+
+BO_ 318291879 BSM_STATUS_RIGHT: 8 XXX
+ SG_ BSM_ALERT : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ BSM_MODE : 6|2@0+ (1,0) [0|3] "" XXX
+ SG_ PRIMARY : 23|1@0+ (1,0) [0|1] "" XXX
+ SG_ PN_1 : 31|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ PN_2 : 39|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ PN_3 : 47|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ REV_A : 55|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ REV_B : 63|4@0+ (1,0) [0|255] "int" XXX
+ SG_ REV_C : 59|4@0+ (1,0) [0|255] "int" XXX
+
+BO_ 318291615 BSM_STATUS_LEFT: 8 XXX
+ SG_ BSM_ALERT : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ BSM_MODE : 6|2@0+ (1,0) [0|3] "" XXX
+ SG_ PRIMARY : 23|1@0+ (1,0) [0|1] "" XXX
+ SG_ PN_1 : 31|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ PN_2 : 39|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ PN_3 : 47|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ REV_A : 55|8@0+ (1,0) [0|255] "ascii" XXX
+ SG_ REV_B : 63|4@0+ (1,0) [0|255] "int" XXX
+ SG_ REV_C : 59|4@0+ (1,0) [0|255] "int" XXX
+
+VAL_ 318291879 BSM_MODE 2 "blind_spot" 1 "cross_traffic" 0 "off";
+VAL_ 318291615 BSM_MODE 2 "blind_spot" 1 "cross_traffic" 0 "off";
+
+CM_ SG_ 318264400 PARKING_LIGHTS "0 = OFF, 1 = ON";
+CM_ SG_ 318288034 PASS_SEAT "0 = OFF, 1 = HIGH, 2 = MED, 3 = LO";
+CM_ SG_ 318288034 DRIVER_SEAT "0 = OFF, 1 = HIGH, 2 = MED, 3 = LO";
+CM_ SG_ 251231057 PASS_TEMP_SETTING "04 = HIGH, 08 = LO";
+CM_ SG_ 251231057 DRIVER_TEMP_SETTING "04 = HIGH, 08 = LO";
+CM_ SG_ 251231057 FAN_SPEED "en = current n setting, 6n = going to n setting";
+CM_ SG_ 251142168 LOCKACTION_STATUS "0 = IDLE, 1 = UNLOCKING, 2 = LOCKING";
+CM_ SG_ 318339668 MODE "5 = FACE, 4 = MIX, 3 = FLOOR, 2 = FLOOR_DEFROST";
+CM_ SG_ 318260272 RF_WINDOWSTATE "1 = CLOSED, 0 = OPEN";
+CM_ SG_ 318260272 LF_WINDOWSTATE "1 = CLOSED, 0 = OPEN";
+CM_ SG_ 318263632 DRIVE_MODE "0 = DRIVE, 4 = S, 1 = L";
+CM_ SG_ 184054040 REAR_WIPER "0 = OFF, 4 = INT, 1 = ON";
+CM_ SG_ 318331988 SAME_PACKET_CNT "0-3";
