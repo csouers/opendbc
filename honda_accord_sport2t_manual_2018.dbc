@@ -58,8 +58,8 @@ BO_ 304 GAS_PEDAL_2: 8 PCM
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" EON
  SG_ NEUTRAL : 48|1@0+ (1,0) [0|1] "" XXX
- SG_ CLUTCH_ACC : 50|1@0+ (1,0) [0|1] "" XXX
- SG_ CLUTCH_MAIN : 51|1@0+ (-1,1) [0|1] "" XXX
+ SG_ CLUTCH_ACC : 50|1@0+ (-1,1) [0|1] "" XXX
+ SG_ CLUTCH_MAIN : 51|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 330 STEERING_SENSORS: 8 EPS
  SG_ STEER_ANGLE : 7|16@0- (-0.1,0) [-500|500] "deg" EON
