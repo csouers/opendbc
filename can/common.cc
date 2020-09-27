@@ -4,10 +4,12 @@ unsigned int honda_checksum(unsigned int address, uint64_t d, int l) {
   d >>= ((8-l)*8); // remove padding
   d >>= 4; // remove checksum
 
+  bool extended = address > 0x7FF;
   int s = 0;
   while (address) { s += (address & 0xF); address >>= 4; }
   while (d) { s += (d & 0xF); d >>= 4; }
   s = 8-s;
+  if (extended){ s += 3; }
   s &= 0xF;
 
   return s;
