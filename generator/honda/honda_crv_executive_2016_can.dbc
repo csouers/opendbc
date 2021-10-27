@@ -1,4 +1,5 @@
-CM_ "IMPORT _honda_2017.dbc";
+CM_ "IMPORT _honda.dbc";
+CM_ "IMPORT _nidec.dbc";
 CM_ "IMPORT _comma.dbc";
 
 BO_ 342 STEERING_SENSORS: 6 EPS
