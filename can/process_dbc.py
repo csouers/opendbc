@@ -91,18 +91,12 @@ def process(in_fn, out_fn):
             sys.exit("%s: COUNTER starts at wrong bit" % dbc_msg_name)
           if little_endian != sig.is_little_endian:
             sys.exit("%s: COUNTER has wrong endianness" % dbc_msg_name)
-      # pedal rules
-      if address in [0x200, 0x201]:
-        if sig.name == "COUNTER_PEDAL" and sig.size != 4:
+      # comma device rules
+      if address in [0x200, 0x201, 0x800, 0x801]:
+        if sig.name == "COUNTER_COMMA" and sig.size != 4:
           sys.exit("%s: PEDAL COUNTER is not 4 bits long" % dbc_msg_name)
-        if sig.name == "CHECKSUM_PEDAL" and sig.size != 8:
+        if sig.name == "CHECKSUM_COMMA" and sig.size != 8:
           sys.exit("%s: PEDAL CHECKSUM is not 8 bits long" % dbc_msg_name)
-      # gateway rules
-      if address in [0x800, 0x801]:
-        if sig.name == "COUNTER_PEDAL" and sig.size != 4:
-          sys.exit("%s: GW COUNTER is not 4 bits long" % dbc_msg_name)
-        if sig.name == "CHECKSUM_PEDAL" and sig.size != 8:
-          sys.exit("%s: GW CHECKSUM is not 8 bits long" % dbc_msg_name)
 
   # Fail on duplicate message names
   c = Counter([msg_name for address, msg_name, msg_size, sigs in msgs])

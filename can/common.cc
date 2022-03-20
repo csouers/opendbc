@@ -175,7 +175,7 @@ unsigned int volkswagen_crc(unsigned int address, uint64_t d, int l) {
   return crc ^ 0xFF; // Return after standard final XOR for CRC8 8H2F/AUTOSAR
 }
 
-unsigned int pedal_checksum(uint64_t d, int l) {
+unsigned int comma_checksum(uint64_t d, int l) {
   uint8_t crc = 0xFF;
   uint8_t poly = 0xD5; // standard crc8
 

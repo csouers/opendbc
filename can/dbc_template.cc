@@ -33,10 +33,10 @@ const Signal sigs_{{address}}[] = {
       .type = SignalType::SUBARU_CHECKSUM,
       {% elif checksum_type == "chrysler" and sig.name == "CHECKSUM" %}
       .type = SignalType::CHRYSLER_CHECKSUM,
-      {% elif address in [512, 513, 2049, 2050] and sig.name == "CHECKSUM_PEDAL" %}
-      .type = SignalType::PEDAL_CHECKSUM,
-      {% elif address in [512, 513, 2049, 2050] and sig.name == "COUNTER_PEDAL" %}
-      .type = SignalType::PEDAL_COUNTER,
+      {% elif address in [512, 513, 2049, 2050] and sig.name == "CHECKSUM_COMMA" %}
+      .type = SignalType::COMMA_CHECKSUM,
+      {% elif address in [512, 513, 2049, 2050] and sig.name == "COUNTER_COMMA" %}
+      .type = SignalType::COMMA_COUNTER,
       {% else %}
       .type = SignalType::DEFAULT,
       {% endif %}

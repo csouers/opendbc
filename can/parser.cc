@@ -59,8 +59,8 @@ bool MessageState::parse(uint64_t sec, uint8_t * dat) {
           INFO("0x%X CHECKSUM FAIL\n", address);
           return false;
         }
-      } else if (sig.type == SignalType::PEDAL_CHECKSUM) {
-        if (pedal_checksum(dat_be, size) != tmp) {
+      } else if (sig.type == SignalType::COMMA_CHECKSUM) {
+        if (comma_checksum(dat_be, size) != tmp) {
           INFO("0x%X PEDAL CHECKSUM FAIL\n", address);
           return false;
         }
@@ -75,7 +75,7 @@ bool MessageState::parse(uint64_t sec, uint8_t * dat) {
           if (!update_counter_generic(tmp, sig.b2)) {
           return false;
         }
-      } else if (sig.type == SignalType::PEDAL_COUNTER) {
+      } else if (sig.type == SignalType::COMMA_COUNTER) {
         if (!update_counter_generic(tmp, sig.b2)) {
           return false;
         }
