@@ -36,6 +36,30 @@ BS_:
 
 BU_: XXX
 
+BO_ 2049 OP_STATE: 8 OP
+ SG_ IGNITION : 0|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ CONTROLS_ALLOWED : 1|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ HEARTBEAT : 2|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ POWERSAVE : 3|1@0+ (1,0) [0|1] "" OPGTW
+ SG_ SAFETY_MODE : 7|4@0+ (1,0) [0|1] "" OPGTW
+ SG_ IDX_32 : 15|8@0+ (1,0) [0|1] "" OPGTW
+ SG_ DATA_32 : 23|32@0+ (1,0) [0|1] "" OPGTW
+ SG_ AUX_4 : 55|4@0+ (1,0) [0|1] "" OPGTW
+ SG_ COUNTER_PEDAL : 51|4@0+ (1,0) [0|15] "" OPGTW
+ SG_ CHECKSUM_PEDAL : 63|8@0+ (1,0) [0|255] "" OPGTW
+
+BO_ 2050 GATEWAY_STATE: 8 OPGTW
+ SG_ IGNITION : 0|1@0+ (1,0) [0|1] "" OP
+ SG_ CONTROLS_ALLOWED : 1|1@0+ (1,0) [0|1] "" OP
+ SG_ HEARTBEAT : 2|1@0+ (1,0) [0|1] "" OP
+ SG_ POWERSAVE : 3|1@0+ (1,0) [0|1] "" OP
+ SG_ SAFETY_MODE : 7|4@0+ (1,0) [0|1] "" OP
+ SG_ IDX_32 : 15|8@0+ (1,0) [0|1] "" OP
+ SG_ DATA_32 : 23|32@0+ (1,0) [0|1] "" OP
+ SG_ AUX_4 : 55|4@0+ (1,0) [0|1] "" OP
+ SG_ COUNTER_PEDAL : 51|4@0+ (1,0) [0|15] "" OP
+ SG_ CHECKSUM_PEDAL : 63|8@0+ (1,0) [0|255] "" OP
+
 BO_ 384899312 IOC_BCM_REQ: 8 DIAG
  SG_ D0 : 7|8@0+ (1,0) [0|255] "" BCM
  SG_ D1 : 15|8@0+ (1,0) [0|255] "" BCM
