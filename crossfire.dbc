@@ -111,26 +111,15 @@ BO_ 776 NEW_MSG_1: 8 XXX
  SG_ NEW_SIGNAL_7 : 63|8@0+ (1,0) [0|1] "" XXX
 
 BO_ 786 NEW_MSG_2: 8 XXX
- SG_ NEW_SIGNAL_2 : 23|16@0+ (1,0) [0|65535] "" XXX
- SG_ NEW_SIGNAL_3 : 39|16@0+ (1,0) [0|65535] "" XXX
- SG_ NEW_SIGNAL_4 : 55|16@0+ (-1,0) [0|65535] "" XXX
- SG_ NEW_SIGNAL_1 : 4|13@0- (1,0) [0|65535] "" XXX
  SG_ NEW_SIGNAL_5 : 7|3@0+ (1,0) [0|1] "" XXX
+ SG_ rpm1 : 23|16@0+ (1,0) [0|65535] "" XXX
+ SG_ rpm2 : 39|16@0+ (1,0) [0|65535] "" XXX
+ SG_ rpm3 : 55|16@0+ (-1,0) [0|65535] "" XXX
+ SG_ rpm4 : 4|13@0- (1,0) [0|65535] "" XXX
 
-BO_ 568 NEW_MSG_3: 8 XXX
- SG_ NEW_SIGNAL_1 : 22|3@0+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_2 : 26|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_3 : 19|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_4 : 63|8@0+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_5 : 55|8@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_6 : 47|8@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_7 : 39|8@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_8 : 15|8@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_10 : 23|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_9 : 7|8@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_11 : 18|3@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_12 : 31|5@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_13 : 25|2@0+ (1,0) [0|1] "" XXX
+BO_ 568 STEER_1: 8 XXX
+ SG_ STEER_ANGLE : 18|11@0+ (1,0) [0|65535] "" XXX
+ SG_ STEER_DIR_FACTOR : 19|1@0+ (-1,0) [0|1] "" XXX
 
 BO_ 530 NEW_MSG_4: 8 XXX
  SG_ NEW_SIGNAL_4 : 19|12@0+ (1,0) [0|65535] "" XXX
@@ -220,7 +209,6 @@ BO_ 1585 NEW_MSG_11: 8 XXX
  SG_ NEW_SIGNAL_6 : 47|8@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_7 : 55|8@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_8 : 63|1@0+ (1,0) [0|1] "" XXX
-
 
 
 
