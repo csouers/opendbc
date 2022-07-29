@@ -130,17 +130,20 @@ BO_ 318264400 LIGHTING_4: 8 XXX
  SG_ SET_TO_0_3 : 55|16@0+ (1,0) [0|65535] "" XXX
 
 BO_ 184029464 LIGHTING_1: 6 XXX
- SG_ HIGH_BEAMS : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ HIGH_BEAM : 0|1@0+ (1,0) [0|1] "" XXX
  SG_ SET_TO_X64 : 15|8@0+ (1,0) [0|255] "" XXX
  SG_ SET_TO_0_1 : 23|32@0+ (1,0) [0|4294967295] "" XXX
  SG_ SET_TO_33 : 7|7@0+ (1,0) [0|255] "" XXX
 
-BO_ 184053784 LIGHTING_2_STALK: 3 XXX
- SG_ NEW_SIGNAL_1 : 0|2@1+ (1,0) [0|3] "" XXX
- SG_ HIGH_BEAMS : 2|1@0+ (1,0) [0|1] "" XXX
- SG_ SET_TO_X2 : 7|5@0+ (1,0) [0|255] "" XXX
- SG_ SET_TO_X4 : 15|8@0+ (1,0) [0|255] "" XXX
- SG_ SET_TO_0_1 : 23|8@0+ (1,0) [0|255] "" XXX
+BO_ 184053784 LIGHTING_STALK: 3 XXX
+ SG_ AUTO : 10|1@0+ (1,0) [0|1] "" XXX
+ SG_ FRONT_FOG : 13|1@0+ (1,0) [0|1] "" XXX
+ SG_ UP : 14|1@0+ (1,0) [0|1] "" XXX
+ SG_ DOWN : 15|1@0+ (1,0) [0|1] "" XXX
+ SG_ PULL : 17|1@0+ (1,0) [0|1] "" XXX
+ SG_ PUSH : 18|1@0+ (1,0) [0|1] "" XXX
+ SG_ PARKING : 22|1@0+ (1,0) [0|1] "" XXX
+ SG_ LOW : 20|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 318259736 RR_DOOR: 1 XXX
  SG_ UNLOCKED : 7|1@0+ (1,0) [0|1] "" XXX
