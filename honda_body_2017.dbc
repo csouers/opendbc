@@ -142,8 +142,8 @@ BO_ 184053784 LIGHTING_STALK: 3 XXX
  SG_ DOWN : 15|1@0+ (1,0) [0|1] "" XXX
  SG_ PULL : 17|1@0+ (1,0) [0|1] "" XXX
  SG_ PUSH : 18|1@0+ (1,0) [0|1] "" XXX
- SG_ PARKING : 22|1@0+ (1,0) [0|1] "" XXX
- SG_ LOW : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ PARKING : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ LOW : 4|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 318259736 RR_DOOR: 1 XXX
  SG_ UNLOCKED : 7|1@0+ (1,0) [0|1] "" XXX
