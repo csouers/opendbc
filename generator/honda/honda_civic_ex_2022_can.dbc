@@ -32,6 +32,14 @@ BO_ 456 ACC_CONTROL: 8 XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
 
+BO_ 457 ACC_HUD_2: 8 CAM
+ SG_ BOH_0 : 63|2@0+ (1,0) [0|1] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|1] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|1] "" XXX
+ SG_ CRUISE_SPEED_KPH : 7|8@0+ (1,0) [0|1] "" XXX
+ SG_ LEAD_DISTANCE : 15|32@0+ (1e-7,0) [0|281474976710655] "Meters" XXX
+ SG_ BOH_1 : 47|16@0+ (0.005,0) [0|1] "" XXX
+
 BO_ 829 LKAS_HUD: 8 ADAS
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] "" XXX
  SG_ SET_ME_32 : 6|6@0+ (1,0) [0|127] "" BDY
