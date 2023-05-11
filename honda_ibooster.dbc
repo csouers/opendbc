@@ -1,0 +1,113 @@
+BO_ 199 VSA_C7: 4 XXX
+ SG_ NEW_SIGNAL_2 : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_3 : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_6 : 18|3@0+ (1,0) [0|7] "" XXX
+ SG_ IGN : 19|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_5 : 21|2@0+ (1,0) [0|63] "" XXX
+ SG_ WTF_IS_THIS : 23|2@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 27|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 29|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 31|2@0+ (1,0) [0|3] "" XXX
+
+BO_ 231 IBCU_TRAVEL: 5 XXX
+ SG_ TRAVEL_PEDAL_MOTOR : 7|12@0+ (1,0) [0|0] "" XXX
+ SG_ ASSIST_AVAILABLE_2 : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKOUT_2 : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ ASSIST_AVAILABLE_1 : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKOUT : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ TRAVEL_PEDAL : 18|12@0+ (1,0) [0|0] "" XXX
+ SG_ OFFLINE_1 : 19|1@0+ (1,0) [0|1] "" XXX
+ SG_ OFFLINE_2 : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ IDK_AND_CAN_BRAKE : 21|1@0+ (1,0) [0|0] "" XXX
+ SG_ IGN : 23|2@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 35|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 37|2@0+ (1,0) [0|0] "" XXX
+ SG_ CAN_BRAKE_2 : 38|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 232 VSA_IBOOSTER_COMMAND: 7 XXX
+ SG_ SPEED : 7|14@0+ (0.06,0) [0|0] "kph" XXX
+ SG_ SET_1_0 : 8|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_0_1 : 9|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_0_2 : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ SET_0_3 : 28|5@0+ (1,0) [0|31] "" XXX
+ SG_ COMPUTER_BRAKE_REQUEST : 29|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_4 : 30|1@0+ (1,0) [0|1] "" XXX
+ SG_ SET_0_5 : 31|1@0+ (1,0) [0|3] "" XXX
+ SG_ COMPUTER_BRAKE : 39|16@0+ (1,-32256) [0|0] "" XXX
+ SG_ CHECKSUM : 51|4@0+ (1,0) [0|15] "" XXX
+ SG_ COUNTER : 53|2@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_6 : 55|2@0+ (1,0) [0|3] "" XXX
+
+BO_ 380 PCM_GATEWAYFORWARD_POWERTRAIN_DATA: 8 XXX
+ SG_ PEDAL_GAS : 7|8@0+ (0.465116279,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ ENGINE_RPM : 23|16@0+ (1,0) [0|0] "" XXX
+ SG_ BRAKE_SWITCH_POSITION_A : 32|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 34|2@0+ (1,0) [0|0] "" XXX
+ SG_ ACC_STATUS_2 : 35|1@0+ (1,0) [0|0] "" XXX
+ SG_ BOH_17C : 37|2@0+ (1,0) [0|0] "" XXX
+ SG_ ACC_STATUS : 38|1@0+ (1,0) [0|0] "" XXX
+ SG_ GAS_PRESSED : 39|1@0+ (1,0) [0|0] "" XXX
+ SG_ BOH2_17C : 47|10@0+ (1,0) [0|0] "" XXX
+ SG_ BOH3_17C : 52|5@0+ (1,0) [0|0] "" XXX
+ SG_ BRAKE_SWITCH_POSITION_B : 53|1@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 63|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 441 VSA_WHEEL_TICKS: 5 XXX
+ SG_ ENCODER_FL : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ ENCODER_FR : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ ENCODER_RL : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ ENCODER_RR : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 35|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 37|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 39|2@0+ (1,0) [0|3] "" XXX
+
+BO_ 446 IBCU_STATUS_0: 3 XXX
+ SG_ NEW_SIGNAL_3 : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ IGN : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ MOTOR_GOOD_1 : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ ASSIST_UNAVAILABLE : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ USER_BRAKING : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_4 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_3 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 19|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 21|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 22|1@0+ (1,0) [0|0] "" XXX
+ SG_ VSA_DETECTED : 23|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 469 IBCU_STATUS_1: 3 XXX
+ SG_ MAX_CAN_TRAVEL : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_2 : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_2 : 5|3@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_5 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_3 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_3 : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_4 : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ ASSIST_AVAILABLE : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKOUT : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ USER_BRAKING : 12|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKOUT_2 : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_1_1 : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ GOOD_4 : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 19|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 21|2@0+ (1,0) [0|0] "" XXX
+ SG_ OFFLINE_BOH_ASSIST_AVAILABLE_OR_IGN_MAYBE : 22|1@0+ (1,0) [0|0] "" XXX
+ SG_ OFFLINE_LOCKOUT_3 : 23|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 1670 IBCU_DTC_MATRIX: 5 XXX
+ SG_ ERROR_HEX_1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ ERROR_HEX_2 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ ERROR_HEX_3 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 35|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 37|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 39|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 417001771 IBCU_ISOTP: 8 XXX
+
+CM_ SG_ 232 SPEED "Seems like XMISSION_SPEED2 but smoothed";
