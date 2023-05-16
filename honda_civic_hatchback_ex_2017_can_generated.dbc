@@ -466,6 +466,17 @@ BO_ 330 STEERING_SENSORS: 8 EPS
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" EON
 
+
+CM_ "Imported file _body_2017.dbc starts here";
+BO_ 384899312 Tester_16f118_KWP_Req_BCM: 8 XXX
+ SG_ D0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ D2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ D3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ D4 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ D5 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
 CM_ "honda_civic_hatchback_ex_2017_can.dbc starts here";
 
 BO_ 401 GEARBOX: 8 PCM
