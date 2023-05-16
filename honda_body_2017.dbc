@@ -151,7 +151,6 @@ BO_ 384899312 Tester_16f118_KWP_Req_BCM: 8 XXX
  SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
  SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
 
-
 BO_ 384954392 BCM_16f1f0_KWP_Resp_Tester: 8 XXX
  SG_ D0 : 7|8@0+ (1,0) [0|0] "" XXX
  SG_ D1 : 15|8@0+ (1,0) [0|0] "" XXX
@@ -161,3 +160,5 @@ BO_ 384954392 BCM_16f1f0_KWP_Resp_Tester: 8 XXX
  SG_ D5 : 47|8@0+ (1,0) [0|0] "" XXX
  SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
  SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
+
+ VAL_ 384954392 D0 127 "UNSUPPORTED" 112 "START_ACCEPTED" 96 "STOP_ACCEPTED" ;
