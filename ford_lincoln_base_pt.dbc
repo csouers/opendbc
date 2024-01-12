@@ -1711,6 +1711,7 @@ BO_ 1047 TrailerAid_Data2: 8 PSCM
  SG_ TrlrAidTrgtId_No_Rq : 44|5@0+ (1,0) [0|31] "unitless"  IPMA_ADAS
  SG_ TrlrAidSetup_D2_Stat : 47|3@0+ (1,0) [0|7] "SED"  IPMA_ADAS
  SG_ TrlrAidEnbl_D2_Stat : 31|3@0+ (1,0) [0|7] "SED"  ABS_ESC,IPMA_ADAS,GWM,PCM,ECM_Diesel
+ SG_ LKAS_OFF_NONFD : 18|1@0+ (1,0) [0|1] "" XXX
  SG_ TrlrAidMsgTxt_D2_Rq : 14|6@0+ (1,0) [0|63] "SED"  IPMA_ADAS,GWM,ABS_ESC
  SG_ EsaOn_B_Stat : 23|1@0+ (1,0) [0|1] "SED"  GWM
  SG_ HitchToTrlrAxle_L_Calc : 7|9@0+ (0.0254,0) [0|12.9794] "meter"  IPMA_ADAS
