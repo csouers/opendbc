@@ -1,0 +1,164 @@
+BO_ 184053784 BCM_af870_LeftStalk: 3 XXX
+ SG_ PULL_IGN_OFF : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ PUSH_IGN_OFF : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOW : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ PARKING : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTO : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ FRONT_FOG : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ UP : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ DOWN : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTE_STARTED : 16|1@0+ (1,0) [0|0] "" XXX
+ SG_ PULL : 17|1@0+ (1,0) [0|0] "" XXX
+ SG_ PUSH : 18|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251138584 BCM_ef812_Keyfob: 2 XXX
+ SG_ LOCK : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCK2 : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCK1 : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ TRUNKBUTTON2 : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTESTART1 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTESTART2 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ TRUNKBUTTON1 : 13|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251139096 BCM_ef814_PANIC: 1 XXX
+ SG_ PANIC_NOTIFY_3 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ PANIC_NOTIFY_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ PANIC_NOTIFY_1 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ PANIC_TRIGGERED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251139352 BCM_ef815_ALARM: 1 XXX
+ SG_ ALARM_NOTIFY_1 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_NOTIFY_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_NOTIFY_3 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_TRIGGERED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251139608 BCM_ef816_Locks: 4 XXX
+ SG_ ALLDOORSUNLOCKED : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ DRIVERDOORUNLOCKED : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTOLOCKED : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKED : 16|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251163506 Solar_ef873: 6 XXX
+ SG_ AUTO_LIGHT_DISENGAGED : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTO_LIGHT_ENGAGED_1 : 7|5@0+ (1,0) [0|0] "" XXX
+ SG_ PHOTO_CELL_LUX : 14|17@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 47|6@0+ (1,0) [0|0] "" XXX
+
+BO_ 318246936 BCM_12f810_Lighting: 6 XXX
+ SG_ NEW_SIGNAL_6 : 0|3@1+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_1 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ BRAKES : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_7 : 7|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 18|3@0+ (1,0) [0|0] "" XXX
+ SG_ RIGHTSIGNAL : 19|1@0+ (1,0) [0|0] "" XXX
+ SG_ LEFTSIGNAL : 20|1@0+ (1,0) [0|0] "" XXX
+ SG_ HAZARDS_ENABLE : 21|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 22|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_3 : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 30|7@0+ (1,0) [0|0] "" XXX
+ SG_ REVERSE : 31|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 37|6@0+ (1,0) [0|0] "" XXX
+ SG_ AUTORIGHT : 38|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTOLEFT : 39|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_C0 : 47|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318255128 BCM_12f830_LeftDoors: 1 XXX
+ SG_ SET_TO_0_2 : 4|5@0+ (1,0) [0|0] "" XXX
+ SG_ LR_OPEN : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ LF_OPEN : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318255408 WindowMain_12f83_LeftFront: 8 XXX
+ SG_ SET_TO_0_2 : 0|2@1+ (1,0) [0|0] "" XXX
+ SG_ LF_LOCKED : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ LF_UNLOCKED : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 23|32@0+ (1,0) [0|0] "" XXX
+ SG_ _COUNTER_ : 48|8@1+ (1,0) [0|0] "" XXX
+ SG_ _CHECKSUM_ : 56|8@1+ (1,0) [0|0] "" XXX
+
+BO_ 318255664 WindowMain_12f832_RightFront: 1 XXX
+ SG_ SET_TO_0_1 : 0|3@1+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCK_BUTTON : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCK_BUTTON : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 7|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259224 BCM_12f840_RightDoors: 1 XXX
+ SG_ SET_TO_0_1 : 3|4@0+ (1,0) [0|0] "" XXX
+ SG_ RR_OPEN : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ RF_OPEN : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259480 BCM_12f841_LeftRear: 1 XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259736 BCM_12f842_RightRear: 1 XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259992 BCM_12f843_Trunk: 1 XXX
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ TRUNK_OPEN : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318260272 WindowMain_12f844_FrontWindows: 2 XXX
+ SG_ SET_TO_XA1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_1 : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_0 : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ SUNROOF_CLOSED : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_0 : 13|2@0+ (1,0) [0|0] "" XXX
+ SG_ RF_WINDOWSTATE : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ LF_WINDOWSTATE : 15|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318291615 BSI_L_12f8be_Status: 8 XXX
+ SG_ BSM_ALERT : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ BSM_MODE : 6|2@0+ (1,0) [0|0] "" XXX
+ SG_ PRIMARY : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ PN_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_2 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_3 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_A : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_C : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ REV_B : 63|4@0+ (1,0) [0|0] "" XXX
+
+BO_ 318291879 BSI_R_12f8bf_Status: 8 XXX
+ SG_ BSM_ALERT : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ BSM_MODE : 6|2@0+ (1,0) [0|0] "" XXX
+ SG_ PRIMARY : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ PN_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_2 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_3 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_A : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_C : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ REV_B : 63|4@0+ (1,0) [0|0] "" XXX
+
+BO_ 384899312 Tester_16f118_KWP_Req_BCM: 8 XXX
+ SG_ D0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ D2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ D3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ D4 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ D5 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 384954392 BCM_16f1f0_KWP_Resp_Tester: 8 XXX
+ SG_ D0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ D2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ D3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ D4 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ D5 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
+
+ VAL_ 384954392 D0 127 "UNSUPPORTED" 112 "START_ACCEPTED" 96 "STOP_ACCEPTED" ;
