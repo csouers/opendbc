@@ -73,11 +73,6 @@ class CarInterface(CarInterfaceBase):
     if candidate in HONDA_BOSCH:
       ret.longitudinalTuning.kpV = [0.5]
       ret.longitudinalTuning.kiV = [0.025]
-      ret.longitudinalTuning.deadzoneBP = [5., 10.]
-      ret.longitudinalTuning.deadzoneV = [.0, .05]
-      # is this right? gas is lazy, brake isn't?
-      # ret.longitudinalActuatorDelayUpperBound = 0.1 # s
-      # ret.longitudinalActuatorDelayLowerBound = 0.1 # s
       ret.stoppingDecelRate = 0.35 #0.075 # brake_travel/s while trying to stop
       ret.vEgoStopping = 0.35
       ret.vEgoStarting = 0.35
