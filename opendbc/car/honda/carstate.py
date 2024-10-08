@@ -101,7 +101,7 @@ class CarState(CarStateBase):
       self.main_on_sig_msg = "SCM_BUTTONS"
 
     self.shifter_values = can_define.dv[self.gearbox_msg]["GEAR_SHIFTER"]
-    if CP.carFingerprint in HONDA_BOSCH:
+    if CP.flags & HondaFlags.ENABLE_BLINKERS.value:
       self.kwp_values = {v: k for k, v in can_define.dv["BCM_16f1f0_KWP_Resp_Tester"]["D0"].items()}
     self.steer_status_values = defaultdict(lambda: "UNKNOWN", can_define.dv["STEER_STATUS"]["STEER_STATUS"])
 
@@ -330,10 +330,7 @@ class CarState(CarStateBase):
         ("BSM_STATUS_RIGHT", 3),
       ]
     if CP.flags & HondaFlags.ENABLE_BLINKERS:
-      messages += [("BCM_12f810_Lighting", 4),
+      messages += [("BCM_12f810_Lighting", 0),
                 ("BCM_16f1f0_KWP_Resp_Tester", 0)]
-    if len(messages):
-      bus_body = CanBus(CP).radar # B-CAN is forwarded to ACC-CAN radar side (CAN 0 on fake ethernet port)
-      return CANParser(DBC[CP.carFingerprint]["body"], messages, bus_body)
-    else:
-      return None
+    return CANParser(DBC[CP.carFingerprint]["body"], messages, CanBus(CP).radar)
+

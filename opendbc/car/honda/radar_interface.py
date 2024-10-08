@@ -2,7 +2,7 @@
 from opendbc.can.parser import CANParser
 from opendbc.car import structs
 from opendbc.car.interfaces import RadarInterfaceBase
-from opendbc.car.honda.values import DBC
+from opendbc.car.honda.values import DBC, HondaFlags
 from opendbc.car.honda import hondacan
 
 
@@ -11,6 +11,8 @@ class RadarInterface(RadarInterfaceBase):
     super().__init__(CP)
     self.CP = CP
     self.CAN = hondacan.CanBus(CP)
+    if not self.CP.flags & HondaFlags.TESLA_RADAR:
+      return None
 
     messages = [('TeslaRadarSguInfo', 10)]
     self.num_points = 32
@@ -22,7 +24,7 @@ class RadarInterface(RadarInterfaceBase):
         (f'RadarPoint{i}_B', 16),
       ])
 
-    self.rcp = CANParser(DBC[CP.carFingerprint]['radar'], messages, self.CAN.radar)
+    self.rcp = CANParser(DBC[CP.carFingerprint]['radar'], messages, hondacan.CanBus.radar)
     self.updated_messages = set()
     self.track_id = 0
 

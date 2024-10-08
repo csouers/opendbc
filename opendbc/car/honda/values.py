@@ -64,6 +64,7 @@ class HondaFlags(IntFlag):
   BOSCH_EXT_HUD = 1
   BOSCH_ALT_BRAKE = 2
   ENABLE_BLINKERS = 4
+  TESLA_RADAR = 8
 
   # Static flags
   BOSCH = 4
@@ -146,12 +147,12 @@ class CAR(Platforms):
       HondaCarDocs("Honda Civic Hatchback 2017-21", min_steer_speed=12. * CV.MPH_TO_MS),
     ],
     CarSpecs(mass=1326, wheelbase=2.7, steerRatio=15.38, centerToFrontRatio=0.4),  # steerRatio: 10.93 is end-to-end spec
-    dbc_dict('honda_civic_hatchback_ex_2017_can_generated', 'tesla_radar_bosch_generated', body_dbc='honda_body_2017'),
+    dbc_dict('honda_civic_hatchback_ex_2017_can_generated', 'tesla_radar_bosch_generated', body_dbc='honda_body_2017_generated'),
   )
   HONDA_CIVIC_BOSCH_DIESEL = HondaBoschPlatformConfig(
     [],  # don't show in docs
     HONDA_CIVIC_BOSCH.specs,
-    dbc_dict('honda_accord_2018_can_generated', None),
+    dbc_dict('honda_accord_2018_can_generated', None, body_dbc='honda_body_2017_generated'),
   )
   HONDA_CIVIC_2022 = HondaBoschPlatformConfig(
     [

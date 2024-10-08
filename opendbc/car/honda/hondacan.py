@@ -240,5 +240,5 @@ def create_kwp_can_msg(packer, cmd, bus=0):
               'D2': 0x0f,
              }
   else:
-    return [384899312, 0, b' ', bus] # default is a special 1 byte cancel
+    return [384899312, b' ', bus] # default is a special 1 byte cancel
   return packer.make_can_msg("Tester_16f118_KWP_Req_BCM", bus, values)

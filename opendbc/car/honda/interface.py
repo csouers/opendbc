@@ -46,17 +46,15 @@ class CarInterface(CarInterfaceBase):
       ret.pcmCruise = True
 
     ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
+    # Detect BCM lighting msgs from B-CAN
+    # TODO. Add back param
+    if 0x12F81018 in fingerprint[CAN.radar]:
+      ret.flags |= HondaFlags.ENABLE_BLINKERS.value
+      ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
 
     # Detect Bosch cars with new HUD msgs
     if any(0x33DA in f for f in fingerprint.values()):
       ret.flags |= HondaFlags.BOSCH_EXT_HUD.value
-
-    # Detect BCM lighting msgs from B-CAN
-    # TODO. Add back param
-    # if any(0x12F81018 in f for f in fingerprint.values()):
-    if candidate in HONDA_BOSCH:
-      ret.flags |= HondaFlags.ENABLE_BLINKERS.value
-      ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
 
     # Accord ICE 1.5T CVT has different gearbox message
     if candidate == CAR.HONDA_ACCORD and 0x191 in fingerprint[CAN.pt]:

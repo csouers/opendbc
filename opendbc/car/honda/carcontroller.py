@@ -137,6 +137,8 @@ class BlinkerController:
     self.right_next = -1
     self.cancel_next = 0
 
+    self.queue = []
+
   def process(self, CS):
     if len(self.queue):
       if CS.bcm_kwp_started and self.queue[0] in ['left', 'right']:
