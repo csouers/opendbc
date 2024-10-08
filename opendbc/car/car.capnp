@@ -395,6 +395,7 @@ struct CarControl {
     rightLaneDepart @8: Bool;
     leftLaneDepart @9: Bool;
     leadDistanceBars @10: Int8;  # 1-3: 1 is closest, 3 is farthest. some ports may utilize 2-4 bars instead
+    e2e @11: Bool;
 
     enum VisualAlert {
       # these are the choices from the Honda
