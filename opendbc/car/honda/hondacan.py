@@ -31,6 +31,10 @@ class CanBus(CanBusBase):
   def camera(self) -> int:
     return self.offset + 2
 
+  @property
+  def bcm(self) -> int:
+    return self.offset
+
 
 def get_lkas_cmd_bus(CAN, car_fingerprint, radar_disabled=False):
   no_radar = car_fingerprint in HONDA_BOSCH_RADARLESS
@@ -224,7 +228,8 @@ def spam_buttons_command(packer, CAN, button_val, car_fingerprint):
   bus = CAN.camera if car_fingerprint in HONDA_BOSCH_RADARLESS else CAN.pt
   return packer.make_can_msg("SCM_BUTTONS", bus, values)
 
-def create_kwp_can_msg(packer, cmd, bus=0):
+
+def create_kwp_can_msg(packer, cmd, bus):
   if cmd == 'left':
     values = {'D0': 0x30,
               'D1': 0x0a,

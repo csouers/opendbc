@@ -382,7 +382,7 @@ class CarController(CarControllerBase):
       if self.BLINK is not None:
         self.BLINK.process(CS)
         if len(self.BLINK.queue):
-          can_sends.append(hondacan.create_kwp_can_msg(self.packer, cmd=self.BLINK.queue[0]))
+          can_sends.append(hondacan.create_kwp_can_msg(self.packer, cmd=self.BLINK.queue[0], bus=self.CAN.bcm))
 
     new_actuators = actuators.as_builder()
     new_actuators.speed = self.speed
