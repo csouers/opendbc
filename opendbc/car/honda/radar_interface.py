@@ -11,22 +11,24 @@ class RadarInterface(RadarInterfaceBase):
     super().__init__(CP)
     self.CP = CP
     self.CAN = hondacan.CanBus(CP)
-    if not self.CP.flags & HondaFlags.TESLA_RADAR:
-      return None
+    self.rcp = None
+    if self.CP.flags & HondaFlags.TESLA_RADAR:
+      messages = [('TeslaRadarSguInfo', 10)]
+      self.num_points = 32
+      self.trigger_msg = 878
 
-    messages = [('TeslaRadarSguInfo', 10)]
-    self.num_points = 32
-    self.trigger_msg = 878
+      for i in range(self.num_points):
+        messages.extend([
+          (f'RadarPoint{i}_A', 16),
+          (f'RadarPoint{i}_B', 16),
+        ])
 
-    for i in range(self.num_points):
-      messages.extend([
-        (f'RadarPoint{i}_A', 16),
-        (f'RadarPoint{i}_B', 16),
-      ])
+      self.rcp = CANParser(DBC[CP.carFingerprint]['radar'], messages, self.CAN.radar)
+      self.updated_messages = set()
+      self.track_id = 0
 
-    self.rcp = CANParser(DBC[CP.carFingerprint]['radar'], messages, hondacan.CanBus.radar)
-    self.updated_messages = set()
-    self.track_id = 0
+      self.radar_fault = False
+      self.radar_wrong_config = False
 
   def update(self, can_strings):
     if self.rcp is None:
@@ -50,9 +52,7 @@ class RadarInterface(RadarInterfaceBase):
       errors.append("wrongConfig")
 
     radar_status = self.rcp.vl['TeslaRadarSguInfo']
-    # if radar_status['RADC_HWFail'] or radar_status['RADC_SGUFail'] or radar_status['RADC_SensorDirty']:
-    if radar_status['RADC_HWFail'] or radar_status['RADC_SensorDirty']:
-      errors.append('fault')
+    self.radar_fault = bool(radar_status['RADC_HWFail'] or radar_status['RADC_SensorDirty'])
 
     ret.errors = errors
 

@@ -103,18 +103,14 @@ def create_acc_commands(packer, CAN, enabled, active, accel, gas, vego, stopping
       "STANDSTILL_RELEASE": standstill_release,
     })
     acc_control_on_values = {
-      "SET_TO_3": 0x3, #test  % (0xff >> 1), # has no effect from user perspective
+      "SET_TO_3": 0x3,
       "CONTROL_ON": enabled,
-      "SET_TO_FF": 0xff, #test  % 0xff, # has no effect from user perspective
-      "SET_TO_75": 0x75, #test  % 0xff, # has no effect from user perspective
-      "SET_TO_30": 0x30, #test  % 0xff, # has no effect from user perspective
-      # "ZEROS_BOH": test  % (0xff >> 3), # rescale and add other new one
-      # "ZEROS_BOH2": test % 0xffff,
-      # "ZEROS_BOH3": test % 2,
+      "SET_TO_FF": 0xff,
+      "SET_TO_75": 0x75,
+      "SET_TO_30": 0x30,
       "COAST_BRAKE": active and accel < -0.15 ,
-      "ACCEL_KILL": 0, # ALWAYS ZERO! KILLS GAS PEDAL TOO! TAKES EFFECT AFTER ENABLING/MOVING FORWARD THE FIRST TIME
+      # "ACCEL_KILL": 0x00, # ALWAYS ZERO! KILLS GAS PEDAL TOO! TAKES EFFECT AFTER ENABLING/MOVING FORWARD THE FIRST TIME
       # "POS_ACCEL": active and not braking,
-      # "NEW_SIGNAL_1": test % 0x4,
     }
     commands.append(packer.make_can_msg("ACC_CONTROL_ON", CAN.pt, acc_control_on_values))
 
