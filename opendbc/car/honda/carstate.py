@@ -330,7 +330,9 @@ class CarState(CarStateBase):
         ("BSM_STATUS_RIGHT", 3),
       ]
     if CP.flags & HondaFlags.ENABLE_BLINKERS:
-      messages += [("BCM_12f810_Lighting", 3),
-                ("BCM_16f1f0_KWP_Resp_Tester", 0)]
+      messages += [
+        ("BCM_12f810_Lighting", 3),
+        ("BCM_16f1f0_KWP_Resp_Tester", 0),
+      ]
     return CANParser(DBC[CP.carFingerprint]["body"], messages, CanBus(CP).bcm)
 
