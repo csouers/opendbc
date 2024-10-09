@@ -42,7 +42,8 @@ class CarControllerParams:
   # Values from PolyReg model of accel, speed, pitch, and engine torque. 100hrs of data. Speed 15 m/s. Pitch -0.01 degrees.
   # Torque is slightly underrated/lazy so PID is maybe less likely to overshoot which could trigger friction brake (annoying).
   # BOSCH_GAS_LOOKUP_BP = [-0.3, -0.25, 0.0, 1.0, 2.0, 3.0]
-  BOSCH_GAS_LOOKUP_BP = [-0.25,        -0.1, 0.0, 1.0, 2.0,           3.0]
+  # BOSCH_GAS_LOOKUP_BP = [-0.25,        -0.1, 0.0, 1.0, 2.0,           3.0]
+  BOSCH_GAS_LOOKUP_BP = [-0.3,         -0.1, 0.0, 1.0, 2.0,           3.0]
   BOSCH_GAS_LOOKUP_V =  [BOSCH_GAS_MIN,   0,  10,  41,  88, BOSCH_GAS_MAX]
 
   STEER_STEP = 1  # 100 Hz
