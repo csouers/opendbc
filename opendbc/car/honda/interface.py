@@ -46,6 +46,7 @@ class CarInterface(CarInterfaceBase):
       ret.pcmCruise = True
     if 0x878 in fingerprint[CAN.radar]:
       ret.flags |= HondaFlags.TESLA_RADAR.value
+      ret.radarUnavailable = False
     ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
 
     # Detect the BCM via B-CAN
@@ -223,7 +224,7 @@ class CarInterface(CarInterfaceBase):
 
     ret.steerActuatorDelay = 0.1
     ret.steerLimitTimer = 0.8
-    ret.radarDelay = 0.1
+    # ret.radarDelay = 0.1
 
     return ret
 
