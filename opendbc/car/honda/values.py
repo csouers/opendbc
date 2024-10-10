@@ -65,7 +65,7 @@ class HondaFlags(IntFlag):
   BOSCH_EXT_HUD = 1
   BOSCH_ALT_BRAKE = 2
   ENABLE_BLINKERS = 4
-  TESLA_RADAR = 8
+  TESLA_RADAR = 128
 
   # Static flags
   BOSCH = 4
