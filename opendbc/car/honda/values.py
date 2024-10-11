@@ -63,17 +63,19 @@ class HondaFlags(IntFlag):
   # Detected flags
   # Bosch models with alternate set of LKAS_HUD messages
   BOSCH_EXT_HUD = 1
-  BOSCH_ALT_BRAKE = 2
-  ENABLE_BLINKERS = 256
-  TESLA_RADAR = 128
+  BOSCH_ALT_BRAKE = 2 ** 1
 
   # Static flags
-  BOSCH = 4
-  BOSCH_RADARLESS = 8
+  BOSCH = 2 ** 2
+  BOSCH_RADARLESS = 2 ** 3
 
-  NIDEC = 16
-  NIDEC_ALT_PCM_ACCEL = 32
-  NIDEC_ALT_SCM_MESSAGES = 64
+  NIDEC = 2 ** 4
+  NIDEC_ALT_PCM_ACCEL = 2 ** 5
+  NIDEC_ALT_SCM_MESSAGES = 2 ** 6
+
+  # Custom w/ +30 offset
+  ENABLE_BLINKERS = 2 ** 30
+  TESLA_RADAR = 2 ** 31
 
 
 # Car button codes
