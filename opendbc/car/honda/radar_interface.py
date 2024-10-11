@@ -15,7 +15,7 @@ class RadarInterface(RadarInterfaceBase):
     if self.CP.flags & HondaFlags.TESLA_RADAR:
       messages = [('TeslaRadarSguInfo', 10)]
       self.num_points = 32
-      self.trigger_msg = 878
+      self.trigger_msg = 878 # dec
 
       for i in range(self.num_points):
         messages.extend([
