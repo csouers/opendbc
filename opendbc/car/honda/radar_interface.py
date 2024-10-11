@@ -52,6 +52,9 @@ class RadarInterface(RadarInterfaceBase):
       errors.append("wrongConfig")
 
     radar_status = self.rcp.vl['TeslaRadarSguInfo']
+    # TODO: bring back sgufail. would need to add a lot to the can gateway. \
+    # idk if its even possible to fake enough of the tesla on that board to make it happen.
+    # maybe put it in OP
     self.radar_fault = bool(radar_status['RADC_HWFail'] or radar_status['RADC_SensorDirty'])
 
     ret.errors = errors
