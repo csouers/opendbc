@@ -44,17 +44,18 @@ class CarInterface(CarInterfaceBase):
       ret.openpilotLongitudinalControl = True
 
       ret.pcmCruise = True
-    if 0x878 in fingerprint[CAN.radar]:
+
+    ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
+
+    if 0x300 in fingerprint[CAN.radar]:
       ret.flags |= HondaFlags.TESLA_RADAR.value
       ret.radarUnavailable = False
-    ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
+      ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
 
     # Detect the BCM via B-CAN
     # TODO. Add back param
-    # if 0x12F81018 in fingerprint[CAN.radar]:
-    if True:
+    if True: #0x12F81018 in fingerprint[CAN.radar]:
       ret.flags |= HondaFlags.ENABLE_BLINKERS.value
-      ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
 
     # Detect Bosch cars with new HUD msgs
     if any(0x33DA in f for f in fingerprint.values()):
