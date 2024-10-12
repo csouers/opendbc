@@ -42,15 +42,16 @@ class CarInterface(CarInterfaceBase):
     else:
       ret.safetyConfigs = [get_safety_config(structs.CarParams.SafetyModel.hondaNidec)]
       ret.openpilotLongitudinalControl = True
-
       ret.pcmCruise = True
 
     ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
 
-    if 0x300 in fingerprint[CAN.radar]:
+    # This is from the fake Tesla. Means we should have radar too.
+    if 361 in fingerprint[CAN.radar]: # decimal
       ret.flags |= HondaFlags.TESLA_RADAR.value
       ret.radarUnavailable = False
       ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
+      ret.radarDelay = 0.25
 
     # Detect the BCM via B-CAN
     # TODO. Add back param
@@ -225,7 +226,9 @@ class CarInterface(CarInterfaceBase):
 
     ret.steerActuatorDelay = 0.1
     ret.steerLimitTimer = 0.8
-    # ret.radarDelay = 0.1
+
+    if not ret.radarDelay:
+      ret.radarDelay = 0.1
 
     return ret
 
