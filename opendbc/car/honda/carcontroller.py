@@ -347,7 +347,7 @@ class CarController(CarControllerBase):
           self.stopping_counter = self.stopping_counter + 1 if stopping and CS.out.standstill else 0
           # Prevent brake lamp flashing. Hold brake_request flag for at least 1.2 seconds before releasing.
           self.braking = self.accel < self.params.BOSCH_GAS_LOOKUP_BP[0]
-          self.braking_counter = 60 if self.braking else self.braking_counter - 1
+          self.braking_counter = 120 if self.braking else self.braking_counter - 1
 
           can_sends.extend(hondacan.create_acc_commands(self.packer, self.CAN, CC.enabled, CC.longActive, self.accel, self.gas,
                                                         CS.out.vEgo, self.stopping_counter, self.braking_counter, self.CP.carFingerprint))
