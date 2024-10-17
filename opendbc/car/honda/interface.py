@@ -54,7 +54,8 @@ class CarInterface(CarInterfaceBase):
       ret.radarDelay = 0.25
 
     # Detect the BCM via B-CAN
-    # TODO. Add back param
+    # TODO Add back the param instead. gateway fw is flakey right now
+    # TODO Fix it
     if True: #0x12F81018 in fingerprint[CAN.radar]:
       ret.flags |= HondaFlags.ENABLE_BLINKERS.value
 
