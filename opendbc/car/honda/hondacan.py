@@ -118,7 +118,7 @@ def create_acc_commands(packer, CAN, enabled, active, accel, gas, vego, stopping
       "SET_TO_FF": 0xff,
       "SET_TO_75": 0x75,
       "SET_TO_30": 0x30,
-      "COAST_BRAKE": active and accel < -0.15 ,
+      "COAST_BRAKE": active and accel < -0.2 , # 0.15
       # "ACCEL_KILL": 0x00, # ALWAYS ZERO! KILLS GAS PEDAL TOO! TAKES EFFECT AFTER ENABLING/MOVING FORWARD THE FIRST TIME
       # "POS_ACCEL": active and not braking,
     }
