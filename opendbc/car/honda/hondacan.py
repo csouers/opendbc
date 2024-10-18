@@ -77,20 +77,14 @@ def create_brake_command(packer, CAN, apply_brake, pump_on, pcm_override, pcm_ca
 def create_acc_commands(packer, CAN, enabled, active, accel, gas, vego, stopping_counter, braking_counter, car_fingerprint, test=None):
   commands = []
   min_gas_accel = CarControllerParams.BOSCH_GAS_LOOKUP_BP[0]
-  min_accel = CarControllerParams.BOSCH_ACCEL_MIN
-
   # engine_brake_accel = CarControllerParams.BOSCH_GAS_LOOKUP_BP[1]
   stopped = stopping_counter > 4 * 50 # allow idle stop after 4 seconds (50 Hz)
-
-  accel_command = accel
-  if stopped:
-    accel_command = min_accel
-
-  gas_command = gas if accel_command > min_gas_accel else -3000
-
-  braking = active and braking_counter > 0
+  accel = accel if not stopped else CarControllerParams.BOSCH_ACCEL_MIN
+  gas_command = gas if active and accel > min_gas_accel else -3000
+  accel_command = accel if active else 0
+  braking = active and braking_counter > 0 and accel < 0
   standstill = active and stopped
-  standstill_release = active and accel > 0.05 and vego < 0.04
+  standstill_release = active and accel > 0 and vego < 0.5 # Hold high briefly
 
   # common ACC_CONTROL values
   acc_control_values = {
