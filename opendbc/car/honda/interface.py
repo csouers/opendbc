@@ -51,7 +51,7 @@ class CarInterface(CarInterfaceBase):
       ret.flags |= HondaFlags.TESLA_RADAR.value
       ret.radarUnavailable = False
       ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
-      ret.radarDelay = 0.25
+      # ret.radarDelay = 0.25 # get this value
 
     # Detect the BCM via B-CAN
     # TODO Add back the param instead. gateway fw is flakey right now
