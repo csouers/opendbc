@@ -79,10 +79,10 @@ class CarInterface(CarInterfaceBase):
     if candidate in HONDA_BOSCH:
       ret.longitudinalTuning.kpV = [0.3] # 0.5
       ret.longitudinalTuning.kiV = [0.09] # 0.025
-      ret.stoppingDecelRate = 0.35 #0.075 # brake_travel/s while trying to stop
+      ret.stoppingDecelRate = 0.30 #0.075 # brake_travel/s while trying to stop
       ret.vEgoStopping = 0.35
       ret.vEgoStarting = 0.35
-      ret.stopAccel = -0.5 #CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
+      ret.stopAccel = -0.75 #CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
       ret.longitudinalActuatorDelay = 0.5 # 0.1
       if candidate in HONDA_BOSCH_RADARLESS:
         ret.stopAccel = CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
