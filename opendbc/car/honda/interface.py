@@ -47,7 +47,8 @@ class CarInterface(CarInterfaceBase):
     ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
 
     # This is from the fake Tesla. Means we should have radar too.
-    if 361 in fingerprint[CAN.radar]: # decimal
+    # Hard code for now
+    if True: #361 in fingerprint[CAN.radar]: # decimal
       ret.flags |= HondaFlags.TESLA_RADAR.value
       ret.radarUnavailable = False
       ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
@@ -76,8 +77,8 @@ class CarInterface(CarInterfaceBase):
     ret.lateralTuning.pid.kf = 0.00006  # conservative feed-forward
 
     if candidate in HONDA_BOSCH:
-      ret.longitudinalTuning.kpV = [0.45] # 0.5
-      ret.longitudinalTuning.kiV = [0.035] # 0.025
+      ret.longitudinalTuning.kpV = [0.3] # 0.5
+      ret.longitudinalTuning.kiV = [0.09] # 0.025
       ret.stoppingDecelRate = 0.35 #0.075 # brake_travel/s while trying to stop
       ret.vEgoStopping = 0.35
       ret.vEgoStarting = 0.35
