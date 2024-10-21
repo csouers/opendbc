@@ -302,9 +302,9 @@ class CarState(CarStateBase):
 
   @staticmethod
   def get_cam_can_parser(CP):
-    messages = [
-      ("STEERING_CONTROL", 100),
-    ]
+    messages = []
+    if CP.radarUnavailable:
+      messages.append(("STEERING_CONTROL", 100))
 
     if CP.carFingerprint in HONDA_BOSCH_RADARLESS:
       messages += [
