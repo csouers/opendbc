@@ -12,6 +12,11 @@ class RadarInterface(RadarInterfaceBase):
     self.CP = CP
     self.CAN = hondacan.CanBus(CP)
     self.rcp = None
+
+    self.track_id = 0
+    self.radar_fault = False
+    self.radar_wrong_config = False
+
     if self.CP.flags & HondaFlags.TESLA_RADAR:
       messages = [('TeslaRadarSguInfo', 10)]
       self.num_points = 32
@@ -25,10 +30,6 @@ class RadarInterface(RadarInterfaceBase):
 
       self.rcp = CANParser(DBC[CP.carFingerprint]['radar'], messages, self.CAN.radar)
       self.updated_messages = set()
-      self.track_id = 0
-
-      self.radar_fault = False
-      self.radar_wrong_config = False
 
   def update(self, can_strings):
     if self.rcp is None:
