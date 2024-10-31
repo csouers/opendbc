@@ -51,7 +51,6 @@ class CarInterface(CarInterfaceBase):
     if True: #361 in fingerprint[CAN.radar]: # decimal
       ret.flags |= HondaFlags.TESLA_RADAR.value
       ret.radarUnavailable = False
-      ret.radarTimeStep = (1.0 / 8) # 8Hz. Tesla Radar
       # ret.radarDelay = 0.25 # get this value
 
     # Detect the BCM via B-CAN
