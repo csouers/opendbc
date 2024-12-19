@@ -2,7 +2,7 @@ from collections import defaultdict
 
 from opendbc.can.can_define import CANDefine
 from opendbc.can.parser import CANParser
-from opendbc.car import create_button_events, structs
+from opendbc.car import Bus, create_button_events, structs
 from opendbc.car.common.conversions import Conversions as CV
 from opendbc.car.common.numpy_fast import interp
 from opendbc.car.honda.hondacan import CanBus, get_cruise_speed_conversion
@@ -91,7 +91,7 @@ def get_can_messages(CP, gearbox_msg):
 class CarState(CarStateBase):
   def __init__(self, CP):
     super().__init__(CP)
-    can_define = CANDefine(DBC[CP.carFingerprint]["pt"])
+    can_define = CANDefine(DBC[CP.carFingerprint][Bus.pt])
     self.gearbox_msg = "GEARBOX"
     if CP.carFingerprint == CAR.HONDA_ACCORD and CP.transmissionType == TransmissionType.cvt:
       self.gearbox_msg = "GEARBOX_15T"
@@ -115,7 +115,11 @@ class CarState(CarStateBase):
     # However, on cars without a digital speedometer this is not always present (HRV, FIT, CRV 2016, ILX and RDX)
     self.dash_speed_seen = False
 
-  def update(self, cp, cp_cam, _, cp_body, __) -> structs.CarState:
+  def update(self, can_parsers) -> structs.CarState:
+    cp = can_parsers[Bus.pt]
+    cp_cam = can_parsers[Bus.cam]
+    cp_body = can_parsers[Bus.body]
+
     ret = structs.CarState()
 
     # car params
@@ -269,8 +273,8 @@ class CarState(CarStateBase):
     if self.CP.enableBsm:
       # BSM messages are on B-CAN, requires a panda forwarding B-CAN messages to CAN 0
       # more info here: https://github.com/commaai/openpilot/pull/1867
-      ret.leftBlindspot = cp_body.vl["BSM_STATUS_LEFT"]["BSM_ALERT"] == 1
-      ret.rightBlindspot = cp_body.vl["BSM_STATUS_RIGHT"]["BSM_ALERT"] == 1
+      ret.leftBlindspot = cp_body.vl["BSI_L_12f8be_Status"]["BSM_ALERT"] == 1
+      ret.rightBlindspot = cp_body.vl["BSI_R_12f8bf_Status"]["BSM_ALERT"] == 1
 
     if self.CP.flags & HondaFlags.ENABLE_BLINKERS:
       # Lamp state
@@ -296,42 +300,42 @@ class CarState(CarStateBase):
 
     return ret
 
-  def get_can_parser(self, CP):
-    messages = get_can_messages(CP, self.gearbox_msg)
-    return CANParser(DBC[CP.carFingerprint]["pt"], messages, CanBus(CP).pt)
+  def get_can_parsers(self, CP):
+    pt_messages = get_can_messages(CP, self.gearbox_msg)
 
-  @staticmethod
-  def get_cam_can_parser(CP):
-    messages = []
+    cam_messages = []
     if CP.radarUnavailable:
-      messages.append(("STEERING_CONTROL", 100))
+      cam_messages.append(("STEERING_CONTROL", 100))
 
     if CP.carFingerprint in HONDA_BOSCH_RADARLESS:
-      messages += [
+      cam_messages += [
         ("ACC_HUD", 10),
         ("LKAS_HUD", 10),
       ]
 
     elif CP.carFingerprint not in HONDA_BOSCH:
-      messages += [
+      cam_messages += [
         ("ACC_HUD", 10),
         ("LKAS_HUD", 10),
         ("BRAKE_COMMAND", 50),
       ]
 
-    return CANParser(DBC[CP.carFingerprint]["pt"], messages, CanBus(CP).camera)
-
-  @staticmethod
-  def get_body_can_parser(CP):
-    messages = []
+    body_messages = []
     if CP.enableBsm:
-      messages += [
-        ("BSM_STATUS_LEFT", 3),
-        ("BSM_STATUS_RIGHT", 3),
+      body_messages += [
+        ("BSI_L_12f8be_Status", 3),
+        ("BSI_R_12f8bf_Status", 3),
       ]
     if CP.flags & HondaFlags.ENABLE_BLINKERS:
-      messages += [
+      body_messages += [
         ("BCM_12f810_Lighting", 3),
         ("BCM_16f1f0_KWP_Resp_Tester", 0),
       ]
-    return CANParser(DBC[CP.carFingerprint]["body"], messages, CanBus(CP).bcm)
+
+    parsers = {
+      Bus.pt: CANParser(DBC[CP.carFingerprint][Bus.pt], pt_messages, CanBus(CP).pt),
+      Bus.cam: CANParser(DBC[CP.carFingerprint][Bus.pt], cam_messages, CanBus(CP).camera),
+      Bus.body: CANParser(DBC[CP.carFingerprint][Bus.body], body_messages, CanBus(CP).bcm),
+    }
+
+    return parsers

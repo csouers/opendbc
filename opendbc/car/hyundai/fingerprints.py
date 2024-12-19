@@ -171,6 +171,7 @@ FW_VERSIONS = {
     (Ecu.eps, 0x7d4, None): [
       b'\xf1\x00DN8 MDPS C 1,00 1,01 56310L0010\x00 4DNAC101',
       b'\xf1\x00DN8 MDPS C 1.00 1.01 56310-L0010 4DNAC101',
+      b'\xf1\x00DN8 MDPS C 1.00 1.01 56310-L0200 4DNAC101',
       b'\xf1\x00DN8 MDPS C 1.00 1.01 56310-L0200 4DNAC102',
       b'\xf1\x00DN8 MDPS C 1.00 1.01 56310-L0210 4DNAC101',
       b'\xf1\x00DN8 MDPS C 1.00 1.01 56310-L0210 4DNAC102',
@@ -575,6 +576,7 @@ FW_VERSIONS = {
     (Ecu.eps, 0x7d4, None): [
       b'\xf1\x00DL3 MDPS C 1.00 1.01 56310-L3110 4DLAC101',
       b'\xf1\x00DL3 MDPS C 1.00 1.01 56310-L3220 4DLAC101',
+      b'\xf1\x00DL3 MDPS C 1.00 1.01 56310L3220\x00 4DLAC101',
       b'\xf1\x00DL3 MDPS C 1.00 1.02 56310-L2220 4DLDC102',
       b'\xf1\x00DL3 MDPS C 1.00 1.02 56310L3220\x00 4DLAC102',
       b'\xf1\x00DL3 MDPS R 1.00 1.02 57700-L3000 4DLAP102',
@@ -589,6 +591,7 @@ FW_VERSIONS = {
       b'\xf1\x00DL ESC \x01 104 \x07\x12 58910-L2200',
       b'\xf1\x00DL ESC \x03 100 \x08\x02 58910-L3600',
       b'\xf1\x00DL ESC \x06 101 \x04\x02 58910-L3200',
+      b'\xf1\x00DL ESC \x06 102 \x07\x02 58910-L3200',
       b'\xf1\x00DL ESC \x06 103"\x08\x06 58910-L3200',
       b'\xf1\x00DL ESC \t 100 \x06\x02 58910-L3800',
       b'\xf1\x00DL ESC \t 101 \x07\x02 58910-L3800',
@@ -635,6 +638,7 @@ FW_VERSIONS = {
       b'\xf1\x00OS  MDPS C 1.00 1.04 56310/K4550 4OEDC104',
       b'\xf1\x00OS  MDPS C 1.00 1.04 56310K4000\x00 4OEDC104',
       b'\xf1\x00OS  MDPS C 1.00 1.04 56310K4050\x00 4OEDC104',
+      b'\xf1\x00OS  MDPS C 1.00 1.05 56310K4000\x00 4OEDC105',
     ],
     (Ecu.fwdRadar, 0x7d0, None): [
       b'\xf1\x00OSev SCC F-CUP      1.00 1.00 99110-K4000         ',
@@ -798,6 +802,7 @@ FW_VERSIONS = {
     (Ecu.abs, 0x7d1, None): [
       b"\xf1\x00JF ESC \t 11 \x18\x03' 58920-D5260",
       b'\xf1\x00JF ESC \x0b 11 \x18\x030 58920-D5180',
+      b'\xf1\x00JF ESC \x0c 11 \x18\x030 58920-D5180',
     ],
     (Ecu.fwdCamera, 0x7c4, None): [
       b'\xf1\x00JFA LKAS AT USA LHD 1.00 1.00 95895-D5001 h32',
@@ -1001,12 +1006,14 @@ FW_VERSIONS = {
   CAR.HYUNDAI_IONIQ_6: {
     (Ecu.fwdRadar, 0x7d0, None): [
       b'\xf1\x00CE__ RDR -----      1.00 1.01 99110-KL000         ',
+      b'\xf1\x00CE__ RDR -----      1.00 1.02 99110-KL000         ',
     ],
     (Ecu.fwdCamera, 0x7c4, None): [
       b'\xf1\x00CE  MFC  AT CAN LHD 1.00 1.04 99211-KL000 221213',
       b'\xf1\x00CE  MFC  AT EUR LHD 1.00 1.03 99211-KL000 221011',
       b'\xf1\x00CE  MFC  AT EUR LHD 1.00 1.04 99211-KL000 221213',
       b'\xf1\x00CE  MFC  AT USA LHD 1.00 1.04 99211-KL000 221213',
+      b'\xf1\x00CE  MFC  AT USA LHD 1.00 1.06 99211-KL000 230915',
     ],
   },
   CAR.HYUNDAI_TUCSON_4TH_GEN: {

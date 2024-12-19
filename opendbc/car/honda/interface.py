@@ -56,7 +56,7 @@ class CarInterface(CarInterfaceBase):
     # Detect the BCM via B-CAN
     # TODO Add back the param instead. gateway fw is flakey right now
     # TODO Fix it
-    if True: #0x12F81018 in fingerprint[CAN.radar]:
+    if True: #0x12F81018 in fingerprint[CAN.bcm]:
       ret.flags |= HondaFlags.ENABLE_BLINKERS.value
 
     # Detect Bosch cars with new HUD msgs

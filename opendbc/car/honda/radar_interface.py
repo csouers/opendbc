@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 from opendbc.can.parser import CANParser
-from opendbc.car import structs
+from opendbc.car import Bus, structs
 from opendbc.car.interfaces import RadarInterfaceBase
 from opendbc.car.honda.values import DBC, HondaFlags
 from opendbc.car.honda import hondacan
 
+
+# This is the Tesla Radar interface brought back from dead.
 
 class RadarInterface(RadarInterfaceBase):
   def __init__(self, CP):
@@ -28,7 +30,7 @@ class RadarInterface(RadarInterfaceBase):
           (f'RadarPoint{i}_B', 16),
         ])
 
-      self.rcp = CANParser(DBC[CP.carFingerprint]['radar'], messages, self.CAN.radar)
+      self.rcp = CANParser(DBC[CP.carFingerprint][Bus.radar], messages, self.CAN.radar)
       self.updated_messages = set()
 
   def update(self, can_strings):

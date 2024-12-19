@@ -1,7 +1,7 @@
 from collections import namedtuple
 
 from opendbc.can.packer import CANPacker
-from opendbc.car import DT_CTRL, rate_limit, make_tester_present_msg, structs
+from opendbc.car import Bus, DT_CTRL, rate_limit, make_tester_present_msg, structs
 from opendbc.car.common.conversions import Conversions as CV
 from opendbc.car.common.numpy_fast import clip, interp
 from opendbc.car.honda import hondacan
@@ -222,9 +222,9 @@ class BlinkerController:
 
 
 class CarController(CarControllerBase):
-  def __init__(self, dbc_name, CP):
-    super().__init__(dbc_name, CP)
-    self.packer = CANPacker(dbc_name)
+  def __init__(self, dbc_names, CP):
+    super().__init__(dbc_names, CP)
+    self.packer = CANPacker(dbc_names[Bus.pt])
     self.params = CarControllerParams(CP)
     self.CAN = hondacan.CanBus(CP)
 
@@ -235,6 +235,7 @@ class CarController(CarControllerBase):
     self.last_pump_ts = 0.
     self.starting_counter = 0
     self.braking_counter = 0
+    self.stopping_counter = 0
 
     self.accel = 0.0
     self.speed = 0.0
