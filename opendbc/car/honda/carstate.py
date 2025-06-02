@@ -72,6 +72,7 @@ def get_can_messages(CP, gearbox_msg):
     messages.append(("CRUISE_FAULT_STATUS", 50))
   elif CP.openpilotLongitudinalControl:
     messages.append(("STANDSTILL", 50))
+    messages.append(("GAS_PEDAL_2", 100))
 
   return messages
 
