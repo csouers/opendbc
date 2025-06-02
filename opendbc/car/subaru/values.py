@@ -53,6 +53,12 @@ class CarControllerParams:
   BRAKE_LOOKUP_V = [BRAKE_MAX, BRAKE_MIN]
 
 
+class SubaruSafetyFlags(IntFlag):
+  GEN2 = 1
+  LONG = 2
+  PREGLOBAL_REVERSED_DRIVER_TORQUE = 4
+
+
 class SubaruFlags(IntFlag):
   # Detected flags
   SEND_INFOTAINMENT = 1
@@ -97,7 +103,7 @@ class SubaruCarDocs(CarDocs):
   def init_make(self, CP: CarParams):
     self.car_parts.parts.extend([Tool.socket_8mm_deep, Tool.pry_tool])
 
-    if CP.experimentalLongitudinalAvailable:
+    if CP.alphaLongitudinalAvailable:
       self.footnotes.append(Footnote.EXP_LONG)
 
 

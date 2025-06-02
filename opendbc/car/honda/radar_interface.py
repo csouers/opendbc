@@ -45,22 +45,19 @@ class RadarInterface(RadarInterfaceBase):
 
     ret = structs.RadarData()
 
-    # Errors
-    errors = []
-    if not self.rcp.can_valid:
-      errors.append("canError")
-    if self.radar_fault:
-      errors.append("fault")
-    if self.radar_wrong_config:
-      errors.append("wrongConfig")
-
     radar_status = self.rcp.vl['TeslaRadarSguInfo']
     # TODO: bring back sgufail. would need to add a lot to the can gateway. \
     # idk if its even possible to fake enough of the tesla on that board to make it happen.
     # maybe put it in OP
     self.radar_fault = bool(radar_status['RADC_HWFail'] or radar_status['RADC_SensorDirty'])
 
-    ret.errors = errors
+    # Errors
+    if not self.rcp.can_valid:
+      ret.errors.canError = True
+    if self.radar_fault:
+      ret.errors.radarFault = True
+    if self.radar_wrong_config:
+      ret.errors.wrongConfig = True
 
 # Radar tracks
     for i in range(self.num_points):
