@@ -1,21 +1,21 @@
 #pragma once
 
-#include "safety_declarations.h"
+#include "opendbc/safety/safety_declarations.h"
 
 // All common address checks except SCM_BUTTONS which isn't on one Nidec safety configuration
-#define HONDA_COMMON_NO_SCM_FEEDBACK_RX_CHECKS(pt_bus)                                                         \
-  {.msg = {{0x1A6, (pt_bus), 8, .max_counter = 3U, .frequency = 25U},                  /* SCM_BUTTONS */       \
-           {0x296, (pt_bus), 4, .max_counter = 3U, .frequency = 25U}, { 0 }}},                                 \
-  {.msg = {{0x158, (pt_bus), 8, .max_counter = 3U, .frequency = 100U}, { 0 }, { 0 }}},  /* ENGINE_DATA */      \
-  {.msg = {{0x17C, (pt_bus), 8, .max_counter = 3U, .frequency = 100U}, { 0 }, { 0 }}},  /* POWERTRAIN_DATA */  \
+#define HONDA_COMMON_NO_SCM_FEEDBACK_RX_CHECKS(pt_bus)                                                                                      \
+  {.msg = {{0x1A6, (pt_bus), 8, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 25U},                  /* SCM_BUTTONS */       \
+           {0x296, (pt_bus), 4, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 25U}, { 0 }}},                                 \
+  {.msg = {{0x158, (pt_bus), 8, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 100U}, { 0 }, { 0 }}},  /* ENGINE_DATA */      \
+  {.msg = {{0x17C, (pt_bus), 8, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 100U}, { 0 }, { 0 }}},  /* POWERTRAIN_DATA */  \
 
-#define HONDA_COMMON_RX_CHECKS(pt_bus)                                                                     \
-  HONDA_COMMON_NO_SCM_FEEDBACK_RX_CHECKS(pt_bus)                                                           \
-  {.msg = {{0x326, (pt_bus), 8, .max_counter = 3U, .frequency = 10U}, { 0 }, { 0 }}},  /* SCM_FEEDBACK */  \
+#define HONDA_COMMON_RX_CHECKS(pt_bus)                                                                                                  \
+  HONDA_COMMON_NO_SCM_FEEDBACK_RX_CHECKS(pt_bus)                                                                                        \
+  {.msg = {{0x326, (pt_bus), 8, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 10U}, { 0 }, { 0 }}},  /* SCM_FEEDBACK */  \
 
 // Alternate brake message is used on some Honda Bosch, and Honda Bosch radarless (where PT bus is 0)
-#define HONDA_ALT_BRAKE_ADDR_CHECK(pt_bus)                                                                 \
-  {.msg = {{0x1BE, (pt_bus), 3, .max_counter = 3U, .frequency = 50U}, { 0 }, { 0 }}},  /* BRAKE_MODULE */  \
+#define HONDA_ALT_BRAKE_ADDR_CHECK(pt_bus)                                                                                              \
+  {.msg = {{0x1BE, (pt_bus), 3, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 50U}, { 0 }, { 0 }}},  /* BRAKE_MODULE */  \
 
 enum {
   HONDA_BTN_NONE = 0,
@@ -322,7 +322,7 @@ static safety_config honda_nidec_init(uint16_t param) {
     // For Nidecs with main on signal on an alternate msg (missing 0x326)
     static RxCheck honda_nidec_alt_rx_checks[] = {
       HONDA_COMMON_NO_SCM_FEEDBACK_RX_CHECKS(0)
-      {.msg = {{0x1FA, 2, 8, .max_counter = 3U, .frequency = 50U}, { 0 }, { 0 }}},  // BRAKE_COMMAND
+      {.msg = {{0x1FA, 2, 8, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 50U}, { 0 }, { 0 }}},  // BRAKE_COMMAND
     };
 
     SET_RX_CHECKS(honda_nidec_alt_rx_checks, ret);
@@ -330,7 +330,7 @@ static safety_config honda_nidec_init(uint16_t param) {
     // Nidec includes BRAKE_COMMAND
     static RxCheck honda_nidec_common_rx_checks[] = {
       HONDA_COMMON_RX_CHECKS(0)
-      {.msg = {{0x1FA, 2, 8, .max_counter = 3U, .frequency = 50U}, { 0 }, { 0 }}},  // BRAKE_COMMAND
+      {.msg = {{0x1FA, 2, 8, .max_counter = 3U, .ignore_quality_flag = true, .frequency = 50U}, { 0 }, { 0 }}},  // BRAKE_COMMAND
     };
 
     SET_RX_CHECKS(honda_nidec_common_rx_checks, ret);
@@ -342,9 +342,12 @@ static safety_config honda_nidec_init(uint16_t param) {
 }
 
 static safety_config honda_bosch_init(uint16_t param) {
-  static CanMsg HONDA_BOSCH_TX_MSGS[] = {{0xE4, 0, 5, .check_relay = true}, {0xE5, 0, 8, .check_relay = true}, {0x296, 1, 4, .check_relay = false},
+  // HONDA_BOSCH_TX_MSGS is used by Bosch and Bosch CAN FD
+  static CanMsg HONDA_BOSCH_TX_MSGS[] = {{0xE4, 0, 5, .check_relay = true}, {0xE5, 0, 8, .check_relay = true},
+                                         // Send buttons on powertrain bus: 0 for Bosch CAN FD, 1 for CAN
+                                         {0x296, 0, 4, .check_relay = false}, {0x296, 1, 4, .check_relay = false},
                                          {0x33D, 0, 5, .check_relay = true}, {0x33DA, 0, 5, .check_relay = true}, {0x33DB, 0, 8, .check_relay = true},
-                                         {0x16F118F0, 0, 8, .check_relay = false}, {0x16F118F0, 0, 1, .check_relay = false}};  // Bosch
+                                         {0x16F118F0, 0, 8, .check_relay = false}, {0x16F118F0, 0, 1, .check_relay = false}};  // Bosch};  // Bosch
 
   static CanMsg HONDA_BOSCH_LONG_TX_MSGS[] = {{0xE4, 1, 5, .check_relay = true}, {0x1DF, 1, 8, .check_relay = true}, {0x1EF, 1, 8, .check_relay = false},
                                               {0x1FA, 1, 8, .check_relay = false}, {0x30C, 1, 8, .check_relay = false}, {0x33D, 1, 5, .check_relay = true},

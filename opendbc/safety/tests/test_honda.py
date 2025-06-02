@@ -17,19 +17,12 @@ class Btn:
   SET = 3
   RESUME = 4
 
-HONDA_NIDEC = 0
-HONDA_BOSCH = 1
-
 # Honda B-CAN
 turnSignalCmdLeftMsg = b"\x30\x0a\x0f\x00\x00\x00\x00\x00"
 turnSignalCmdRightMsg = b"\x30\x0b\x0f\x00\x00\x00\x00\x00"
 turnSignalCmdCancelMsg = b"\x20"
 trunkCmdReleaseMsg = b"\x30\x09\x01\x00\x00\x00\x00\x00"
 
-# Honda safety has several different configurations tested here:
-#  * Nidec
-#    * normal (PCM-enable)
-#    * alt SCM messages  (PCM-enable)
 #  * Bosch
 #    * Bosch with Longitudinal Support
 #  * Bosch Radarless
@@ -37,7 +30,6 @@ trunkCmdReleaseMsg = b"\x30\x09\x01\x00\x00\x00\x00\x00"
 
 
 class HondaButtonEnableBase(common.PandaCarSafetyTest):
-  # pylint: disable=no-member,abstract-method
 
   # override these inherited tests since we're using button enable
   def test_disable_control_allowed_from_cruise(self):
@@ -159,7 +151,6 @@ class HondaButtonEnableBase(common.PandaCarSafetyTest):
 
 
 class HondaPcmEnableBase(common.PandaCarSafetyTest):
-  # pylint: disable=no-member,abstract-method
 
   def test_buttons(self):
     """

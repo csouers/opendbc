@@ -1,7 +1,7 @@
 #pragma once
 
-#include "safety_declarations.h"
-#include "safety_defaults.h"
+#include "opendbc/safety/safety_declarations.h"
+#include "opendbc/safety/modes/defaults.h"
 
 #define CAN_GATEWAY_INPUT 0x800
 #define CAN_GATEWAY_OUTPUT 0x801

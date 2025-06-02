@@ -141,6 +141,7 @@ FW_VERSIONS = {
   },
   CAR.HYUNDAI_IONIQ_HEV_2022: {
     (Ecu.fwdRadar, 0x7d0, None): [
+      b'\xf1\x00AEhe SCC F-CUP      1.00 1.02 99110-G2100         ',
       b'\xf1\x00AEhe SCC F-CUP      1.00 1.00 99110-G2600         ',
       b'\xf1\x00AEhe SCC FHCUP      1.00 1.00 99110-G2600         ',
       b'\xf1\x00AEhe SCC FHCUP      1.00 1.02 99110-G2100         ',
@@ -150,8 +151,8 @@ FW_VERSIONS = {
       b'\xf1\x00AE  MDPS C 1.00 1.01 56310G2510\x00 4APHC101',
     ],
     (Ecu.fwdCamera, 0x7c4, None): [
-      b'\xf1\x00AEH MFC  AT USA LHD 1.00 1.00 95740-G2700 201027',
       b'\xf1\x00AEH MFC  AT USA LHD 1.00 1.01 95740-G2600 190819',
+      b'\xf1\x00AEH MFC  AT USA LHD 1.00 1.00 95740-G2700 201027',
     ],
   },
   CAR.HYUNDAI_SONATA: {
@@ -279,12 +280,14 @@ FW_VERSIONS = {
       b'\xf1\x00TM ESC \x04 102!\x04\x05 58910-S2GA0',
       b'\xf1\x00TM ESC \x04 103"\x07\x08 58910-S2GA0',
       b'\xf1\x00TM ESC \x1e 102 \x08\x08 58910-S1DA0',
+      b'\xf1\x00TM ESC \x1b 102 \x08\x08 58910-S1DA0',
       b'\xf1\x00TM ESC   103!\x030 58910-S1MA0',
     ],
     (Ecu.eps, 0x7d4, None): [
       b'\xf1\x00TM  MDPS C 1.00 1.01 56310-S1AB0 4TSDC101',
       b'\xf1\x00TM  MDPS C 1.00 1.01 56310-S1EB0 4TSDC101',
       b'\xf1\x00TM  MDPS C 1.00 1.02 56370-S2AA0 0B19',
+      b'\xf1\x00TM  MDPS R 1.00 1.05 57700-S1500 4TSDP105',
     ],
     (Ecu.fwdCamera, 0x7c4, None): [
       b'\xf1\x00TM  MFC  AT EUR LHD 1.00 1.03 99211-S1500 210224',
@@ -737,6 +740,7 @@ FW_VERSIONS = {
       b'\xf1\x00SG2EMFC  AT EUR LHD 1.00 1.00 99211-AT200 240315',
       b'\xf1\x00SG2EMFC  AT EUR LHD 1.01 1.09 99211-AT000 220801',
       b'\xf1\x00SG2EMFC  AT USA LHD 1.01 1.09 99211-AT000 220801',
+      b'\xf1\x00SG2EMFC  AT USA LHD 1.00 1.00 99211-AT200 240401',
     ],
   },
   CAR.KIA_NIRO_PHEV: {
