@@ -186,8 +186,8 @@ def create_ui_commands(packer, CAN, CP, enabled, pcm_speed, hud, is_metric, acc_
     'STEERING_REQUIRED': hud.steer_required,
     'SOLID_LANES': hud.lanes_visible,
     'BEEP': 0,
-    'RDM_OFF_MINI_ICON': hud.e2e,
-    'LANE_DEPARTURE_WARNING': hud.ldw,
+    'LDW_ICON': hud.e2e,
+    'LANE_DEPARTURE_ALERT': hud.ldw,
   }
 
   if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
