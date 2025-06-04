@@ -338,6 +338,9 @@ static safety_config honda_nidec_init(uint16_t param) {
 
   SET_TX_MSGS(HONDA_N_TX_MSGS, ret);
 
+  // not needed without bosch adas
+  ret.disable_forwarding = true;
+
   return ret;
 }
 
