@@ -421,7 +421,7 @@ static safety_config honda_bosch_init(uint16_t param) {
     }
   }
 
-    // not needed without bosch adas
+  // not needed without bosch adas
   ret.disable_forwarding = true;
 
   return ret;
