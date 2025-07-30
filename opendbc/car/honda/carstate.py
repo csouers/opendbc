@@ -231,10 +231,13 @@ class CarState(CarStateBase):
     return ret
 
   def get_can_parsers(self, CP):
+    body_messages = [
+      ("BCM_16f1f0_KWP_Resp_Tester", float('nan')),
+    ]
     parsers = {
       Bus.pt: CANParser(DBC[CP.carFingerprint][Bus.pt], [], CanBus(CP).pt),
       Bus.cam: CANParser(DBC[CP.carFingerprint][Bus.pt], [], CanBus(CP).camera),
-      Bus.body: CANParser(DBC[CP.carFingerprint][Bus.body], [], CanBus(CP).bcm),
+      Bus.body: CANParser(DBC[CP.carFingerprint][Bus.body], body_messages, CanBus(CP).bcm),
     }
 
     return parsers
