@@ -1,0 +1,632 @@
+BO_ 380 NEW_MSG_1: 8 XXX
+ SG_ NEW_SIGNAL_1 : 23|16@0+ (1,0) [0|0] "" XXX
+
+BO_ 2049 OP_STATE: 8 OP
+ SG_ IGNITION : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ CONTROLS_ALLOWED : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ HEARTBEAT : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ POWERSAVE : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ SAFETY_MODE : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ IDX_32 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ DATA_32 : 23|32@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER_COMMA : 51|4@0+ (1,0) [0|0] "" XXX
+ SG_ AUX_4 : 55|4@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM_COMMA : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 2050 GATEWAY_STATE: 8 GATEWAY
+ SG_ IGNITION : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ CONTROLS_ALLOWED : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ HEARTBEAT : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ POWERSAVE : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ SAFETY_MODE : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ IDX_32 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ DATA_32 : 23|32@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER_COMMA : 51|4@0+ (1,0) [0|0] "" XXX
+ SG_ AUX_4 : 55|4@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM_COMMA : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 184029464 BCM_af811_Wipers_Lighting: 6 BCM
+ SG_ HIGH_BEAM : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_2 : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 4|3@0+ (1,0) [0|0] "" XXX
+ SG_ FRONT_WIPER_ACTIVE_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_1 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_33 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X64 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 23|24@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 43|4@0+ (1,0) [0|0] "" XXX
+ SG_ FRONT_WIPER_ACTIVE : 44|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 47|3@0+ (1,0) [0|0] "" XXX
+
+BO_ 184053784 BCM_af870_LeftStalk: 3 BCM
+ SG_ PULL_IGN_OFF : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ PUSH_IGN_OFF : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOW : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ PARKING : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTO : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ FRONT_FOG : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ UP : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ DOWN : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTE_STARTED : 16|1@0+ (1,0) [0|0] "" XXX
+ SG_ PULL : 17|1@0+ (1,0) [0|0] "" XXX
+ SG_ PUSH : 18|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 184054040 BCM_af871_RightStalk: 3 BCM
+ SG_ SWIPE : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ OFF : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ INTERMITTENT_SLIDER : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ REAR_WIPER : 23|3@0+ (1,0) [0|0] "" XXX
+
+BO_ 184057168 Meter_af87d: 2 Meter
+
+BO_ 184057368 BCM_af87e: 3 BCM
+
+BO_ 184121680 Meter_af979: 1 Meter
+
+BO_ 251138584 BCM_ef812_Keyfob: 2 BCM
+ SG_ LOCK : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCK2 : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCK1 : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ TRUNKBUTTON2 : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTESTART1 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTESTART2 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ TRUNKBUTTON1 : 13|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251138840 RemoteSrtOrWakeup_ef813: 6 RemoteSrtOrWakeup
+
+BO_ 251139096 BCM_ef814_PANIC: 1 BCM
+ SG_ PANIC_NOTIFY_3 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ PANIC_NOTIFY_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ PANIC_NOTIFY_1 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ PANIC_TRIGGERED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251139352 BCM_ef815_ALARM: 1 BCM
+ SG_ ALARM_NOTIFY_1 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_NOTIFY_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_NOTIFY_3 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ ALARM_TRIGGERED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251139608 BCM_ef816_Locks: 4 BCM
+ SG_ ALLDOORSUNLOCKED : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ DRIVERDOORUNLOCKED : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTOLOCKED : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKED : 16|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251139632 RemoteSrtOrWakeup_ef816: 8 RemoteSrtOrWakeup
+
+BO_ 251142168 BCM_ef820_DoorLocks: 1 BCM
+ SG_ SET_TO_0_ : 5|6@0+ (1,0) [0|0] "" XXX
+ SG_ LOCKACTION_STATUS : 7|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 251142936 BCM_ef823_SeatBelt: 2 BCM
+ SG_ DRIVER_SEATBELT : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0 : 7|7@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X2 : 15|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 251143448 RemoteSrtOrWakeup_ef825: 1 RemoteSrtOrWakeup
+
+BO_ 251159376 Meter_ef863_CoarseSpeed: 8 Meter
+ SG_ LF_WHEELSPEED_COARSE : 0|8@1+ (1,0) [0|0] "" XXX
+ SG_ RF_WHEELSPEED_COARSE : 8|8@1+ (1,0) [0|0] "" XXX
+ SG_ LR_WHEELSPEED_COARSE : 16|8@1+ (1,0) [0|0] "" XXX
+ SG_ RR_WHEELSPEED_COARSE : 24|8@1+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X55_0 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X55_1 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ _COUNTER_ : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ _CHECKSUM_ : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 251163506 Solar_ef873: 6 Solar
+ SG_ AUTO_LIGHT_DISENGAGED : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTO_LIGHT_ENGAGED_1 : 7|5@0+ (1,0) [0|0] "" XXX
+ SG_ PHOTO_CELL_LUX : 14|17@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 47|6@0+ (1,0) [0|0] "" XXX
+
+BO_ 251167000 BCM_ef881: 1 BCM
+
+BO_ 251167512 BCM_ef883: 8 BCM
+ SG_ NEW_SIGNAL_3 : 4|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ OFF_AWAKE_REMOTESTARTING : 24|1@0+ (1,0) [0|0] "" XXX
+ SG_ IGN : 25|1@0+ (1,0) [0|0] "" XXX
+ SG_ RUNNING : 26|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 251171864 BCM_ef894: 3 BCM
+
+BO_ 251174936 RemoteSrtOrWakeup_ef8a0: 1 RemoteSrtOrWakeup
+
+BO_ 251184543 BSI_L_EF8C5: 1 BSI_L
+
+BO_ 251203924 Audio_ef911: 3 Audio
+
+BO_ 251231057 Climate_ef97b_Climate: 8 Climate
+ SG_ FAN_SPEED : 0|8@1+ (1,0) [0|0] "" XXX
+ SG_ DRIVER_TEMP_SETTING : 8|8@1+ (1,0) [0|0] "" XXX
+ SG_ PASS_TEMP_SETTING : 16|8@1+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X60 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ NORMAL_MODE : 36|1@0+ (1,0) [0|0] "" XXX
+ SG_ maybe_AUTO : 37|1@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTE_START_MODE_2 : 45|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X80_2 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 251234129 Climate_ef987: 3 Climate
+
+BO_ 251234897 Climate_ef98a: 2 Climate
+ SG_ TempRelated : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 13|6@0+ (1,0) [0|0] "" XXX
+ SG_ SomeState : 15|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 251235152 Meter_ef98b_Fuel: 7 Meter
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ Fuel_idk : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ 0s : 31|32@0+ (1,0) [0|0] "" XXX
+
+BO_ 303169360 RemoteSrtOrWakeup_1211ff: 0 RemoteSrtOrWakeup
+
+BO_ 317390672 RemoteSrtOrWakeup_12eaff_50: 2 RemoteSrtOrWakeup
+
+BO_ 317390673 RemoteSrtOrWakeup_12eaff_51: 2 RemoteSrtOrWakeup
+
+BO_ 317390676 Audio_12eaff_QueryAllModules: 2 Audio
+ SG_ ReturnID : 15|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318246936 BCM_12f810_Lighting: 6 BCM
+ SG_ NEW_SIGNAL_6 : 0|3@1+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_1 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ PEDAL_BRAKE_OUTPUT : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_7 : 7|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 18|3@0+ (1,0) [0|0] "" XXX
+ SG_ RIGHTSIGNAL : 19|1@0+ (1,0) [0|0] "" XXX
+ SG_ LEFTSIGNAL : 20|1@0+ (1,0) [0|0] "" XXX
+ SG_ HAZARDS_ENABLE : 21|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 22|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_3 : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 30|7@0+ (1,0) [0|0] "" XXX
+ SG_ REVERSE : 31|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 37|6@0+ (1,0) [0|0] "" XXX
+ SG_ AUTORIGHT : 38|1@0+ (1,0) [0|0] "" XXX
+ SG_ AUTOLEFT : 39|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_C0 : 47|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318251544 BCM_12f822: 1 BCM
+
+BO_ 318254104 BCM_12f82c: 1 BCM
+
+BO_ 318255128 BCM_12f830_LeftDoors: 1 BCM
+ SG_ SET_TO_0_2 : 4|5@0+ (1,0) [0|0] "" XXX
+ SG_ LR_OPEN : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ LF_OPEN : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318255408 WindowMain_12f83_LeftFront: 8 WindowMain
+ SG_ SET_TO_0_2 : 0|2@1+ (1,0) [0|0] "" XXX
+ SG_ LF_LOCKED : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ LF_UNLOCKED : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 23|32@0+ (1,0) [0|0] "" XXX
+ SG_ _COUNTER_ : 48|8@1+ (1,0) [0|0] "" XXX
+ SG_ _CHECKSUM_ : 56|8@1+ (1,0) [0|0] "" XXX
+
+BO_ 318255664 WindowMain_12f832_RightFront: 1 WindowMain
+ SG_ SET_TO_0_1 : 0|3@1+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ LOCK_BUTTON : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCK_BUTTON : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 7|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 318256152 BCM_12f834: 1 BCM
+
+BO_ 318259224 BCM_12f840_RightDoors: 1 BCM
+ SG_ SET_TO_0_1 : 3|4@0+ (1,0) [0|0] "" XXX
+ SG_ RR_OPEN : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 5|1@0+ (1,0) [0|0] "" XXX
+ SG_ RF_OPEN : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259480 BCM_12f841_LeftRear: 1 BCM
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259736 BCM_12f842_RightRear: 1 BCM
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ UNLOCKED : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318259992 BCM_12f843_Trunk: 1 BCM
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ TRUNK_OPEN : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318260272 WindowMain_12f844_FrontWindows: 2 WindowMain
+ SG_ SET_TO_XA1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_1 : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_0 : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ SUNROOF_CLOSED : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_0 : 13|2@0+ (1,0) [0|0] "" XXX
+ SG_ RF_WINDOWSTATE : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ LF_WINDOWSTATE : 15|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318261784 BCM_12f84a: 1 BCM
+
+BO_ 318263376 Meter_12f850_Gauges1: 6 Meter
+ SG_ CAR_SPEED_1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ ENGINE_RPM : 15|16@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 28|5@0+ (1,0) [0|0] "" XXX
+ SG_ ECO_MODE : 29|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 31|2@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 39|16@0+ (1,0) [0|0] "" XXX
+
+BO_ 318263632 Meter_12f851_Shifter: 5 Meter
+ SG_ MB_RELATED_DOORLOCKS : 1|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEUTRAL : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ REVERSE : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 7|3@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_1_1 : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ PARKBRAKE_ENGAGE : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 10|2@1+ (1,0) [0|0] "" XXX
+ SG_ DRIVE_MODE : 14|3@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_4 : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_5 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ RELATED_TEMP_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X60 : 39|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318263888 Meter_12f852: 4 Meter
+
+BO_ 318264145 Climate_12f853: 8 Climate
+ SG_ INTERIOR_TEMP : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 55|16@0+ (1,0) [0|0] "" XXX
+
+BO_ 318264400 Meter_12f854_Lighting: 8 Meter
+ SG_ SET_TO_21 : 5|6@0+ (1,0) [0|0] "" XXX
+ SG_ PARKING_LIGHTS : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_1 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ ACC_ON : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ ACC_OFF : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 23|16@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_XB0 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_X55 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_TO_0_3 : 55|16@0+ (1,0) [0|0] "" XXX
+
+BO_ 318265425 Climate_12f858: 6 Climate
+ SG_ INTERIOR_TEMP : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ EXTERIOR_TEMP : 31|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318265680 Meter_12f859_Speed: 7 Meter
+ SG_ SET_TO_0_1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ KPH_1 : 15|16@0+ (0.01,0) [0|0] "" XXX
+ SG_ KPH_2 : 31|16@0+ (0.01,0) [0|0] "" XXX
+ SG_ SET_TO_0_2 : 47|16@0+ (1,0) [0|0] "" XXX
+
+BO_ 318266448 Meter_12f85c: 6 Meter
+
+BO_ 318267728 Meter_12f861: 8 Meter
+
+BO_ 318273560 BCM_12f878: 1 BCM
+
+BO_ 318275608 BCM__12f880_TrunkButton: 1 BCM
+ SG_ SET_TO_0_1 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ RELEASE_BUTTON : 7|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318279704 BCM_12f890: 4 BCM
+ SG_ State_idk : 8|2@1+ (1,0) [0|0] "" XXX
+ SG_ Starter_idk : 26|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318284336 WindowMain_12f8a2: 8 WindowMain
+
+BO_ 318287007 BSI_L_12f8ac: 1 BSI_L
+
+BO_ 318288034 HeatedSeats_12f8b0_Seats: 2 HeatedSeats
+ SG_ REMOTE_START_2 : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ PASS_SEAT : 2|2@0+ (1,0) [0|0] "" XXX
+ SG_ REMOTE_START_1 : 4|2@0+ (1,0) [0|0] "" XXX
+ SG_ DRIVER_SEAT : 6|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 15|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318288209 Climate_12f8b1: 4 Climate
+
+BO_ 318291615 BSI_L_12f8be_Status: 8 BSI_L
+ SG_ NEW_SIGNAL_3 : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ REVERSE : 1|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_1 : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ BSM_ALERT : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ BSM_MODE : 6|2@0+ (1,0) [0|0] "" XXX
+ SG_ PRIMARY : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ PN_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_2 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_3 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_A : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_C : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ REV_B : 63|4@0+ (1,0) [0|0] "" XXX
+
+BO_ 318291879 BSI_R_12f8bf_Status: 8 BSI_R
+ SG_ BSM_ALERT : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ BSM_MODE : 6|2@0+ (1,0) [0|0] "" XXX
+ SG_ PRIMARY : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ PN_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_2 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ PN_3 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_A : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ REV_C : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ REV_B : 63|4@0+ (1,0) [0|0] "" XXX
+
+BO_ 318292308 Audio_12f8c1: 8 Audio
+
+BO_ 318300244 Audio_12f8e0: 8 Audio
+
+BO_ 318302548 Audio_12f8e9_HUDAudioInfo: 8 Audio
+ SG_ IDX : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ ASCII_1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ ASCII_2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ ASCII_3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ ASCII_4 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ ASCII_5 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ ASCII_6 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ BODY_SUM : 59|4@0+ (1,0) [0|0] "" XXX
+
+BO_ 318302800 Meter_12f8ea: 8 Meter
+ SG_ CHANGES_WITH_TRACK_CHANGE : 39|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318303316 Audio_12f8ec: 8 Audio
+ SG_ MENU_STATE : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ MINOR_IDX : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ STATION_MHZ : 31|16@0+ (1,0) [0|0] "" XXX
+ SG_ STATION_FRACTION_MHZ : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ MHZ : 48|1@0+ (1,0) [0|0] "" XXX
+ SG_ KHZ : 49|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318313808 Meter_12f915_StrWheelDPad: 8 Meter
+ SG_ VOLUME_UP : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ VOLUME_DOWN : 2|1@0+ (1,0) [0|0] "" XXX
+ SG_ DOWN : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ UP : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ RIGHT : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ LEFT : 12|1@0+ (1,0) [0|0] "" XXX
+ SG_ ENTER : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ VOICE_ASSISTANT : 25|1@0+ (1,0) [0|0] "" XXX
+ SG_ HANG_UP : 26|1@0+ (1,0) [0|0] "" XXX
+ SG_ ANSWER : 27|1@0+ (1,0) [0|0] "" XXX
+ SG_ MENU_TYPE_UP : 38|7@0+ (1,0) [0|0] "" XXX
+ SG_ VOLUME_PROMPT_ACTIVE : 44|1@0+ (1,0) [0|0] "" XXX
+ SG_ VOICE_ASSISTANT_UP_2 : 47|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318314580 Audio_12f918: 4 Audio
+
+BO_ 318329172 Audio_12f951: 4 Audio
+
+BO_ 318330196 Audio_12f955: 2 Audio
+
+BO_ 318331220 Audio_12f959_Nav_3: 8 Audio
+ SG_ SET_X00_0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ IDK_1 : 8|8@1+ (1,0) [0|0] "" XXX
+ SG_ IDK_2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ IDK_3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X83 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X00_1 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ IDK_4 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X00_2 : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318331732 Audio_12f95b_Nav_4: 8 Audio
+ SG_ SET_X20 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X15 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X03 : 31|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318331988 Audio_12f95c_Nav_2: 8 Audio
+ SG_ INDEX : 0|8@1+ (1,0) [0|0] "" XXX
+ SG_ SAME_PACKET_CNT : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_1 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_2 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_3 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_0_4 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ _CHECKSUM_ : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318332244 Audio_12f95d_Nav_5: 4 Audio
+ SG_ SET_X20 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X00_1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X1C : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ SET_X04 : 31|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318332500 Audio_12f95e_NavCurrentStreet: 8 Audio
+ SG_ INDEX : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 8|8@1+ (1,0) [0|0] "" XXX
+ SG_ D2 : 16|8@1+ (1,0) [0|0] "" XXX
+ SG_ D3 : 24|8@1+ (1,0) [0|0] "" XXX
+ SG_ D4 : 32|8@1+ (1,0) [0|0] "" XXX
+ SG_ D5 : 40|8@1+ (1,0) [0|0] "" XXX
+ SG_ D6 : 48|8@1+ (1,0) [0|0] "" XXX
+ SG_ IDK : 56|8@1+ (1,0) [0|0] "" XXX
+
+BO_ 318332752 Meter_12f95f: 8 Meter
+ SG_ NEW_SIGNAL_1 : 7|24@0+ (0.0176,0) [0|0] "" XXX
+
+BO_ 318333008 Meter_12f960: 7 Meter
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_6 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_7 : 55|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318333264 Meter_12f961: 7 Meter
+
+BO_ 318333520 Meter_12f962: 7 Meter
+
+BO_ 318334800 Meter_12f967: 8 Meter
+
+BO_ 318335824 Meter_12f96b: 8 Meter
+
+BO_ 318336336 Meter_12f96d: 8 Meter
+
+BO_ 318336596 Audio_12f96e_MaintenanceMenu: 8 Audio
+ SG_ MAINT_MENU_UP : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ STATE : 23|3@0+ (1,0) [0|0] "" XXX
+
+BO_ 318337360 Meter_12f971: 3 Meter
+ SG_ SET_TO_XE0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ STEER_ANGLE : 15|16@0- (1,0) [0|0] "" XXX
+
+BO_ 318337872 Meter_12f973: 2 Meter
+
+BO_ 318338128 Meter_12f974: 2 Meter
+ SG_ STEER_ANGLE : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ MAYBE_STEER_DIRECTION : 15|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 318338640 Meter_12f976: 1 Meter
+
+BO_ 318339668 Audio_12f97a_ClimateCommand: 8 Audio
+ SG_ FAN : 0|3@1+ (1,0) [0|0] "" XXX
+ SG_ MODE : 31|3@0+ (1,0) [0|0] "" XXX
+ SG_ AC_SWITCH : 34|2@1+ (1,0) [0|0] "" XXX
+
+BO_ 318340176 Meter_12f97c: 1 Meter
+ SG_ IGN2_STARTED : 3|1@0+ (1,0) [0|0] "" XXX
+ SG_ IGN : 4|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 318343249 BCM_12f988: 3 BCM
+
+BO_ 318357584 Meter_12f9c0: 8 Meter
+
+BO_ 318357840 Meter_12f9c1: 8 Meter
+
+BO_ 318358096 Meter_12f9c2: 4 Meter
+
+BO_ 318358352 Meter_12f9c3: 8 Meter
+
+BO_ 318358612 Audio_12f9c: 4 Audio
+
+BO_ 318358868 Audio_12f9c5: 8 Audio
+
+BO_ 318361624 BCM_12f9d0: 1 BCM
+
+BO_ 370212632 BCM_1610ff_Ping: 0 BCM
+
+BO_ 370212656 WindowMain_1610ff_Ping: 0 WindowMain
+
+BO_ 370212688 Meter_1610ff_Ping: 0 Meter
+
+BO_ 370212689 Climate_1610ff_Ping: 0 Climate
+
+BO_ 370212692 Audio_1610ff_Ping: 0 Audio
+
+BO_ 370212722 Solar_1610ff_Ping: 0 Solar
+
+BO_ 370212767 BSI_L_1610ff_Ping: 1 BSI_L
+
+BO_ 370212770 HeatedSeats_1610ff_Ping: 0 HeatedSeats
+
+BO_ 370212775 BSI_R_1610_PING: 1 BSI_R
+
+BO_ 372250708 Audio_1630_18: 8 Audio
+
+BO_ 372265044 Audio_Query_Meter_163050: 8 Audio
+
+BO_ 372266008 BCM_Reply_Audio_1630: 3 BCM
+
+BO_ 372266064 Meter_Reply_Audio_163054: 3 Meter
+
+BO_ 372266098 Solar_Reply_Audio_1630: 3 Solar
+
+BO_ 372266143 BSI_L_resp_Audio_1630: 3 BSI_L
+
+BO_ 372273748 Audio_1630_Solar: 8 Audio
+
+BO_ 372285268 Audio_resp_BSI_L_1630: 3 Audio
+ SG_ NEW_SIGNAL_1 : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_2 : 16|1@0+ (1,0) [0|1] "" XXX
+
+BO_ 372331544 BCM_Reply_Audio_1631: 8 BCM
+
+BO_ 372331568 WindowMain_Reply_Audio_1631: 8 WindowMain
+
+BO_ 372331600 Meter_Reply_Audio_1631: 8 Meter
+
+BO_ 372331634 Solar__Reply_Audio_1631: 8 Solar
+
+BO_ 372331679 BSI_L_TO_AUDIO_1631: 8 BSI_L
+
+BO_ 384899156 Audio_16f118_PingBCM: 2 Audio
+
+BO_ 384899312 Tester_16f118_KWP_Req_BCM: 8 Tester
+ SG_ D0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ D2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ D3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ D4 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ D5 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 384913492 Audio_Query_Meter_16f150: 2 Audio
+
+BO_ 384913748 Audio_16f151: 2 Audio
+
+BO_ 384914456 BCM_16f154_PingAudio: 8 BCM
+
+BO_ 384914512 Meter_Reply_Audio_16f154: 8 Meter
+
+BO_ 384914513 Climate_16f154: 8 Climate
+
+BO_ 384914594 HeatedSeats_16f154: 8 HeatedSeats
+
+BO_ 384934484 Audio_16f1a2: 2 Audio
+
+BO_ 384954392 BCM_16f1f0_KWP_Resp_Tester: 8 BCM
+ SG_ D0 : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ D1 : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ D2 : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ D3 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ D4 : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ D5 : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ D6 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 384979992 BCM_16f254_ResponseToAudioUnit_0x12eaff54: 2 BCM
+
+BO_ 384980016 WindowMain_16f254_ResponseToAudioUnit_0x12eaff54: 2 WindowMain
+
+BO_ 384980048 Meter_16f254_ResponseToAudioUnit_0x12eaff54: 2 Meter
+
+BO_ 384980049 Climate_16f254_ResponseToAudioUnit_0x12eaff54: 2 Climate
+
+BO_ 384980082 Solar_16f254_ResponseToAudioUnit_0x12eaff54: 2 Solar
+
+BO_ 384980127 BSI_L__TO_AUDIO_16f254: 2 BSI_L
+
+BO_ 384980130 HeatedSeats_16f254_ResponseToAudioUnit_0x12eaff54: 2 HeatedSeats
+
+BO_ 384980135 BSI_R_TO_AUDIO_16F2: 2 BSI_R
+
+BO_ 385376848 Meter_16f862_VIN: 8 Meter
+ SG_ INDEX : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ DIGIT_A : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ DIGIT_B : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ DIGIT_C : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ DIGIT_D : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ DIGIT_E : 47|8@0+ (1,0) [0|0] "" XXX
+ SG_ DIGIT_F : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 63|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 385449300 Audio_16f97d: 8 Audio
+
+BO_ 385450324 Audio_16f981: 1 Audio
+
+BO_ 504561432 BCM_1e12ff_Wakeup: 0 BCM
+
+BO_ 504561456 WindowMain_1e12ff_AlarmTriggered: 1 WindowMain
+
+BO_ 504561522 Solar_1e12ff_WakeupRemoteStart: 0 Solar
+
+BO_ 505610008 RemoteSrtOrWakeup_1e22ff_18: 2 RemoteSrtOrWakeup
+
+BO_ 505610064 RemoteSrtOrWakeup_1e22ff_50: 2 RemoteSrtOrWakeup
+
+CM_ SG_ 318303316 MENU_STATE "16=VOLUME_CHANGE_START,20=VOLUME_CHANGE_END,96=TRACK_CHANGE_BASE,100=TRACK_CHANGE_BASE_TRACKNUMBER,108=TRACK_CHANGE_BASE_TRACKNUMBER_SONGTITLE";
+CM_ SG_ 318303316 MINOR_IDX "ALSO_VOLUME_LEVEL";

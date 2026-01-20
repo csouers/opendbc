@@ -1,0 +1,1633 @@
+BO_ 228 CAM_STEERING_CONTROL: 5 XXX
+ SG_ STEER_TORQUE : 7|16@0- (1,0) [0|0] "" XXX
+ SG_ SET_ME_X00 : 22|7@0+ (1,0) [0|0] "" XXX
+ SG_ STEER_TORQUE_REQUEST : 23|1@0+ (1,0) [0|0] "" XXX
+ SG_ SET_ME_X00_2 : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 35|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 37|2@0+ (1,0) [0|0] "" XXX
+ SG_ STEER_DOWN_TO_ZERO : 38|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM : 39|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 229 CAM_BOSCH_SUPPLEMENTAL_1: 8 XXX
+ SG_ FLAG_A_0_RDMON : 0|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_1_ZERO : 1|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_2_ZERO : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_3_ZERO : 3|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_4_STEER_ON : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAG_A_5_DECEL_REQ : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ RDM_CORRECTING_1 : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ RDM_WOBBLING_1 : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_0_ZERO_STEER_OFF : 8|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_1_ZERO : 9|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_2_ZERO_STEER_OFF : 10|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_B_3_ZERO : 11|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_1 : 12|4@1+ (1,0) [0|15] "" XXX
+ SG_ WOBBLE_WITH_STEER_TORQUE_COMMAND : 16|7@1- (1,0) [-127|127] "" XXX
+ SG_ FLAGS_B_NOT_WOBBLING_LEFT : 23|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_0_LANES_IDK2 : 24|1@1+ (1,0) [0|255] "" XXX
+ SG_ FLAGS_D_1_ZERO : 25|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_2_ZERO : 26|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_3_ZERO : 27|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_4__STEER_OFF : 28|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_5__STEER_ON : 29|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_6_ZERO : 30|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_7_ZERO : 31|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_4_0_3_ZERO : 35|4@0+ (1,0) [0|15] "" XXX
+ SG_ FLAGS_D_4_4_INIT_FAULT : 36|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_4_5_ZERO : 37|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_4_6_INIT_FAULT : 38|1@0+ (1,0) [0|1] "" XXX
+ SG_ FLAGS_D_4_7_ZERO : 39|1@0+ (1,0) [0|1] "" XXX
+ SG_ D5_D6_ALL_ZERO : 47|16@0+ (1,0) [0|16777215] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
+ SG_ D7_6_7_ZERO : 63|2@0+ (1,0) [0|3] "" XXX
+
+BO_ 513 CAM_201: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 576 CAM_LEFT_LANE_LINE_1: 8 XXX
+ SG_ LINE_ANGLE : 7|12@0+ (0.0005,-1.024) [0|0] "" XXX
+ SG_ FRAME_INDEX : 8|4@1+ (1,0) [0|0] "" XXX
+ SG_ LINE_OFFSET : 23|12@0+ (0.004,-8.192) [0|0] "" XXX
+ SG_ LINE_DISTANCE_VISIBLE : 39|9@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_PROBABILITY : 46|6@0+ (0.015625,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 577 CAM_LEFT_LANE_LINE_2: 8 XXX
+ SG_ FRAME_INDEX : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_SOLID : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_DASHED : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_CURVATURE : 23|12@0+ (1e-05,-0.02048) [0|0] "" XXX
+ SG_ LINE_PARAMETER : 39|12@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_FAR_EDGE_POSITION : 55|8@0+ (1,-128) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 579 CAM_RIGHT_LANE_LINE_1: 8 XXX
+ SG_ LINE_ANGLE : 7|12@0+ (0.0005,-1.024) [0|0] "" XXX
+ SG_ FRAME_INDEX : 8|4@1+ (1,0) [0|0] "" XXX
+ SG_ LINE_OFFSET : 23|12@0+ (0.004,-8.192) [0|0] "" XXX
+ SG_ LINE_DISTANCE_VISIBLE : 39|9@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_PROBABILITY : 46|6@0+ (0.015625,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 580 CAM_RIGHT_LANE_LINE_2: 8 XXX
+ SG_ FRAME_INDEX : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_SOLID : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_DASHED : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_CURVATURE : 23|12@0+ (1e-05,-0.02048) [0|0] "" XXX
+ SG_ LINE_PARAMETER : 39|12@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_FAR_EDGE_POSITION : 55|8@0+ (1,-128) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 582 CAM_ADJACENT_LEFT_LANE_LINE_1: 8 XXX
+ SG_ LINE_ANGLE : 7|12@0+ (0.0005,-1.024) [0|0] "" XXX
+ SG_ FRAME_INDEX : 8|4@1+ (1,0) [0|0] "" XXX
+ SG_ LINE_OFFSET : 23|12@0+ (0.004,-8.192) [0|0] "" XXX
+ SG_ LINE_DISTANCE_VISIBLE : 39|9@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_PROBABILITY : 46|6@0+ (0.015625,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 583 CAM_ADJACENT_LEFT_LANE_LINE_2: 8 XXX
+ SG_ FRAME_INDEX : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_SOLID : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_DASHED : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_CURVATURE : 23|12@0+ (1e-05,-0.02048) [0|0] "" XXX
+ SG_ LINE_PARAMETER : 39|12@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_FAR_EDGE_POSITION : 55|8@0+ (1,-128) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 585 CAM_ADJACENT_RIGHT_LANE_LINE_1: 8 XXX
+ SG_ LINE_ANGLE : 7|12@0+ (0.0005,-1.024) [0|0] "" XXX
+ SG_ FRAME_INDEX : 8|4@1+ (1,0) [0|0] "" XXX
+ SG_ LINE_OFFSET : 23|12@0+ (0.004,-8.192) [0|0] "" XXX
+ SG_ LINE_DISTANCE_VISIBLE : 39|9@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_PROBABILITY : 46|6@0+ (0.015625,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 586 CAM_ADJACENT_RIGHT_LANE_LINE_2: 8 XXX
+ SG_ FRAME_INDEX : 7|4@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_SOLID : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_DASHED : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_CURVATURE : 23|12@0+ (1e-05,-0.02048) [0|0] "" XXX
+ SG_ LINE_PARAMETER : 39|12@0+ (1,0) [0|0] "" XXX
+ SG_ LINE_FAR_EDGE_POSITION : 55|8@0+ (1,-128) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 640 CAM_280_OBJECT_1A: 8 XXX
+ SG_ STATE_A : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ TRACKING : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ OBJECT_TICK_TOCK : 15|3@0+ (1,0) [0|0] "" XXX
+ SG_ LongDist : 23|12@0+ (0.0625,0) [0|0] "" XXX
+ SG_ TRACKING_COUNTER : 27|4@0+ (1,0) [0|0] "" XXX
+ SG_ LatDist : 39|11@0+ (0.01,-10.24) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 44|5@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 51|4@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 55|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 641 CAM_281_OBJECT_1B: 8 XXX
+ SG_ NEW_SIGNAL_4 : 7|6@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 15|9@0+ (1,0) [0|0] "" XXX
+ SG_ IDK_LEAK : 22|11@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 27|3@0+ (1,0) [0|0] "" XXX
+ SG_ IDK_LEAD2 : 39|16@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 642 CAM_282_OBJECT_1C: 8 XXX
+ SG_ NEW_SIGNAL_1 : 4|5@0- (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_8 : 7|3@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 11|4@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_7 : 15|3@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 22|9@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 29|6@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 39|24@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_6 : 63|1@0+ (1,0) [0|0] "" XXX
+
+BO_ 643 CAM_283_OBJECT_1D: 8 XXX
+ SG_ NEW_SIGNAL_4 : 7|15@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 23|11@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 32|3@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 52|5@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 644 CAM_284_OBJECT_2A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 645 CAM_285_OBJECT_2B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 646 CAM_286_OBJECT_2C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 647 CAM_287_OBJECT_2D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 648 CAM_288_OBJECT_3A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 649 CAM_289_OBJECT_3B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 650 CAM_28A_OBJECT_3C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 651 CAM_28B_OBJECT_3D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 652 CAM_28C_OBJECT_4A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 653 CAM_28D_OBJECT_4B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 654 CAM_28E_OBJECT_4C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 655 CAM_28F_OBJECT_4D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 656 CAM_290: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 657 CAM_291: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 658 CAM_292: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 659 CAM_293: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 660 CAM_294: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 661 CAM_295: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 662 CAM_296: 8 XXX
+ SG_ NEW_SIGNAL_1 : 7|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 663 CAM_297: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 712 CAM_2C8: 8 XXX
+ SG_ NEW_SIGNAL_3 : 6|7@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_9 : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 12|4@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 15|3@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 23|10@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 33|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_6 : 47|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_7 : 55|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_8 : 63|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 713 CAM_2C9: 8 XXX
+ SG_ NEW_SIGNAL_1 : 2|10@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_7 : 7|5@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_2 : 21|6@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_3 : 31|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_4 : 47|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_5 : 49|2@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_6 : 63|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 714 CAM_2CA: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 715 CAM_2CB: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 716 CAM_2CC: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 717 CAM_2CD: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 718 CAM_2CE: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 719 CAM_2CF: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 720 CAM_2D0_OBJECT_5A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 721 CAM_2D1_OBJECT_5B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 722 CAM_2D2_OBJECT_5C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 723 CAM_2D3_OBJECT_5D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 724 CAM_2D4_OBJECT_6A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 725 CAM_2D5_OBJECT_6B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 726 CAM_2D6_OBJECT_6C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 727 CAM_2D7_OBJECT_6D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 728 CAM_2D8_OBJECT_7A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 729 CAM_2D9_OBJECT_7B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 730 CAM_2DA_OBJECT_7C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 731 CAM_2DB_OBJECT_7D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 732 CAM_2DC_OBJECT_8A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 733 CAM_2DD_OBJECT_8B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 734 CAM_2DE_OBJECT_8C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 735 CAM_2DF_OBJECT_8D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 736 CAM_2E0_OBJECT_9A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 737 CAM_2E1_OBJECT_9B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 738 CAM_2E2_OBJECT_9C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 739 CAM_2E3_OBJECT_9D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 740 CAM_2E4_OBJECT_10A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 741 CAM_2E5_OBJECT_10B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 742 CAM_2E6_OBJECT_10C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 743 CAM_2E7_OBJECT_10D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 744 CAM_2E8_OBJECT_11A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 745 CAM_2E9_OBJECT_11B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 746 CAM_2EA_OBJECT_11C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 747 CAM_2EB_OBJECT_11D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 748 CAM_2EC_OBJECT_12A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 749 CAM_2ED_OBJECT_12B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 750 CAM_2EE_OBJECT_12C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 751 CAM_2EF_OBJECT_12D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 752 CAM_2F0_OBJECT_13A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 753 CAM_2F1_OBJECT_13B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 754 CAM_2F2_OBJECT_13C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 755 CAM_2F3_OBJECT_13D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 756 CAM_2F4_OBJECT_14A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 757 CAM_2F5_OBJECT_14B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 758 CAM_2F6_OBJECT_14C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 759 CAM_2F7_OBJECT_14D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 760 CAM_2F8_OBJECT_15A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 761 CAM_2F9_OBJECT_15B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 762 CAM_2FA_OBJECT_15C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 763 CAM_2FB_OBJECT_15D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 764 CAM_2FC_OBJECT_16A: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 765 CAM_2FD_OBJECT_16B: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 766 CAM_2FE_OBJECT_16C: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 767 CAM_2FF_OBJECT_16D: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 784 M_310hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 785 M_310hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 787 M_313hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 788 M_313hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 790 M_316hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 791 M_316hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 793 M_319hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 794 M_319hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 796 M_31Chex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 797 M_31Chex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 799 M_31Fhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 800 M_31Fhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 802 M_322hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 803 M_322hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 805 M_325hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 806 M_325hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 808 M_328hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 809 M_328hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 811 M_32Bhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 812 M_32Bhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 814 M_32Ehex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 815 M_32Ehex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 817 M_331hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 818 M_331hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 820 M_334hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 821 M_334hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 823 M_337hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 824 M_337hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 826 M_33Ahex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 827 M_33Ahex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 829 M_33Dhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 830 M_33Dhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 832 M_340hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 833 M_340hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 835 M_343hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 836 M_343hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 838 M_346hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 839 M_346hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 841 M_349hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 842 M_349hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 844 M_34Chex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 845 M_34Chex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 847 M_34Fhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 848 M_34Fhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 850 M_352hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 851 M_352hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 853 M_355hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 854 M_355hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 856 M_358hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 857 M_358hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 859 M_35Bhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 860 M_35Bhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 862 M_35Ehex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 863 M_35Ehex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 865 M_361hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 866 M_361hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 868 M_364hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 869 M_364hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 871 M_367hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 872 M_367hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 874 M_36Ahex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 875 M_36Ahex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 877 M_36Dhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 878 M_36Dhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 881 L_1_371hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 882 L_1_371hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 884 L_2_374hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 885 L_2_375hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 887 L_3_377hex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 888 L_3_378hex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 890 L_4_37ahex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 891 L_4_37ahex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 893 L_5_37dhex: 8 XXX
+ SG_ LongDist : 0|12@1+ (0.0625,0) [0|255.9] "meters" XXX
+ SG_ LongSpeed : 12|12@1+ (0.0625,-128) [-128|128] "meters/sec" XXX
+ SG_ LatDist : 24|11@1+ (0.125,-128) [-128|128] "meters" XXX
+ SG_ ProbExist : 35|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ LongAccel : 40|10@1+ (0.03125,-16) [-16|16] "meters/sec/sec" XXX
+ SG_ ProbObstacle : 50|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Valid : 55|1@1+ (1,0) [0|1] "" XXX
+ SG_ ProbNonObstacle : 56|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Meas : 61|1@1+ (1,0) [0|1] "" XXX
+ SG_ Tracked : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 894 L_5_37dhex2: 8 XXX
+ SG_ LatSpeed : 0|10@1+ (0.125,-64) [-64|64] "meters/sec" XXX
+ SG_ Length : 10|6@1+ (0.125,0) [0|7.875] "m" XXX
+ SG_ dZ : 16|6@1+ (0.25,-5) [-5|10.75] "m" XXX
+ SG_ MovingState : 22|2@1+ (1,0) [0|3] "" XXX
+ SG_ dxSigma : 24|6@1+ (1,0) [0|63] "" XXX
+ SG_ vxSigma : 30|6@1+ (1,0) [0|63] "" XXX
+ SG_ axSigma : 36|6@1+ (1,0) [0|63] "" XXX
+ SG_ dySigma : 42|6@1+ (1,0) [0|63] "" XXX
+ SG_ ProbClass : 48|5@1+ (3.125,0) [0|96.875] "%" XXX
+ SG_ Class : 53|3@1+ (1,0) [0|7] "" XXX
+ SG_ dxRearEndLoss : 56|6@1+ (1,0) [0|63] "" XXX
+ SG_ NotUsed : 62|1@1+ (1,0) [0|1] "" XXX
+ SG_ Index2 : 63|1@1+ (1,0) [0|1] "" XXX
+
+BO_ 1024 RADAR_400: 4 XXX
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 1040 RADAR_FIRMWARE_ID: 6 XXX
+ SG_ VEH_CODE_ASCII_A : 7|8@0+ (1,0) [0|0] "" XXX
+ SG_ VEH_CODE_ASCII_B : 15|8@0+ (1,0) [0|0] "" XXX
+ SG_ VEH_CODE_ASCII_C : 23|8@0+ (1,0) [0|0] "" XXX
+ SG_ VEH_CODE_REV_ASCII_A : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ VEH_CODE_REV_DECIMAL_BCD : 39|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 43|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 45|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 1056 RADAR_420: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 1072 CAM_430_ODYSSEY21: 8 XXX
+
+BO_ 1088 RADAR_440: 3 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 1104 CAM_450: 8 XXX
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 1641 CAM_669: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 1872 CAM_STATUS_1: 8 XXX
+ SG_ BAT_VOLTAGE : 15|8@0+ (0.1,0) [0|0] "" XXX
+ SG_ TEMP_C : 31|8@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 13274 CAM_LKAS_HUD_A: 5 XXX
+ SG_ ENABLED : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_PROBLEM : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_NOW_AVAILABLE : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ RECENT_STATE_CHANGE : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ CAM_TEMP_HIGH : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ STEERING_REQUIRED : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ LANE_DEPARTURE_WARNING : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ SOLID_LANES : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_OFF : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_PROBLEM_MINI_ICON : 12|1@0+ (1,0) [0|0] "" XXX
+ SG_ DTC : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ DASHED_LANES : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ CAM_TEMP_TOO_HOT : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ BEEP : 17|2@0+ (1,0) [0|0] "" XXX
+ SG_ DOUBLE_BEEP : 18|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_ON : 20|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_PROBLEM : 21|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_OFF_MINI_ICON : 22|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_SETTING : 25|2@0+ (1,0) [0|0] "" XXX
+ SG_ CLEAN_WINDSHIELD : 26|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_OFF : 27|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_ON_2 : 28|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_BEEP_OFF : 30|1@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 35|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 37|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 13275 CAM_LKAS_HUD_B: 8 XXX
+ SG_ ENABLED : 0|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_PROBLEM : 1|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_NOW_AVAILABLE : 4|1@0+ (1,0) [0|0] "" XXX
+ SG_ RECENT_STATE_CHANGE : 6|1@0+ (1,0) [0|0] "" XXX
+ SG_ CAM_TEMP_HIGH : 7|1@0+ (1,0) [0|0] "" XXX
+ SG_ STEERING_REQUIRED : 8|1@0+ (1,0) [0|0] "" XXX
+ SG_ LANE_DEPARTURE_WARNING : 9|1@0+ (1,0) [0|0] "" XXX
+ SG_ SOLID_LANES : 10|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_OFF : 11|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_PROBLEM_MINI_ICON : 12|1@0+ (1,0) [0|0] "" XXX
+ SG_ DTC : 13|1@0+ (1,0) [0|0] "" XXX
+ SG_ DASHED_LANES : 14|1@0+ (1,0) [0|0] "" XXX
+ SG_ CAM_TEMP_TOO_HOT : 15|1@0+ (1,0) [0|0] "" XXX
+ SG_ BEEP : 17|2@0+ (1,0) [0|0] "" XXX
+ SG_ DOUBLE_BEEP : 18|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_ON : 20|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_PROBLEM : 21|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_OFF_MINI_ICON : 22|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_SETTING : 25|2@0+ (1,0) [0|0] "" XXX
+ SG_ CLEAN_WINDSHIELD : 26|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_OFF : 27|1@0+ (1,0) [0|0] "" XXX
+ SG_ RDM_ON_2 : 28|1@0+ (1,0) [0|0] "" XXX
+ SG_ LKAS_BEEP_OFF : 30|1@0+ (1,0) [0|0] "" XXX
+ SG_ NEW_SIGNAL_1 : 35|1@0+ (1,0) [0|1] "" XXX
+ SG_ RAMP_TO_NO_TORQUE_ON_RELEASE : 36|1@0+ (1,0) [0|0] "" XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 134117888 CAM_7FE7A00: 8 XXX
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 469662241 CAM_1BFE7A21: 8 XXX
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+
+BO_ 469662262 CAM_1BFE7A36: 8 XXX
+ SG_ CHECKSUM : 59|4@0+ (1,0) [0|0] "" XXX
+ SG_ COUNTER : 61|2@0+ (1,0) [0|0] "" XXX
+
+BO_ 469662263 CAM_1BFE7A37: 8 XXX
+ SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|0] "" XXX
+
+CM_ SG_ 228 SET_ME_X00_2 "3=idle,2=active,5=rdm,1=?";
+CM_ SG_ 13274 RECENT_STATE_CHANGE "IN LAST 3000MS";
+CM_ SG_ 13274 RDM_SETTING "0=NORMAL,1=WIDE,2=WARNING_ONLY";
+CM_ SG_ 13274 RDM_OFF "OR WARNING ONLY";
+CM_ SG_ 13275 RECENT_STATE_CHANGE "IN LAST 3000MS";
+CM_ SG_ 13275 RDM_SETTING "0=NORMAL,1=WIDE,2=WARNING_ONLY";
+CM_ SG_ 13275 RDM_OFF "OR WARNING ONLY";
+CM_ SG_ 13275 RAMP_TO_NO_TORQUE_ON_RELEASE "OVER 0-1000MS";
