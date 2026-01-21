@@ -55,7 +55,7 @@ class CarInterface(CarInterfaceBase):
       ret.openpilotLongitudinalControl = True
       ret.pcmCruise = True
 
-    ret.enableBsm = 0x12f8bfa7 in fingerprint[CAN.radar]
+    ret.enableBsm = True #0x12f8bfa7 in fingerprint[CAN.radar]
 
     # This is from the fake Tesla. Means we should have radar too.
     # Hard code for now
