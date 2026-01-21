@@ -16,6 +16,7 @@ LongCtrlState = structs.CarControl.Actuators.LongControlState
 
 BLINKER_INTERVAL_CANCEL = 20 # frames
 BLINKER_INTERVAL = 30 # frames. The real interval is 0.350 seconds but ours must be shorter
+FOG_INTERVAL = 15 * 1000 # 15 seconds
 FACTOR_TORQUE_TO_ACCEL = 0.015
 MAX_GAS_DIFF = 1.0
 
