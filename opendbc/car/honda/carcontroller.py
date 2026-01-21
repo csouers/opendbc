@@ -166,8 +166,8 @@ class BlinkerController:
     # the only way to re-enable control after override is to turn off blinker control
     self.disabled = False if not control else self.disabled
 
-    fog = (CS.vEgo < CV.MPH_TO_MS * 15.0) and CS.steerAngle > 10.
-    print(fog)
+    fog = (CS.vEgo < CV.MPH_TO_MS * 20.0) and CS.steerAngle > 10. and not CS.standstill
+    print(f'oh boy the fog lite is {fog}')
     # control but no lamp
     if CC.leftBlinker:
       # light has been off and user input is off. send a pre-cancel
@@ -212,6 +212,18 @@ class BlinkerController:
         self.queue = []
         self.cancel_next = frame
     elif fog:
+       if frame >= (self.fog_last + FOG_INTERVAL):
+          if len(self.queue):
+            if 'fog' not in self.queue:
+              self.right_next = frame
+          else:
+            self.right_next = frame
+       elif frame >= (self.fog_last + FOG_INTERVAL + (5 * 100)):
+          if len(self.queue):
+            if 'cancel' not in self.queue:
+              self.cancel_next = frame
+          else:
+            self.cancel_next = frame
     elif self.control_prev:
       # todo: cancel light when full on period has completed (aesthetic)
       # cancel (or cancel again) when blinker control disenages
