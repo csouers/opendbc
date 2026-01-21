@@ -134,16 +134,18 @@ class BlinkerController:
     # self.left_confirmed = False
     self.right_last = 0
     # self.right_confirmed = False
+    self.fog_last = 0
 
     self.left_next = -1
     self.right_next = -1
     self.cancel_next = 0
+    self.fog_next = -1
 
     self.queue = []
 
   def process(self, CS):
     if len(self.queue):
-      if CS.bcm_kwp_started and self.queue[0] in ['left', 'right']:
+      if CS.bcm_kwp_started and self.queue[0] in ['left', 'right', 'fog']:
         print(f'{self.queue[0]} accepted. removing {self.queue[0]} from queue')
         self.queue.remove(self.queue[0])
       elif CS.bcm_kwp_stopped and self.queue[0] == 'cancel':
@@ -156,6 +158,7 @@ class BlinkerController:
     # lamp state
     self.left_last = frame if CS.leftBlinker_lamp else self.left_last
     self.right_last = frame if CS.rightBlinker_lamp else self.right_last
+    self.fog_last = frame if CS.fog else self.fog_last
     # stalk state
     stalk = CS.leftBlinker_stalk or CS.rightBlinker_stalk
 
@@ -163,6 +166,8 @@ class BlinkerController:
     # the only way to re-enable control after override is to turn off blinker control
     self.disabled = False if not control else self.disabled
 
+    fog = (CS.vEgo < CV.MPH_TO_MS * 15.0) and CS.steerAngle > 10.
+    print(fog)
     # control but no lamp
     if CC.leftBlinker:
       # light has been off and user input is off. send a pre-cancel
@@ -206,6 +211,7 @@ class BlinkerController:
         self.disabled = True
         self.queue = []
         self.cancel_next = frame
+    elif fog:
     elif self.control_prev:
       # todo: cancel light when full on period has completed (aesthetic)
       # cancel (or cancel again) when blinker control disenages
@@ -219,6 +225,8 @@ class BlinkerController:
         self.queue.append('left')
       elif frame == self.right_next:
         self.queue.append('right')
+      elif frame == self.fog_next:
+        self.queue.append('fog')
     self.control_prev = control
     return
 
