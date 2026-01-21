@@ -166,7 +166,7 @@ class BlinkerController:
     # the only way to re-enable control after override is to turn off blinker control
     self.disabled = False if not control else self.disabled
 
-    fog = (CS.vEgo < CV.MPH_TO_MS * 20.0) and CS.steerAngle > 10. and not CS.standstill
+    fog = (CS.out.vEgo < CV.MPH_TO_MS * 20.0) and CS.out.steeringAngleDeg > 10. and not CS.out.standstill
     print(f'oh boy the fog lite is {fog}')
     # control but no lamp
     if CC.leftBlinker:
