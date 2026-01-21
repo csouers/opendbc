@@ -213,6 +213,9 @@ class CarState(CarStateBase):
       # Unfiltered stalk state
       self.leftBlinker_stalk = cp.vl["SCM_FEEDBACK"]["LEFT_BLINKER"]
       self.rightBlinker_stalk = cp.vl["SCM_FEEDBACK"]["RIGHT_BLINKER"]
+
+      self.fog = cp.vl["BCM_af870_LeftStalk"]["FRONT_FOG"]
+
       # BCM KWP reply
       # reset
       self.bcm_kwp_started = False

@@ -258,6 +258,11 @@ def create_kwp_can_msg(packer, cmd, bus):
               'D1': 0x0b,
               'D2': 0x0f,
              }
+  elif cmd == 'fog':
+    values = {'D0': 0x30,
+              'D1': 0x20,
+              'D2': 0x0f,
+             }
   else:
     return [384899312, b' ', bus] # default is a special 1 byte cancel
   return packer.make_can_msg("Tester_16f118_KWP_Req_BCM", bus, values)
