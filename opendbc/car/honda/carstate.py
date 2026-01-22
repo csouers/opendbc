@@ -208,13 +208,14 @@ class CarState(CarStateBase):
 
     if self.CP.flags & HondaFlags.ENABLE_BLINKERS:
       # Lamp state
-      self.leftBlinker_lamp = cp_body.vl["BCM_12f810_Lighting"]["LEFTSIGNAL"]
-      self.rightBlinker_lamp = cp_body.vl["BCM_12f810_Lighting"]["RIGHTSIGNAL"]
+      self.leftBlinker_lamp = cp_body.vl["12f810_Lighting"]["LEFTSIGNAL"]
+      self.rightBlinker_lamp = cp_body.vl["12f810_Lighting"]["RIGHTSIGNAL"]
+      self.fog = cp_body.vl["af811_Wipers_Lighting_Output"]["FRONT_FOG"]
+
       # Unfiltered stalk state
       self.leftBlinker_stalk = cp.vl["SCM_FEEDBACK"]["LEFT_BLINKER"]
       self.rightBlinker_stalk = cp.vl["SCM_FEEDBACK"]["RIGHT_BLINKER"]
-
-      self.fog = cp.vl["BCM_af870_LeftStalk"]["FRONT_FOG"]
+      self.lighting_auto = cp_body.vl["af870_LeftStalk_Input"]["AUTO"]
 
       # BCM KWP reply
       # reset

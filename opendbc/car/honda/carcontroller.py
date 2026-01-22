@@ -16,7 +16,7 @@ LongCtrlState = structs.CarControl.Actuators.LongControlState
 
 BLINKER_INTERVAL_CANCEL = 20 # frames
 BLINKER_INTERVAL = 30 # frames. The real interval is 0.350 seconds but ours must be shorter
-FOG_INTERVAL = 15 * 1000 # 15 seconds
+FOG_INTERVAL = 100 # 15 seconds
 FACTOR_TORQUE_TO_ACCEL = 0.015
 MAX_GAS_DIFF = 1.0
 
@@ -131,9 +131,8 @@ class BlinkerController:
     self.control_prev = False
 
     self.left_last = 0
-    # self.left_confirmed = False
     self.right_last = 0
-    # self.right_confirmed = False
+
     self.fog_last = 0
 
     self.left_next = -1
@@ -143,31 +142,38 @@ class BlinkerController:
 
     self.queue = []
 
+  # todo: get rid of this
   def process(self, CS):
     if len(self.queue):
+      # the request was received by the module and it replied with a good confirmation
       if CS.bcm_kwp_started and self.queue[0] in ['left', 'right', 'fog']:
         print(f'{self.queue[0]} accepted. removing {self.queue[0]} from queue')
         self.queue.remove(self.queue[0])
+      # the cancel request was received by the module and it replied with a good confirmation
       elif CS.bcm_kwp_stopped and self.queue[0] == 'cancel':
         print(f'{self.queue[0]} accepted. removing {self.queue[0]} from queue')
         self.queue.remove(self.queue[0])
+
+      # a command WAS received by the module BUT it replied with an invalid request message (the request bytes weren't valid, try another?).
       if CS.bcm_kwp_failed:
         self.lockout = True
 
   def update(self, frame, CC, CS):
-    # lamp state
+    # maintain lamp states
     self.left_last = frame if CS.leftBlinker_lamp else self.left_last
     self.right_last = frame if CS.rightBlinker_lamp else self.right_last
     self.fog_last = frame if CS.fog else self.fog_last
-    # stalk state
-    stalk = CS.leftBlinker_stalk or CS.rightBlinker_stalk
 
-    control = CC.leftBlinker or CC.rightBlinker
-    # the only way to re-enable control after override is to turn off blinker control
+    # control surfaces
+    stalk = CS.leftBlinker_stalk or CS.rightBlinker_stalk
+    fog = CS.out.vEgo < (CV.MPH_TO_MS * 25.0) and abs(CS.out.steeringAngleDeg) >= 60. and not CS.out.standstill
+
+    # anytime control is desired. can probably get rid of this somehow
+    control = CC.leftBlinker or CC.rightBlinker or fog
+
+    # the only way to re-enable control after override is to turn off control
     self.disabled = False if not control else self.disabled
 
-    fog = (CS.out.vEgo < CV.MPH_TO_MS * 20.0) and abs(CS.out.steeringAngleDeg) >= 5. #and not CS.out.standstill
-    print(f'oh boy the fog lite is {fog}')
     # control but no lamp
     if CC.leftBlinker:
       # light has been off and user input is off. send a pre-cancel
@@ -212,13 +218,13 @@ class BlinkerController:
         self.queue = []
         self.cancel_next = frame
     elif fog:
-       if frame >= (self.fog_last + FOG_INTERVAL):
+       if CS.lighting_auto and frame >= (self.fog_last + FOG_INTERVAL):
           if len(self.queue):
             if 'fog' not in self.queue:
-              self.right_next = frame
+              self.fog_next = frame
           else:
-            self.right_next = frame
-       elif frame >= (self.fog_last + FOG_INTERVAL + (5 * 100)):
+            self.fog_next = frame
+       elif not CS.lighting_auto or frame >= (self.fog_last + FOG_INTERVAL + 50):
           if len(self.queue):
             if 'cancel' not in self.queue:
               self.cancel_next = frame
@@ -231,6 +237,8 @@ class BlinkerController:
       self.queue = []
       self.cancel_next = frame
     if not self.lockout:
+      if len(self.queue):
+        print(self.queue)
       if frame == self.cancel_next:
         self.queue.append('cancel')
       elif frame == self.left_next:
