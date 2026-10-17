@@ -1,5 +1,5 @@
 BO_ 479 ACC_CONTROL: 8 EON
- SG_ GAS_COMMAND : 7|16@0- (1,0) [0|0] "" XXX
+ SG_ GAS_COMMAND : 7|16@0- (0.1,0) [0|0] "nM" XXX
  SG_ ACC_ENABLED : 16|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_FAULTED : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ CONTROL_ON : 23|3@0+ (1,0) [0|5] "" XXX
@@ -22,6 +22,7 @@ BO_ 495 ACC_CONTROL_ON: 8 XXX
  SG_ ZEROS_BOH : 23|8@0+ (1,0) [0|255] "" XXX
  SG_ ZEROS_BOH2 : 47|16@0+ (1,0) [0|255] "" XXX
  SG_ SET_TO_FF : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ COAST_BRAKE : 17|1@0+ (1,0) [0|0] "" XXX
  SG_ SET_TO_3 : 6|7@0+ (1,0) [0|4095] "" XXX
  SG_ CONTROL_ON : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX

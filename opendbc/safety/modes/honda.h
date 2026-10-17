@@ -77,7 +77,7 @@ static void honda_rx_hook(const CANPacket_t *msg) {
 
   // check ACC main state
   // 0x326 for all Bosch and some Nidec, 0x1A6 for some Nidec
-  if ((msg->addr == 0x326U) || (msg->addr == 0x1A6U)) {
+  if (((msg->addr == 0x326U) && (msg->bus == pt_bus)) || (msg->addr == 0x1A6U)) {
     acc_main_on = GET_BIT(msg, ((msg->addr == 0x326U) ? 28U : 47U));
     if (!acc_main_on) {
       controls_allowed = false;
@@ -167,6 +167,7 @@ static bool honda_tx_hook(const CANPacket_t *msg) {
     .min_accel = -350,
 
     .max_gas = 2000,
+    .min_gas = -40,
     .inactive_gas = -30000,
   };
 
@@ -285,6 +286,27 @@ static bool honda_tx_hook(const CANPacket_t *msg) {
     }
   }
 
+  // KWP over CAN. Allow only short turn signal request and cancel
+  // TODO: probably move to gateway firmware
+  if (msg-> addr == 0x16F118F0U){
+    bool signalCmd = ((GET_LEN(msg) == 8U) && ((GET_BYTES_64_LE(msg, 0, 4) == 0x000F0A30ULL) || (GET_BYTES_64_LE(msg, 0, 4) == 0x000F0B30ULL) || (GET_BYTES_64_LE(msg, 0, 4) == 0x000F2030ULL)) && (GET_BYTES_64_LE(msg, 4, 4) == 0x0ULL));
+    bool fogCmd = ((GET_LEN(msg) == 8U) && (GET_BYTES_64_LE(msg, 0, 4) == 0x000F2030ULL) && (GET_BYTES_64_LE(msg, 4, 4) == 0x0ULL));
+    bool cancelCmd = ((GET_LEN(msg) == 1U) && (GET_BYTES_64_LE(msg, 0, 1) == 0x20ULL));
+    // always allow cancel
+    if (!fogCmd){
+      if (!cancelCmd) {
+        if (!controls_allowed) {
+          tx = false;
+        }
+        else {
+          if (!signalCmd) {
+            tx = false;
+          }
+        }
+      }
+    }
+  }
+
   return tx;
 }
 
@@ -298,6 +320,8 @@ static safety_config honda_nidec_init(uint16_t param) {
     {0x1FA, 0, 8, .check_relay = false},
     {0x30C, 0, 8, .check_relay = true},
     {0x33D, 0, 5, .check_relay = true},
+    {0x16F118F0, 0, 8, .check_relay = false},
+    {0x16F118F0, 0, 1, .check_relay = false},
   };
 
   const uint16_t HONDA_PARAM_NIDEC_ALT = 4;
@@ -348,21 +372,25 @@ static safety_config honda_bosch_init(uint16_t param) {
     {0x33D, 0, 8, .check_relay = true},
     {0x33DA, 0, 5, .check_relay = true},
     {0x33DB, 0, 8, .check_relay = true},
+    {0x16F118F0, 0, 8, .check_relay = false},
+    {0x16F118F0, 0, 1, .check_relay = false},
   };
 
   // Bosch w/ gas and brakes
   static const CanMsg HONDA_BOSCH_LONG_TX_MSGS[] = {
-    {0xE4, 1, 5, .check_relay = true},
-    {0x1DF, 1, 8, .check_relay = true},
+    {0xE4, 1, 5, .check_relay = false},
+    {0x1DF, 1, 8, .check_relay = false},
     {0x1EF, 1, 8, .check_relay = false},
     {0x1FA, 1, 8, .check_relay = false},
     {0x30C, 1, 8, .check_relay = false},
-    {0x33D, 1, 5, .check_relay = true},
-    {0x33D, 1, 8, .check_relay = true},
-    {0x33DA, 1, 5, .check_relay = true},
-    {0x33DB, 1, 8, .check_relay = true},
+    {0x33D, 1, 5, .check_relay = false},
+    {0x33D, 1, 8, .check_relay = false},
+    {0x33DA, 1, 5, .check_relay = false},
+    {0x33DB, 1, 8, .check_relay = false},
     {0x39F, 1, 8, .check_relay = false},
     {0x18DAB0F1, 1, 8, .check_relay = false},
+    {0x16F118F0, 0, 8, .check_relay = false},
+    {0x16F118F0, 0, 1, .check_relay = false},
   };
 
   // Bosch radarless
@@ -370,6 +398,8 @@ static safety_config honda_bosch_init(uint16_t param) {
     {0xE4, 0, 5, .check_relay = true},
     {0x296, 2, 4, .check_relay = false},
     {0x33D, 0, 8, .check_relay = true},
+    {0x16F118F0, 0, 8, .check_relay = false},
+    {0x16F118F0, 0, 1, .check_relay = false},
   };
 
   // Bosch radarless w/ gas and brakes
@@ -378,6 +408,8 @@ static safety_config honda_bosch_init(uint16_t param) {
     {0x33D, 0, 8, .check_relay = true},
     {0x1C8, 0, 8, .check_relay = true},
     {0x30C, 0, 8, .check_relay = true},
+    {0x16F118F0, 0, 8, .check_relay = false},
+    {0x16F118F0, 0, 1, .check_relay = false},
   };
 
   static const CanMsg HONDA_CANFD_TX_MSGS[] = {
@@ -453,6 +485,10 @@ static safety_config honda_bosch_init(uint16_t param) {
       SET_TX_MSGS(HONDA_BOSCH_TX_MSGS, ret);
     }
   }
+
+  // not needed without bosch adas
+  ret.disable_forwarding = true;
+
   return ret;
 }
 

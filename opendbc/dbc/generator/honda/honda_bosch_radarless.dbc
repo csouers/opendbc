@@ -4,6 +4,7 @@ CM_ "IMPORT _lkas_hud_8byte.dbc";
 CM_ "IMPORT _bosch_standstill.dbc";
 CM_ "IMPORT _steering_sensors_a.dbc";
 CM_ "IMPORT _gearbox_common.dbc";
+CM_ "IMPORT _body_2017.dbc";
 
 BO_ 456 ACC_CONTROL: 8 XXX
  SG_ ACCEL_COMMAND : 7|12@0- (0.01,0) [0|0] "m/s^2" XXX
@@ -34,6 +35,7 @@ BO_ 495 SPEED_LIMIT_DASH_DISPLAY: 8 ADAS
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" XXX
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" XXX
 
+:opendbc/dbc/generator/honda/honda_civic_ex_2022_can.dbc
 BO_ 254913108 LKAS_HUD_2: 8 ADAS
  SG_ COUNTER_2 : 7|2@0+ (1,0) [0|3] "" XXX
  SG_ SET_ME_X01 : 5|1@0+ (1,0) [0|1] "" XXX

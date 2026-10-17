@@ -5,6 +5,7 @@ CM_ "IMPORT _nidec_scm_group_b.dbc";
 CM_ "IMPORT _steering_sensors_a.dbc";
 CM_ "IMPORT _steering_control_a.dbc";
 CM_ "IMPORT _gearbox_common.dbc";
+CM_ "IMPORT _body_2017.dbc";
 
 BO_ 768 VEHICLE_STATE: 8 ADAS
  SG_ SET_ME_XF9 : 7|8@0+ (1,0) [0|255] "" Vector__XXX

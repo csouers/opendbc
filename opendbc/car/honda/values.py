@@ -32,8 +32,19 @@ class CarControllerParams:
   BOSCH_ACCEL_MIN = -3.5  # m/s^2
   BOSCH_ACCEL_MAX = 2.0  # m/s^2
 
-  BOSCH_GAS_LOOKUP_BP = [-0.2, 2.0]  # 2m/s^2
-  BOSCH_GAS_LOOKUP_V = [0, 1600]
+  BOSCH_GAS_MIN = -4 # same as panda safety
+  BOSCH_GAS_MAX = 160 # panda safety is 200
+
+  # Stats from 250+ hrs of CIVIC_BOSCH
+  # Max gas: 186.6
+  # Min gas: -4.0
+
+  # Values from PolyReg model of accel, speed, pitch, and engine torque. 100hrs of data. Speed 15 m/s. Pitch -0.01 degrees.
+  # Torque is slightly underrated/lazy so PID is maybe less likely to overshoot which could trigger friction brake (annoying).
+  # BOSCH_GAS_LOOKUP_BP = [-0.3, -0.25, 0.0, 1.0, 2.0, 3.0]
+  # BOSCH_GAS_LOOKUP_BP = [-0.25,        -0.1, 0.0, 1.0, 2.0,           3.0]
+  BOSCH_GAS_LOOKUP_BP = [-0.3,         -0.1, 0.0, 1.0, 2.0,           3.0]
+  BOSCH_GAS_LOOKUP_V =  [BOSCH_GAS_MIN,   0,  10,  41,  88, BOSCH_GAS_MAX]
 
   STEER_STEP = 1  # 100 Hz
   STEER_DELTA_UP = 3  # min/max in 0.33s for all Honda
@@ -73,15 +84,19 @@ class HondaFlags(IntFlag):
   # Detected flags
   # Bosch models with alternate set of LKAS_HUD messages
   BOSCH_EXT_HUD = 1
-  BOSCH_ALT_BRAKE = 2
+  BOSCH_ALT_BRAKE = 2 ** 1
 
   # Static flags
-  BOSCH = 4
-  BOSCH_RADARLESS = 8
+  BOSCH = 2 ** 2
+  BOSCH_RADARLESS = 2 ** 3
 
-  NIDEC = 16
-  NIDEC_ALT_PCM_ACCEL = 32
-  NIDEC_ALT_SCM_MESSAGES = 64
+  NIDEC = 2 ** 4
+  NIDEC_ALT_PCM_ACCEL = 2 ** 5
+  NIDEC_ALT_SCM_MESSAGES = 2 ** 6
+
+  # Custom w/ +30 offset
+  ENABLE_BLINKERS = 2 ** 30
+  TESLA_RADAR = 2 ** 31
 
   BOSCH_CANFD = 128
 
@@ -155,8 +170,8 @@ class HondaNidecPlatformConfig(PlatformConfig):
     self.flags |= HondaFlags.NIDEC
 
 
-def radar_dbc_dict(pt_dict):
-  return {Bus.pt: pt_dict, Bus.radar: 'acura_ilx_2016_nidec'}
+def radar_dbc_dict(pt_dict, radar_dict='acura_ilx_2016_nidec'):
+  return {Bus.pt: pt_dict, Bus.radar: radar_dict, Bus.body: 'honda_body_2017_generated'}
 
 
 # Certain Hondas have an extra steering sensor at the bottom of the steering rack,
@@ -182,7 +197,7 @@ class CAR(Platforms):
     ],
     # steerRatio: 11.82 is spec end-to-end
     CarSpecs(wheelbase=2.83, steerRatio=16.33, centerToFrontRatio=0.39, tireStiffnessFactor=0.8467),
-    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated'},
+    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated', Bus.body: 'honda_body_2017_generated'},
   )
   HONDA_ACCORD_11G = HondaBoschCANFDPlatformConfig(
     [
@@ -199,12 +214,12 @@ class CAR(Platforms):
       HondaCarDocs("Honda Civic Hatchback 2019-21", "All", min_steer_speed=12. * CV.MPH_TO_MS),
     ],
     CarSpecs(wheelbase=2.7, steerRatio=15.38, centerToFrontRatio=0.4),  # steerRatio: 10.93 is end-to-end spec
-    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated'},
+    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated', Bus.radar: 'tesla_radar_bosch_generated', Bus.body: 'honda_body_2017_generated'},
   )
   HONDA_CIVIC_BOSCH_DIESEL = HondaBoschPlatformConfig(
     [],  # don't show in docs
     HONDA_CIVIC_BOSCH.specs,
-    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated'},
+    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated', Bus.body: 'honda_body_2017_generated'},
   )
   HONDA_CIVIC_2022 = HondaBoschPlatformConfig(
     [
@@ -216,14 +231,14 @@ class CAR(Platforms):
       HondaCarDocs("Honda Civic Hatchback Hybrid 2025-26", "All"),
     ],
     HONDA_CIVIC_BOSCH.specs,
-    {Bus.pt: 'honda_bosch_radarless_generated'},
+    {Bus.pt: 'honda_bosch_radarless_generated', Bus.body: 'honda_body_2017_generated'},
     flags=HondaFlags.BOSCH_RADARLESS
   )
   HONDA_CRV_5G = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda CR-V 2017-22", min_steer_speed=15. * CV.MPH_TO_MS)],
     # steerRatio: 12.3 is spec end-to-end
     CarSpecs(wheelbase=2.66, steerRatio=16.0, centerToFrontRatio=0.41, tireStiffnessFactor=0.677),
-    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated', Bus.body: 'honda_crv_ex_2017_body_generated'},
+    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated', Bus.body: 'honda_body_2017_generated'},
     flags=HondaFlags.BOSCH_ALT_BRAKE,
   )
   HONDA_CRV_6G = HondaBoschCANFDPlatformConfig(
@@ -237,12 +252,12 @@ class CAR(Platforms):
     [HondaCarDocs("Honda CR-V Hybrid 2017-22", min_steer_speed=12. * CV.MPH_TO_MS)],
     # steerRatio: 12.3 is spec end-to-end
     CarSpecs(wheelbase=2.66, steerRatio=16, centerToFrontRatio=0.41, tireStiffnessFactor=0.677),
-    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated'},
+    {Bus.pt: 'honda_civic_hatchback_ex_2017_can_generated', Bus.body: 'honda_body_2017_generated'},
   )
   HONDA_HRV_3G = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda HR-V 2023-27", "All")],
     CarSpecs(wheelbase=2.61, steerRatio=15.2, centerToFrontRatio=0.41, tireStiffnessFactor=0.5),
-    {Bus.pt: 'honda_bosch_radarless_generated'},
+    {Bus.pt: 'honda_bosch_radarless_generated', Bus.body: 'honda_body_2017_generated'},
     flags=HondaFlags.BOSCH_RADARLESS,
   )
   HONDA_CITY_7G = HondaBoschPlatformConfig(
@@ -254,7 +269,7 @@ class CAR(Platforms):
   ACURA_RDX_3G = HondaBoschPlatformConfig(
     [HondaCarDocs("Acura RDX 2019-21", "All", min_steer_speed=3. * CV.MPH_TO_MS)],
     CarSpecs(wheelbase=2.75, steerRatio=11.95, centerToFrontRatio=0.41, tireStiffnessFactor=0.677),  # as spec
-    {Bus.pt: 'acura_rdx_2020_can_generated'},
+    {Bus.pt: 'acura_rdx_2020_can_generated', Bus.body: 'honda_body_2017_generated'},
     flags=HondaFlags.BOSCH_ALT_BRAKE,
   )
   ACURA_RDX_3G_MMR = HondaBoschPlatformConfig(
@@ -266,12 +281,12 @@ class CAR(Platforms):
   HONDA_INSIGHT = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda Insight 2019-22", "All", min_steer_speed=3. * CV.MPH_TO_MS)],
     CarSpecs(wheelbase=2.7, steerRatio=15.0, centerToFrontRatio=0.39, tireStiffnessFactor=0.82),  # as spec
-    {Bus.pt: 'honda_insight_ex_2019_can_generated'},
+    {Bus.pt: 'honda_insight_ex_2019_can_generated', Bus.body: 'honda_body_2017_generated'},
   )
   HONDA_E = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda e 2020", "All", min_steer_speed=3. * CV.MPH_TO_MS)],
     CarSpecs(wheelbase=2.5, centerToFrontRatio=0.5, steerRatio=16.71, tireStiffnessFactor=0.82),
-    {Bus.pt: 'acura_rdx_2020_can_generated'},
+    {Bus.pt: 'acura_rdx_2020_can_generated', Bus.body: 'honda_body_2017_generated'},
   )
   HONDA_E_ADVANCE = HondaBoschPlatformConfig(
     [],  # don't show in docs, base trim already in docs

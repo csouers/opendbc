@@ -2,17 +2,40 @@ import numpy as np
 
 from opendbc.can import CANPacker
 from opendbc.car import Bus, DT_CTRL, rate_limit, make_tester_present_msg, structs
+from opendbc.car.common.conversions import Conversions as CV
 from opendbc.car.honda import hondacan
 from opendbc.car.honda.values import CAR, CruiseButtons, HondaFlags, CarControllerParams
 from opendbc.car.interfaces import CarControllerBase
+from openpilot.selfdrive.car.cruise import IMPERIAL_INCREMENT
 
 VisualAlert = structs.CarControl.HUDControl.VisualAlert
 LongCtrlState = structs.CarControl.Actuators.LongControlState
 
 
+BLINKER_INTERVAL_CANCEL = 20 # frames
+BLINKER_INTERVAL = 30 # frames. The real interval is 0.350 seconds but ours must be shorter
+FOG_INTERVAL = 100 # 15 seconds
+FACTOR_TORQUE_TO_ACCEL = 0.015
+MAX_GAS_DIFF = 1.0
+
+
+def torque_accel(accel, speed, torque):
+  # Send more brake when engine torque increases at low speeds
+  # TODO: does radarless need this?
+  if speed < 2.0 and not accel and torque:
+    accel -= (torque * FACTOR_TORQUE_TO_ACCEL)
+  return accel
+
+
 def compute_gb_honda_bosch(accel, speed):
   # TODO returns 0s, is unused
   return 0.0, 0.0
+
+def round_hud_set_speed(v_cruise_kph, is_metric):
+  if not is_metric:
+    v_cruise_kph = v_cruise_kph / (CV.MPH_TO_KPH / IMPERIAL_INCREMENT)
+    v_cruise_kph = round(v_cruise_kph / IMPERIAL_INCREMENT) * IMPERIAL_INCREMENT * 1.001
+  return round(v_cruise_kph)
 
 
 def compute_gb_honda_nidec(accel, speed):
@@ -76,15 +99,145 @@ def brake_pump_hysteresis(apply_brake, apply_brake_last, last_pump_ts, ts):
 def process_hud_alert(hud_alert):
   alert_fcw = False
   alert_steer_required = False
+  alert_ldw = False
 
   # Make sure FCW is prioritized over steering required
-  # TODO: implement separate available LDW alert
   if hud_alert == VisualAlert.fcw:
     alert_fcw = True
-  elif hud_alert in (VisualAlert.steerRequired, VisualAlert.ldw):
+  elif hud_alert == VisualAlert.steerRequired:
     alert_steer_required = True
+  elif hud_alert == VisualAlert.ldw:
+    alert_ldw = True
 
-  return alert_fcw, alert_steer_required
+  return alert_fcw, alert_steer_required, alert_ldw
+
+
+class BlinkerController:
+  def __init__(self):
+    # Always cancel on startup to test communication with B-CAN
+    self.disabled = True
+    self.lockout = False
+    self.control_prev = False
+
+    self.left_last = 0
+    self.right_last = 0
+
+    self.fog_last = 0
+
+    self.left_next = -1
+    self.right_next = -1
+    self.cancel_next = 0
+    self.fog_next = -1
+
+    self.queue = []
+
+  # todo: get rid of this
+  def process(self, CS):
+    if len(self.queue):
+      # the request was received by the module and it replied with a good confirmation
+      if CS.bcm_kwp_started and self.queue[0] in ['left', 'right', 'fog']:
+        print(f'{self.queue[0]} accepted. removing {self.queue[0]} from queue')
+        self.queue.remove(self.queue[0])
+      # the cancel request was received by the module and it replied with a good confirmation
+      elif CS.bcm_kwp_stopped and self.queue[0] == 'cancel':
+        print(f'{self.queue[0]} accepted. removing {self.queue[0]} from queue')
+        self.queue.remove(self.queue[0])
+
+      # a command WAS received by the module BUT it replied with an invalid request message (the request bytes weren't valid, try another?).
+      if CS.bcm_kwp_failed:
+        self.lockout = True
+
+  def update(self, frame, CC, CS):
+    # maintain lamp states
+    self.left_last = frame if CS.leftBlinker_lamp else self.left_last
+    self.right_last = frame if CS.rightBlinker_lamp else self.right_last
+    self.fog_last = frame if CS.fog else self.fog_last
+
+    # control surfaces
+    stalk = CS.leftBlinker_stalk or CS.rightBlinker_stalk
+    fog = CS.out.vEgo < (CV.MPH_TO_MS * 25.0) and abs(CS.out.steeringAngleDeg) >= 60. and not CS.out.standstill
+
+    # anytime control is desired. can probably get rid of this somehow
+    control = CC.leftBlinker or CC.rightBlinker or fog
+
+    # the only way to re-enable control after override is to turn off control
+    self.disabled = False if not control else self.disabled
+
+    # control but no lamp
+    if CC.leftBlinker:
+      # light has been off and user input is off. send a pre-cancel
+      if not self.disabled and not stalk:
+        # cancel before the light re-flashes
+        if frame >= (self.left_last + BLINKER_INTERVAL):
+          if len(self.queue):
+            if 'left' not in self.queue:
+              self.left_next = frame
+          else:
+            self.left_next = frame
+        elif frame >= (self.left_last + BLINKER_INTERVAL_CANCEL):
+          if len(self.queue):
+            if 'cancel' not in self.queue:
+              self.cancel_next = frame
+          else:
+            self.cancel_next = frame
+        # user override or car unresponsive
+      elif CS.rightBlinker_stalk or frame > (self.left_last + 1 / DT_CTRL):
+        self.disabled = True
+        self.queue = []
+        self.cancel_next = frame
+    elif CC.rightBlinker:
+      # light has been off and user input is off. send a pre-cancel
+      if not self.disabled and not stalk:
+        # cancel before the light re-flashes
+        if frame >= (self.right_last + BLINKER_INTERVAL):
+          if len(self.queue):
+            if 'right' not in self.queue:
+              self.right_next = frame
+          else:
+            self.right_next = frame
+        elif frame >= (self.right_last + BLINKER_INTERVAL_CANCEL):
+          if len(self.queue):
+            if 'cancel' not in self.queue:
+              self.cancel_next = frame
+          else:
+            self.cancel_next = frame
+        # user override or car unresponsive
+      elif CS.leftBlinker_stalk or frame > (self.right_last + 1 / DT_CTRL):
+        self.disabled = True
+        self.queue = []
+        self.cancel_next = frame
+    elif fog:
+       if CS.lighting_auto and frame >= (self.fog_last + FOG_INTERVAL):
+          if len(self.queue):
+            if 'fog' not in self.queue:
+              self.fog_next = frame
+          else:
+            self.fog_next = frame
+       elif not CS.lighting_auto or frame >= (self.fog_last + FOG_INTERVAL + 50):
+          if len(self.queue):
+            if 'cancel' not in self.queue:
+              self.cancel_next = frame
+          else:
+            self.cancel_next = frame
+    elif self.control_prev:
+      # todo: cancel light when full on period has completed (aesthetic)
+      # cancel (or cancel again) when blinker control disenages
+      print('control off cancel')
+      self.queue = []
+      self.cancel_next = frame
+    if not self.lockout:
+      if len(self.queue):
+        print(self.queue)
+      if frame == self.cancel_next:
+        self.queue.append('cancel')
+      elif frame == self.left_next:
+        self.queue.append('left')
+      elif frame == self.right_next:
+        self.queue.append('right')
+      elif frame == self.fog_next:
+        self.queue.append('fog')
+    self.control_prev = control
+    return
 
 
 class CarController(CarControllerBase):
@@ -100,6 +253,8 @@ class CarController(CarControllerBase):
     self.brake_last = 0.
     self.apply_brake_last = 0
     self.last_pump_ts = 0.
+    self.starting_counter = 0
+    self.braking_counter = 0
     self.stopping_counter = 0
 
     self.accel = 0.0
@@ -107,6 +262,11 @@ class CarController(CarControllerBase):
     self.gas = 0.0
     self.brake = 0.0
     self.last_torque = 0.0
+    self.last_gas = 0.0
+
+    self.BLINK = None
+    if self.CP.flags & HondaFlags.ENABLE_BLINKERS:
+      self.BLINK = BlinkerController()
 
   def update(self, CC, CS, now_nanos):
     actuators = CC.actuators
@@ -133,7 +293,7 @@ class CarController(CarControllerBase):
     self.brake_last = rate_limit(pre_limit_brake, self.brake_last, -2., DT_CTRL)
 
     # vehicle hud display, wait for one update from 10Hz 0x304 msg
-    alert_fcw, alert_steer_required = process_hud_alert(hud_control.visualAlert)
+    alert_fcw, alert_steer_required, alert_ldw = process_hud_alert(hud_control.visualAlert)
 
     # **** process the car messages ****
 
@@ -195,13 +355,21 @@ class CarController(CarControllerBase):
         ts = self.frame * DT_CTRL
 
         if self.CP.flags & HondaFlags.BOSCH:
+          accel = torque_accel(accel, CS.out.vEgo, CS.engine_torque)
           self.accel = float(np.clip(accel, self.params.BOSCH_ACCEL_MIN, self.params.BOSCH_ACCEL_MAX))
-          self.gas = float(np.interp(accel, self.params.BOSCH_GAS_LOOKUP_BP, self.params.BOSCH_GAS_LOOKUP_V))
+
+          gas = float(np.interp(accel, self.params.BOSCH_GAS_LOOKUP_BP, self.params.BOSCH_GAS_LOOKUP_V))
+          self.gas = min(gas, self.last_gas + MAX_GAS_DIFF)
+          self.last_gas = self.gas
 
           stopping = actuators.longControlState == LongCtrlState.stopping
-          self.stopping_counter = self.stopping_counter + 1 if stopping else 0
+          self.stopping_counter = self.stopping_counter + 1 if stopping and CS.out.standstill else 0
+          # Prevent brake lamp flashing. Hold brake_request flag for at least 1.2 seconds before releasing.
+          self.braking = self.accel < self.params.BOSCH_GAS_LOOKUP_BP[0]
+          self.braking_counter = 120 if self.braking else self.braking_counter - 1
+
           can_sends.extend(hondacan.create_acc_commands(self.packer, self.CAN, CC.enabled, CC.longActive, self.accel, self.gas,
-                                                        self.stopping_counter, self.CP))
+                                                        CS.out.vEgo, self.stopping_counter, self.braking_counter, self.CP))
         else:
           apply_brake = np.clip(self.brake_last - wind_brake, 0.0, 1.0)
           apply_brake = int(np.clip(apply_brake * self.params.NIDEC_BRAKE_MAX, 0, self.params.NIDEC_BRAKE_MAX - 1))
@@ -213,26 +381,35 @@ class CarController(CarControllerBase):
           self.apply_brake_last = apply_brake
           self.brake = apply_brake / self.params.NIDEC_BRAKE_MAX
 
+    if self.BLINK is not None:
+      self.BLINK.update(self.frame, CC, CS)
+
     # Send dashboard UI commands.
     if self.frame % 10 == 0:
       if self.CP.openpilotLongitudinalControl:
         # On Nidec, this also controls longitudinal positive acceleration
         can_sends.append(hondacan.create_acc_hud(self.packer, self.CAN.pt, self.CP, CC.enabled, pcm_speed, pcm_accel,
-                                                 hud_control, hud_v_cruise, CS.is_metric, CS.acc_hud))
+                                                 hud_control, round_hud_set_speed(hud_v_cruise, CS.is_metric), CS.is_metric, CS.acc_hud,
+                                                 self.braking))
 
       steering_available = CS.out.cruiseState.available and CS.out.vEgo > max(self.params.STEER_GLOBAL_MIN_SPEED, self.CP.minSteerSpeed)
       can_sends.extend(hondacan.create_lkas_hud(self.packer, self.CAN.lkas, self.CP, hud_control, CC.latActive,
-                                                steering_available, alert_steer_required, CS.lkas_hud))
+                                                steering_available, alert_steer_required, CS.lkas_hud, alert_ldw))
 
       if self.CP.openpilotLongitudinalControl:
         # TODO: combining with create_acc_hud block above will change message order and will need replay logs regenerated
         if self.CP.flags & HondaFlags.BOSCH and not (self.CP.flags & HondaFlags.BOSCH_RADARLESS):
           can_sends.append(hondacan.create_radar_hud(self.packer, self.CAN.pt))
         if self.CP.carFingerprint == CAR.HONDA_CIVIC_BOSCH:
-          can_sends.append(hondacan.create_legacy_brake_command(self.packer, self.CAN.pt))
+          can_sends.append(hondacan.create_legacy_brake_command(self.packer, self.CAN.pt, alert_fcw))
         if not (self.CP.flags & HondaFlags.BOSCH):
           self.speed = pcm_speed
           self.gas = pcm_accel / self.params.NIDEC_GAS_MAX
+
+      if self.BLINK is not None:
+        self.BLINK.process(CS)
+        if len(self.BLINK.queue):
+          can_sends.append(hondacan.create_kwp_can_msg(self.packer, cmd=self.BLINK.queue[0], bus=self.CAN.bcm))
 
     new_actuators = actuators.as_builder()
     new_actuators.speed = self.speed

@@ -23,7 +23,7 @@ class CarInterface(CarInterfaceBase):
   @staticmethod
   def get_pid_accel_limits(CP, current_speed, cruise_speed):
     if CP.flags & HondaFlags.BOSCH:
-      return CarControllerParams.BOSCH_ACCEL_MIN, CarControllerParams.BOSCH_ACCEL_MAX
+      return CarControllerParams.BOSCH_ACCEL_MIN, CarControllerParams.BOSCH_GAS_LOOKUP_BP[-1]
     else:
       # NIDECs don't allow acceleration near cruise_speed,
       # so limit limits of pid to prevent windup
@@ -54,11 +54,26 @@ class CarInterface(CarInterfaceBase):
     else:
       ret.safetyConfigs = [get_safety_config(structs.CarParams.SafetyModel.hondaNidec)]
       ret.openpilotLongitudinalControl = True
-
       ret.pcmCruise = True
 
     if candidate == CAR.HONDA_CRV_5G and 0x12f8bfa7 in fingerprint[CAN.radar]:
       ret.flags |= HondaFlags.HAS_BSM.value
+
+    # custom: always enable BSM, not just on CRV_5G
+    ret.flags |= HondaFlags.HAS_BSM.value
+
+    # This is from the fake Tesla. Means we should have radar too.
+    # Hard code for now
+    if True: #361 in fingerprint[CAN.radar]: # decimal
+      ret.flags |= HondaFlags.TESLA_RADAR.value
+      ret.radarUnavailable = False
+      # ret.radarDelay = 0.25 # get this value
+
+    # Detect the BCM via B-CAN
+    # TODO Add back the param instead. gateway fw is flakey right now
+    # TODO Fix it
+    if True: #0x12F81018 in fingerprint[CAN.bcm]:
+      ret.flags |= HondaFlags.ENABLE_BLINKERS.value
 
     # Detect Bosch cars with new HUD msgs
     if any(0x33DA in f for f in fingerprint.values()):
@@ -81,7 +96,13 @@ class CarInterface(CarInterfaceBase):
     ret.steerActuatorDelay = 0.1
 
     if ret.flags & HondaFlags.BOSCH:
-      ret.longitudinalActuatorDelay = 0.5 # s
+      ret.longitudinalTuning.kpV = [0.3]  # 0.5
+      ret.longitudinalTuning.kiV = [0.09]  # 0.025
+      ret.stoppingDecelRate = 0.30  # 0.075 # brake_travel/s while trying to stop
+      ret.vEgoStopping = 0.35
+      ret.vEgoStarting = 0.35
+      ret.stopAccel = -0.75  # CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
+      ret.longitudinalActuatorDelay = 0.5  # 0.1
       if ret.flags & HondaFlags.BOSCH_RADARLESS:
         ret.stopAccel = CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
     else:
@@ -90,17 +111,24 @@ class CarInterface(CarInterfaceBase):
       ret.longitudinalTuning.kiV = [1.2, 0.8, 0.5]
 
     # Disable control if EPS mod detected
+    eps_modified = False
     for fw in car_fw:
       if fw.ecu == "eps" and b"," in fw.fwVersion:
-        ret.dashcamOnly = True
+        eps_modified = True
 
     if candidate == CAR.HONDA_CIVIC:
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[1.1], [0.33]]
 
     elif candidate in (CAR.HONDA_CIVIC_BOSCH, CAR.HONDA_CIVIC_BOSCH_DIESEL):
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.8], [0.24]]
-      if candidate == CAR.HONDA_CIVIC_BOSCH:
-          CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 750]
+      if eps_modified:
+        ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 2564, 8000], [0, 2564, 3840]]
+        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.36], [0.108]]
+      else:
+        ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]  # TODO: determine if there is a dead zone at the top end
+        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.8], [0.24]]
+      # custom: upstream sets BOSCH_GAS_LOOKUP_V = [0, 750] here; the fork's 6-point BOSCH_GAS_LOOKUP_* map is used instead
+      # if candidate == CAR.HONDA_CIVIC_BOSCH:
+      #     CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 750]
 
     elif candidate in (CAR.HONDA_CIVIC_2022, CAR.HONDA_PRELUDE_6G):
       ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kpV = [[0, 10], [0.05, 0.5]]
@@ -164,7 +192,8 @@ class CarInterface(CarInterfaceBase):
     elif candidate == CAR.HONDA_ODYSSEY_5G_MMR:
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
       ret.steerActuatorDelay = 0.15
-      CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 2000]
+      # custom: upstream sets BOSCH_GAS_LOOKUP_V = [0, 2000] here; the fork's 6-point BOSCH_GAS_LOOKUP_* map is used instead
+      # CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 2000]
       if not ret.openpilotLongitudinalControl:
         # When using stock ACC, the radar intercepts and filters steering commands the EPS would otherwise accept
         ret.minSteerSpeed = 70. * CV.KPH_TO_MS
@@ -174,7 +203,8 @@ class CarInterface(CarInterfaceBase):
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
 
     if candidate == CAR.ACURA_RDX_3G_MMR:
-      CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 2000] # alpha longitudinal pedal tuning
+      # custom: upstream sets BOSCH_GAS_LOOKUP_V = [0, 2000] here; the fork's 6-point BOSCH_GAS_LOOKUP_* map is used instead
+      # CarControllerParams.BOSCH_GAS_LOOKUP_V = [0, 2000] # alpha longitudinal pedal tuning
       ret.dashcamOnly = is_release  # TODO: release from dashcam when there's enough driving data for torqued/paramsd to converge
 
     # These cars use alternate user brake msg (0x1BE)
@@ -205,7 +235,9 @@ class CarInterface(CarInterfaceBase):
       ret.minEnableSpeed = 25.51 * CV.MPH_TO_MS
 
     ret.steerLimitTimer = 0.8
-    ret.radarDelay = 0.1
+
+    if not ret.radarDelay:
+      ret.radarDelay = 0.1
 
     return ret
 
