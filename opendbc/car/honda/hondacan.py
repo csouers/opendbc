@@ -162,6 +162,7 @@ def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, 
     acc_hud_values['ACC_ON'] = int(enabled)
     acc_hud_values['FCM_OFF'] = 1
     acc_hud_values['FCM_OFF_2'] = 1
+    acc_hud_values['ICONS'] = int(bool(hud_control.e2e) << 1)
   else:
     # Shows the distance bars, TODO: stock camera shows updates temporarily while disabled
     acc_hud_values['ACC_ON'] = int(enabled)
@@ -186,6 +187,7 @@ def create_lkas_hud(packer, bus, CP, hud_control, lat_active, steering_available
     'SOLID_LANES': hud_control.lanesVisible,
     'BEEP': 0,
     'RDM_HUD': ldw,
+    'LDW_ICON': hud_control.e2e,
   }
 
   if CP.flags & (HondaFlags.BOSCH_RADARLESS | HondaFlags.BOSCH_CANFD):
