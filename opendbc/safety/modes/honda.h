@@ -374,6 +374,11 @@ static safety_config honda_bosch_init(uint16_t param) {
     {0x33DB, 0, 8, .check_relay = true},
     {0x16F118F0, 0, 8, .check_relay = false},
     {0x16F118F0, 0, 1, .check_relay = false},
+    // OPNAV: openpilot -> aapi companion nav instructions on the forwarded B-CAN (body)
+    // bus. Private 29-bit ids, never transmitted by the car; aapi only listens.
+    {0x1A5A0001, 0, 8, .check_relay = false},
+    {0x1A5A0002, 0, 8, .check_relay = false},
+    {0x1A5A0003, 0, 8, .check_relay = false},
   };
 
   // Bosch w/ gas and brakes
@@ -391,6 +396,11 @@ static safety_config honda_bosch_init(uint16_t param) {
     {0x18DAB0F1, 1, 8, .check_relay = false},
     {0x16F118F0, 0, 8, .check_relay = false},
     {0x16F118F0, 0, 1, .check_relay = false},
+    // OPNAV: openpilot -> aapi companion nav instructions on the forwarded B-CAN (body)
+    // bus. Private 29-bit ids, never transmitted by the car; aapi only listens.
+    {0x1A5A0001, 0, 8, .check_relay = false},
+    {0x1A5A0002, 0, 8, .check_relay = false},
+    {0x1A5A0003, 0, 8, .check_relay = false},
   };
 
   // Bosch radarless

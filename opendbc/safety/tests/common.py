@@ -912,7 +912,8 @@ class SafetyTest(SafetyTestBase):
   SCANNED_ADDRS = [*range(0x800),                      # Entire 11-bit CAN address space
                    *range(0x18DA00F1, 0x18DB00F1, 0x100),   # 29-bit UDS physical addressing
                    *range(0x18DB00F1, 0x18DC00F1, 0x100),   # 29-bit UDS functional addressing
-                   *range(0x3300, 0x3400)]                  # Honda
+                   *range(0x3300, 0x3400),                  # Honda
+                   *range(0x1A5A0000, 0x1A5A0004)]          # OPNAV (Honda body, private)
   FWD_BLACKLISTED_ADDRS: dict[int, list[int]] = {}  # {bus: [addr]}
   FWD_BUS_LOOKUP: dict[int, int] = {0: 2, 2: 0}
 
@@ -1011,8 +1012,10 @@ class SafetyTest(SafetyTestBase):
 
             # TODO: Temporary, should be fixed in panda firmware, safety_honda.h
             if attr.startswith('TestHonda'):
-              # exceptions for common msgs across different hondas
-              tx = list(filter(lambda m: m[0] not in [0x1FA, 0x30C, 0x33D, 0x33DB], tx))
+              # exceptions for common msgs across different hondas. OPNAV nav frames are
+              # deliberately whitelisted in both Bosch modes (they actuate nothing).
+              tx = list(filter(lambda m: m[0] not in [0x1FA, 0x30C, 0x33D, 0x33DB,
+                                                     0x1A5A0001, 0x1A5A0002, 0x1A5A0003], tx))
 
             if attr.startswith('TestHyundaiLongitudinal'):
               # exceptions for common msgs across different Hyundai CAN platforms

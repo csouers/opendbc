@@ -171,3 +171,39 @@ BO_ 384954392 BCM_16f1f0_KWP_Resp_Tester: 8 XXX
  SG_ D7 : 63|8@0+ (1,0) [0|0] "" XXX
 
  VAL_ 384954392 D0 127 "UNSUPPORTED" 112 "START_ACCEPTED" 96 "STOP_ACCEPTED" ;
+BO_ 442105857 OPNAV_Status: 8 XXX
+ SG_ COUNTER : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ VERSION : 15|4@0+ (1,0) [0|15] "" XXX
+ SG_ FLAGS : 11|4@0+ (1,0) [0|15] "" XXX
+ SG_ MANEUVER : 23|8@0+ (1,0) [0|19] "" XXX
+ SG_ TURN_SIDE : 31|4@0+ (1,0) [0|3] "" XXX
+ SG_ UNIT : 27|4@0+ (1,0) [0|3] "" XXX
+ SG_ DISTANCE : 39|16@0+ (1,0) [0|65535] "" XXX
+ SG_ ETA_S : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ TTL_DS : 63|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 442105858 OPNAV_TextCtl: 8 XXX
+ SG_ COUNTER : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ TEXT_ID : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ LENGTH : 23|8@0+ (1,0) [0|36] "" XXX
+ SG_ CHUNKS : 31|8@0+ (1,0) [0|6] "" XXX
+ SG_ TTL_DS : 39|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 442105859 OPNAV_TextChunk: 8 XXX
+ SG_ TEXT_ID : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ CHUNK_INDEX : 15|8@0+ (1,0) [0|5] "" XXX
+ SG_ DATA_0 : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ DATA_1 : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ DATA_2 : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ DATA_3 : 47|8@0+ (1,0) [0|255] "" XXX
+ SG_ DATA_4 : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ DATA_5 : 63|8@0+ (1,0) [0|255] "" XXX
+
+VAL_ 442105857 MANEUVER 0 "UNKNOWN" 1 "DEPART" 2 "NAME_CHANGE" 3 "SLIGHT_TURN" 4 "TURN" 5 "SHARP_TURN" 6 "U_TURN" 7 "ON_RAMP" 8 "OFF_RAMP" 9 "FORK" 10 "MERGE" 11 "ROUNDABOUT_ENTER" 12 "ROUNDABOUT_EXIT" 13 "ROUNDABOUT_ENTER_AND_EXIT" 14 "STRAIGHT" 16 "FERRY_BOAT" 17 "FERRY_TRAIN" 19 "DESTINATION" ;
+VAL_ 442105857 TURN_SIDE 0 "NONE" 1 "LEFT" 2 "RIGHT" 3 "UNSPECIFIED" ;
+VAL_ 442105857 UNIT 0 "METRES" 1 "FEET" 2 "MILES" 3 "KILOMETRES" ;
+
+CM_ "OPNAV 0x1A5A0001/2/3: openpilot -> AAPI nav instructions on the 125 kbit/s B-CAN. Private ids; the head unit transmits its own 0x12F95xxx nav family and must not be mirrored. Status is sent at ~2 Hz and on change; FLAGS bit0 VALID, bit1 ARRIVED, bit2 ROUTE_ACTIVE. MANEUVER uses the Android Auto NextTurnEnum numbering (arrow only; this cluster has no turn-angle display). DISTANCE is in UNIT, ETA_S 0 = unknown, TTL_DS is the frame lifetime in 100 ms units (0 = clear). Text is up to 36 bytes in 6-byte chunks; TextCtl announces TEXT_ID/LENGTH/CHUNKS and chunks repeat the TEXT_ID plus index.";
+CM_ BO_ 442105857 "openpilot nav status (B-CAN, private)";
+CM_ BO_ 442105858 "openpilot nav road-name header (B-CAN, private)";
+CM_ BO_ 442105859 "openpilot nav road-name chunk, 6 ASCII bytes (B-CAN, private)";
