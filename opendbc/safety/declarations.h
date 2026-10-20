@@ -37,6 +37,10 @@
 #define SAFETY_BYD 35U
 #define SAFETY_MG 38U
 
+// hondabody firmware (F4 body harness): unrestricted TX + bus 0<->1 forwarding
+#define SAFETY_HONDA_BODY 100U
+#define SAFETY_HONDA_BODY_TEST 101U
+
 #define GET_BIT(msg, b) ((bool)!!(((msg)->data[((b) / 8U)] >> ((b) % 8U)) & 0x1U))
 #define GET_FLAG(value, mask) (((value) & (mask)) == (mask))
 
@@ -353,6 +357,8 @@ extern const safety_hooks alloutput_hooks;
 extern const safety_hooks ford_hooks;
 extern const safety_hooks gm_hooks;
 extern const safety_hooks honda_nidec_hooks;
+extern const safety_hooks honda_body_hooks;
+extern const safety_hooks honda_body_test_hooks;
 extern const safety_hooks honda_bosch_hooks;
 extern const safety_hooks hyundai_canfd_hooks;
 extern const safety_hooks hyundai_hooks;

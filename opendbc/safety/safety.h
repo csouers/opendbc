@@ -31,6 +31,7 @@
 #include "opendbc/safety/modes/psa.h"
 #include "opendbc/safety/modes/byd.h"
 #include "opendbc/safety/modes/hyundai_canfd.h"
+#include "opendbc/safety/modes/honda_body.h"
 
 uint32_t GET_BYTES_LE(const CANPacket_t *msg, int start, int len) {
   uint32_t ret = 0U;
@@ -237,7 +238,8 @@ static bool tx_msg_safety_check(const CANPacket_t *msg, const CanMsg msg_list[],
 
 bool safety_tx_hook(CANPacket_t *msg) {
   bool whitelisted = tx_msg_safety_check(msg, current_safety_config.tx_msgs, current_safety_config.tx_msgs_len);
-  if ((current_safety_mode == SAFETY_ALLOUTPUT) || (current_safety_mode == SAFETY_ELM327)) {
+  if ((current_safety_mode == SAFETY_ALLOUTPUT) || (current_safety_mode == SAFETY_ELM327) ||
+      (current_safety_mode == SAFETY_HONDA_BODY) || (current_safety_mode == SAFETY_HONDA_BODY_TEST)) {
     whitelisted = true;
   }
 
@@ -251,7 +253,16 @@ bool safety_tx_hook(CANPacket_t *msg) {
 
 static int get_fwd_bus(int bus_num) {
   int destination_bus;
-  if (bus_num == 0) {
+  if ((current_safety_mode == SAFETY_HONDA_BODY) || (current_safety_mode == SAFETY_HONDA_BODY_TEST)) {
+    // body harness: powertrain (0) <-> body (1)
+    if (bus_num == 0) {
+      destination_bus = 1;
+    } else if (bus_num == 1) {
+      destination_bus = 0;
+    } else {
+      destination_bus = -1;
+    }
+  } else if (bus_num == 0) {
     destination_bus = 2;
   } else if (bus_num == 2) {
     destination_bus = 0;
@@ -387,6 +398,8 @@ int set_safety_hooks(uint16_t mode, uint16_t param) {
     {SAFETY_VOLKSWAGEN_MLB, &volkswagen_mlb_hooks},
     {SAFETY_VOLKSWAGEN_PQ, &volkswagen_pq_hooks},
     {SAFETY_ALLOUTPUT, &alloutput_hooks},
+    {SAFETY_HONDA_BODY, &honda_body_hooks},
+    {SAFETY_HONDA_BODY_TEST, &honda_body_test_hooks},
 #endif
   };
 
