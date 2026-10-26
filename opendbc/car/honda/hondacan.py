@@ -149,7 +149,7 @@ def create_bosch_supplemental_1(packer, CAN):
 
 def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, hud_v_cruise, is_metric, acc_hud, braking):
   acc_hud_values = {
-    'CRUISE_SPEED': 0 if not enabled else (hud_v_cruise if not braking else 252),
+    'CRUISE_SPEED': 255 if not enabled else (hud_v_cruise if not braking else 252),
     'ENABLE_MINI_CAR': 1 if enabled else 0,
     # only moves the lead car without ACC_ON
     'HUD_DISTANCE': hud_control.leadDistanceBars,  # wraps to 0 at 4 bars
