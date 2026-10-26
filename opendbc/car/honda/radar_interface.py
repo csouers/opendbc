@@ -20,7 +20,7 @@ class RadarInterface(RadarInterfaceBase):
     self.radar_wrong_config = False
 
     if self.CP.flags & HondaFlags.TESLA_RADAR:
-      messages = [('TeslaRadarSguInfo', 10)]
+      messages = [('TeslaRadarSguInfo', 9)]
       self.num_points = 32
       self.trigger_msg = 878 # dec
 
