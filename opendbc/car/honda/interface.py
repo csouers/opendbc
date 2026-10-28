@@ -122,7 +122,8 @@ class CarInterface(CarInterfaceBase):
     elif candidate in (CAR.HONDA_CIVIC_BOSCH, CAR.HONDA_CIVIC_BOSCH_DIESEL):
       if eps_modified:
         # ret.lateralTuning.torqueBP, ret.lateralTuning.torqueV = [[0, 2564, 8000], [0, 2564, 3840]]
-        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.36], [0.108]]
+        # 2026-10-28: halved for experimental linear4x EPS firmware (kp 0.36->0.18, ki 0.108->0.054)
+        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.18], [0.054]]
       else:
         # ret.lateralTuning.torqueBP, ret.lateralTuning.torqueV = [[0, 4096], [0, 4096]]  # TODO: determine if there is a dead zone at the top end
         ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.8], [0.24]]
