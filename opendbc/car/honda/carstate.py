@@ -251,6 +251,7 @@ class CarState(CarStateBase):
 
       # Meter illumination: the dash dimmer steps 1 (dimmest) .. 21 (full brightness), 22 = idle
       self.illumination_step = int(cp_body.vl["12f854_Lighting"]["ILLUMINATION"])
+      self.daylight_override = bool(cp_body.vl["12f854_Lighting"]["DAYLIGHT_OVERRIDE"])
 
       # The real flasher output, so the UI can blink with the car.
       # Only claim it is valid once the body bus has actually delivered it, otherwise
