@@ -47,7 +47,7 @@ class CarState(CarStateBase):
       self.fog = False
       self.headlights = False
       self.lighting_auto = False
-      self.headlights_on = False  # headlights/dark mode (also filled without the body bus)
+      self.parking_lights_on = False  # car's parking lights = night/dark mode
       self.lamp_seen = False  # B-CAN has actually delivered the lamp state at least once
 
     self.brake_error = False
@@ -262,12 +262,12 @@ class CarState(CarStateBase):
       self.bcm_kwp_stopped = cp_body.vl["BCM_16f1f0_KWP_Resp_Tester"]["D0"] == self.kwp_values.get("STOP_ACCEPTED")
       self.bcm_kwp_failed = cp_body.vl["BCM_16f1f0_KWP_Resp_Tester"]["D0"] == self.kwp_values.get("UNSUPPORTED")
 
-    # Headlights on = the car is in its night/dark mode (meter + interior illumination).
-    # STALK_STATUS is on the powertrain bus and present on every Honda; the B-CAN lighting output
-    # is OR'd in for cars whose stalk-status bit is not populated.
-    self.headlights_on = bool(cp.vl["STALK_STATUS"]["HEADLIGHTS_ON"])
+    # Parking lights on = the car is in its night/dark mode (meter + interior illumination).
+    # STALK_STATUS_2 is on the powertrain bus and present on every Honda; the B-CAN lighting
+    # output is OR'd in as the actual lamp state.
+    self.parking_lights_on = bool(cp.vl["STALK_STATUS_2"]["PARK_LIGHTS"])
     if cp_body is not None:
-      self.headlights_on = self.headlights_on or bool(cp_body.vl["af811_Wipers_Lighting_Output"]["HEADLIGHTS"])
+      self.parking_lights_on = self.parking_lights_on or bool(cp_body.vl["af811_Wipers_Lighting_Output"]["PARKING_LIGHTS"])
 
     ret.buttonEvents = [
       *create_button_events(self.cruise_buttons, prev_cruise_buttons, BUTTONS_DICT),
