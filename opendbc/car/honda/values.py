@@ -49,7 +49,7 @@ class CarControllerParams:
   STEER_STEP = 1  # 100 Hz
   STEER_DELTA_UP = 3  # min/max in 0.33s for all Honda
   STEER_DELTA_DOWN = 3
-  STEER_GLOBAL_MIN_SPEED = 3 * CV.MPH_TO_MS
+  STEER_GLOBAL_MIN_SPEED = 0.
 
   def __init__(self, CP):
     if CP.carFingerprint in (CAR.HONDA_CRV, CAR.HONDA_CRV_EU, CAR.ACURA_RDX):
@@ -62,7 +62,7 @@ class CarControllerParams:
                                CAR.HONDA_ODYSSEY, CAR.HONDA_PILOT, CAR.HONDA_RIDGELINE, CAR.HONDA_INSIGHT, CAR.HONDA_NBOX_2G,
                                CAR.HONDA_E, CAR.HONDA_E_ADVANCE, CAR.HONDA_PRELUDE_6G):
       # TODO: determine if there is a dead zone at the top end (except HONDA_FREED, HONDA_HRV, HONDA_HRV_3G)
-      self.STEER_MAX = 4096
+      self.STEER_MAX = 4095
     elif CP.carFingerprint == CAR.HONDA_ODYSSEY_TWN:
       self.STEER_MAX = 32767  # TODO: determine if there is a dead zone at the top end
     elif CP.carFingerprint == CAR.HONDA_PILOT_4G_MMR:
