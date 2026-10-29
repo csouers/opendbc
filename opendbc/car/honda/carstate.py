@@ -39,6 +39,17 @@ class CarState(CarStateBase):
     if CP.flags & HondaFlags.ENABLE_BLINKERS.value:
       self.kwp_values = {v: k for k, v in can_define.dv["BCM_16f1f0_KWP_Resp_Tester"]["D0"].items()}
 
+      # B-CAN lamp/stalk state, only valid once the body parser starts delivering
+      self.leftBlinker_lamp = False
+      self.rightBlinker_lamp = False
+      self.leftBlinker_stalk = False
+      self.rightBlinker_stalk = False
+      self.fog = False
+      self.headlights = False
+      self.lighting_auto = False
+      self.headlights_on = False  # headlights/dark mode (also filled without the body bus)
+      self.lamp_seen = False  # B-CAN has actually delivered the lamp state at least once
+
     self.brake_error = False
     self.brake_switch_prev = False
     self.brake_switch_active = False
@@ -229,11 +240,17 @@ class CarState(CarStateBase):
       self.leftBlinker_lamp = cp_body.vl["12f810_Lighting"]["LEFTSIGNAL"]
       self.rightBlinker_lamp = cp_body.vl["12f810_Lighting"]["RIGHTSIGNAL"]
       self.fog = cp_body.vl["af811_Wipers_Lighting_Output"]["FRONT_FOG"]
+      self.headlights = cp_body.vl["af811_Wipers_Lighting_Output"]["HEADLIGHTS"]
 
       # Unfiltered stalk state
       self.leftBlinker_stalk = cp.vl["SCM_FEEDBACK"]["LEFT_BLINKER"]
       self.rightBlinker_stalk = cp.vl["SCM_FEEDBACK"]["RIGHT_BLINKER"]
       self.lighting_auto = cp_body.vl["af870_LeftStalk_Input"]["AUTO"]
+
+      # The real flasher output, so the UI can blink with the car.
+      # Only claim it is valid once the body bus has actually delivered it, otherwise
+      # a car without the B-CAN harness would never show the turn signal icon.
+      self.lamp_seen = self.lamp_seen or len(cp_body.vl_all["12f810_Lighting"]["LEFTSIGNAL"]) > 0
 
       # BCM KWP reply
       # reset
@@ -244,6 +261,13 @@ class CarState(CarStateBase):
       self.bcm_kwp_started = cp_body.vl["BCM_16f1f0_KWP_Resp_Tester"]["D0"] == self.kwp_values.get("START_ACCEPTED")
       self.bcm_kwp_stopped = cp_body.vl["BCM_16f1f0_KWP_Resp_Tester"]["D0"] == self.kwp_values.get("STOP_ACCEPTED")
       self.bcm_kwp_failed = cp_body.vl["BCM_16f1f0_KWP_Resp_Tester"]["D0"] == self.kwp_values.get("UNSUPPORTED")
+
+    # Headlights on = the car is in its night/dark mode (meter + interior illumination).
+    # STALK_STATUS is on the powertrain bus and present on every Honda; the B-CAN lighting output
+    # is OR'd in for cars whose stalk-status bit is not populated.
+    self.headlights_on = bool(cp.vl["STALK_STATUS"]["HEADLIGHTS_ON"])
+    if cp_body is not None:
+      self.headlights_on = self.headlights_on or bool(cp_body.vl["af811_Wipers_Lighting_Output"]["HEADLIGHTS"])
 
     ret.buttonEvents = [
       *create_button_events(self.cruise_buttons, prev_cruise_buttons, BUTTONS_DICT),

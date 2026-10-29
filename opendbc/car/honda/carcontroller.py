@@ -156,6 +156,9 @@ class BlinkerController:
     # control surfaces
     stalk = CS.leftBlinker_stalk or CS.rightBlinker_stalk
     fog = CS.out.vEgo < (CV.MPH_TO_MS * 25.0) and abs(CS.out.steeringAngleDeg) >= 60. and not CS.out.standstill
+    # only drive the fog lamps when the light switch is in AUTO and the headlights are actually on,
+    # otherwise we would be turning lights on in daylight/off positions
+    fog_lights_on = bool(CS.lighting_auto and CS.headlights)
 
     # anytime control is desired. can probably get rid of this somehow
     control = CC.leftBlinker or CC.rightBlinker or fog
@@ -207,13 +210,13 @@ class BlinkerController:
         self.queue = []
         self.cancel_next = frame
     elif fog:
-       if CS.lighting_auto and frame >= (self.fog_last + FOG_INTERVAL):
+       if fog_lights_on and frame >= (self.fog_last + FOG_INTERVAL):
           if len(self.queue):
             if 'fog' not in self.queue:
               self.fog_next = frame
           else:
             self.fog_next = frame
-       elif not CS.lighting_auto or frame >= (self.fog_last + FOG_INTERVAL + 50):
+       elif not fog_lights_on or frame >= (self.fog_last + FOG_INTERVAL + 50):
           if len(self.queue):
             if 'cancel' not in self.queue:
               self.cancel_next = frame
