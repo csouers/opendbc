@@ -48,6 +48,7 @@ class CarState(CarStateBase):
       self.headlights = False
       self.lighting_auto = False
       self.parking_lights_on = False  # car's parking lights = night/dark mode
+      self.illumination_step = 0      # meter/dash illumination step, 1 (dim) .. 21 (full)
       self.lamp_seen = False  # B-CAN has actually delivered the lamp state at least once
 
     self.brake_error = False
@@ -247,6 +248,9 @@ class CarState(CarStateBase):
       self.rightBlinker_stalk = cp.vl["SCM_FEEDBACK"]["RIGHT_BLINKER"]
       self.lighting_auto = cp_body.vl["af870_LeftStalk_Input"]["AUTO"]
 
+      # Meter illumination: the dash dimmer steps 1 (dimmest) .. 21 (full brightness), 22 = idle
+      self.illumination_step = int(cp_body.vl["12f854_Lighting"]["ILLUMINATION"])
+
       # The real flasher output, so the UI can blink with the car.
       # Only claim it is valid once the body bus has actually delivered it, otherwise
       # a car without the B-CAN harness would never show the turn signal icon.
@@ -267,7 +271,9 @@ class CarState(CarStateBase):
     # output is OR'd in as the actual lamp state.
     self.parking_lights_on = bool(cp.vl["STALK_STATUS_2"]["PARK_LIGHTS"])
     if cp_body is not None:
-      self.parking_lights_on = self.parking_lights_on or bool(cp_body.vl["af811_Wipers_Lighting_Output"]["PARKING_LIGHTS"])
+      self.parking_lights_on = self.parking_lights_on or \
+        bool(cp_body.vl["af811_Wipers_Lighting_Output"]["PARKING_LIGHTS"]) or \
+        bool(cp_body.vl["12f854_Lighting"]["PARKING_LIGHTS"])
 
     ret.buttonEvents = [
       *create_button_events(self.cruise_buttons, prev_cruise_buttons, BUTTONS_DICT),
