@@ -12,54 +12,6 @@ from opendbc.car.interfaces import CarStateBase
 TransmissionType = structs.CarParams.TransmissionType
 ButtonType = structs.CarState.ButtonEvent.Type
 
-class BodyParsers:
-  """B-CAN/DBC body messages, parsed on every bus they may arrive on.
-
-  The Honda fork maps Bus.body to the radar/body slot (bus 0), but on the comma four harness the body
-  bus physically reports as bus 2, so parse both and use whichever is actually delivering frames.
-  Sending is unaffected (it still uses CanBus.bcm).
-  """
-
-  def __init__(self, dbc_name: str, messages: list[tuple[str, float]], buses: list[int]) -> None:
-    self.dbc_name = dbc_name
-    self.parsers = [CANParser(dbc_name, messages, bus) for bus in buses]
-    # registering is lazy on vl access; do it for every message so "seen anything" works on all buses
-    for parser in self.parsers:
-      for name in parser.dbc.name_to_msg:
-        parser.vl[name]
-
-  def update(self, can_packets) -> None:
-    for parser in self.parsers:
-      parser.update(can_packets)
-
-  @staticmethod
-  def _seen(parser: CANParser) -> bool:
-    return any(t > 0 for msg in parser.ts_nanos.values() for t in msg.values())
-
-  @property
-  def _active(self) -> CANParser:
-    for parser in self.parsers:
-      if self._seen(parser):
-        return parser
-    return self.parsers[0]
-
-  @property
-  def vl(self):
-    return self._active.vl
-
-  @property
-  def vl_all(self):
-    return self._active.vl_all
-
-  @property
-  def can_valid(self) -> bool:
-    return all(parser.can_valid for parser in self.parsers)
-
-  @property
-  def bus_timeout(self) -> bool:
-    return self._active.bus_timeout
-
-
 BUTTONS_DICT = {CruiseButtons.RES_ACCEL: ButtonType.accelCruise, CruiseButtons.DECEL_SET: ButtonType.decelCruise,
                 CruiseButtons.MAIN: ButtonType.mainCruise, CruiseButtons.CANCEL: ButtonType.cancel}
 SETTINGS_BUTTONS_DICT = {CruiseSettings.DISTANCE: ButtonType.gapAdjustCruise, CruiseSettings.LKAS: ButtonType.lkas}
@@ -339,8 +291,6 @@ class CarState(CarStateBase):
       Bus.cam: CANParser(DBC[CP.carFingerprint][Bus.pt], [], CanBus(CP).camera),
     }
     if Bus.body in DBC[CP.carFingerprint]:
-      # bus 0 is the fork's body/radar slot; the four's body harness reports on bus 2
-      body_buses = sorted({CanBus(CP).bcm, 2})
-      parsers[Bus.body] = BodyParsers(DBC[CP.carFingerprint][Bus.body], body_messages, body_buses)
+      parsers[Bus.body] = CANParser(DBC[CP.carFingerprint][Bus.body], body_messages, CanBus(CP).bcm)
 
     return parsers
