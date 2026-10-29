@@ -2,6 +2,7 @@ import numpy as np
 from collections import defaultdict
 
 from opendbc.can import CANDefine, CANParser
+from opendbc.can.dbc import DBC as DBCFile
 from opendbc.car import Bus, create_button_events, structs
 from opendbc.car.common.conversions import Conversions as CV
 from opendbc.car.honda.hondacan import CanBus
@@ -282,12 +283,31 @@ class CarState(CarStateBase):
 
     return ret
 
+  @staticmethod
+  def _optional_messages(dbc_name: str, messages: list[tuple[str, float]]) -> list[tuple[str, float]]:
+    """Keep only the messages this platform's DBC has; all of them ignore alive checks.
+
+    Anything we read for convenience (lamps, parking lights, dash illumination, KWP replies) must never
+    gate canValid: a signal missing from the wire would otherwise raise a CAN error and drop controls.
+    """
+    names = DBCFile(dbc_name).name_to_msg
+    return [(name, freq) for name, freq in messages if name in names]
+
   def get_can_parsers(self, CP):
-    body_messages = [
-      ("BCM_16f1f0_KWP_Resp_Tester", float('nan')),
-    ]
+    nan = float('nan')
+    body_messages = self._optional_messages(DBC[CP.carFingerprint][Bus.body] if Bus.body in DBC[CP.carFingerprint] else "",
+                                            [("BCM_16f1f0_KWP_Resp_Tester", nan),
+                                             ("12f810_Lighting", nan),
+                                             ("12f854_Lighting", nan),
+                                             ("af811_Wipers_Lighting_Output", nan),
+                                             ("af870_LeftStalk_Input", nan),
+                                             ("BSI_L_12f8be_Status", nan),
+                                             ("BSI_R_12f8bf_Status", nan)])
+    pt_messages = self._optional_messages(DBC[CP.carFingerprint][Bus.pt],
+                                          [("STALK_STATUS_2", nan)])
+
     parsers = {
-      Bus.pt: CANParser(DBC[CP.carFingerprint][Bus.pt], [], CanBus(CP).pt),
+      Bus.pt: CANParser(DBC[CP.carFingerprint][Bus.pt], pt_messages, CanBus(CP).pt),
       Bus.cam: CANParser(DBC[CP.carFingerprint][Bus.pt], [], CanBus(CP).camera),
     }
     if Bus.body in DBC[CP.carFingerprint]:
