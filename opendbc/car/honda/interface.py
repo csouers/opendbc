@@ -101,7 +101,7 @@ class CarInterface(CarInterfaceBase):
       # ret.stoppingDecelRate = 0.30  # 0.075 # brake_travel/s while trying to stop
       # ret.vEgoStopping = 0.35
       # ret.vEgoStarting = 0.35
-      ret.stopAccel = -0.75  # CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
+      ret.stopAccel = -0.5  # CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
       ret.longitudinalActuatorDelay = 0.5  # 0.1
       if ret.flags & HondaFlags.BOSCH_RADARLESS:
         ret.stopAccel = CarControllerParams.BOSCH_ACCEL_MIN  # stock uses -4.0 m/s^2 once stopped but limited by safety model
