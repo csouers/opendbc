@@ -18,6 +18,9 @@ class RadarInterface(RadarInterfaceBase):
     self.track_id = 0
     self.radar_fault = False
     self.radar_wrong_config = False
+    # trackIds the sensor classifies as vehicles. Carried out-of-band (radarTrackClass event) so
+    # opendbc/car/car.capnp needs no fork-specific RadarPoint field.
+    self.vehicle_track_ids: set[int] = set()
 
     if self.CP.flags & HondaFlags.TESLA_RADAR:
       messages = [('TeslaRadarSguInfo', 9)]
@@ -71,6 +74,7 @@ class RadarInterface(RadarInterfaceBase):
       # Check if it's a valid track
       if not msg_a['Tracked']:
         if i in self.pts:
+          self.vehicle_track_ids.discard(self.pts[i].trackId)
           del self.pts[i]
         continue
 
@@ -84,6 +88,11 @@ class RadarInterface(RadarInterfaceBase):
       self.pts[i].dRel = msg_a['LongDist']
       self.pts[i].yRel = msg_a['LatDist'] + 0.57 # 10th Gen Civic Hatchback
       self.pts[i].vRel = msg_a['LongSpeed']
+      # Bosch object class: 1=car, 2=truck, 3=pedestrian, 4=motorcycle, 5=bicycle, 6=wide, 0=unknown
+      if int(msg_b['Class']) in (1, 2, 4, 5, 6):
+        self.vehicle_track_ids.add(self.pts[i].trackId)
+      else:
+        self.vehicle_track_ids.discard(self.pts[i].trackId)
 
     ret.points = list(self.pts.values())
     self.updated_messages.clear()

@@ -32,6 +32,8 @@ def compute_gb_honda_bosch(accel, speed):
   return 0.0, 0.0
 
 def round_hud_set_speed(v_cruise_kph, is_metric):
+  if v_cruise_kph == 255:
+    return 255  # "no_speed" sentinel — never a legal set speed (max ~233 kph); imperial rounding mangles it to 253
   if not is_metric:
     v_cruise_kph = v_cruise_kph / (CV.MPH_TO_KPH / IMPERIAL_INCREMENT)
     v_cruise_kph = round(v_cruise_kph / IMPERIAL_INCREMENT) * IMPERIAL_INCREMENT * 1.001
@@ -251,6 +253,9 @@ class CarController(CarControllerBase):
     self.CAN = hondacan.CanBus(CP)
     self.tja_control = bool(CP.flags & HondaFlags.BOSCH_TJA_CONTROL)
 
+    # set by card.py every cycle from radarState.leadOne.present (stock service, no CarControl field)
+    self.lead_present = False
+
     self.braking = False
     self.brake_steady = 0.
     self.brake_last = 0.
@@ -392,8 +397,8 @@ class CarController(CarControllerBase):
       if self.CP.openpilotLongitudinalControl:
         # On Nidec, this also controls longitudinal positive acceleration
         can_sends.append(hondacan.create_acc_hud(self.packer, self.CAN.pt, self.CP, CC.enabled, pcm_speed, pcm_accel,
-                                                 hud_control, round_hud_set_speed(hud_v_cruise, CS.is_metric), CS.is_metric, CS.acc_hud,
-                                                 self.braking))
+                                                 hud_control, self.lead_present, round_hud_set_speed(hud_v_cruise, CS.is_metric),
+                                                 CS.is_metric, CS.acc_hud, self.braking))
 
       steering_available = CS.out.cruiseState.available and CS.out.vEgo > max(self.params.STEER_GLOBAL_MIN_SPEED, self.CP.minSteerSpeed)
       can_sends.extend(hondacan.create_lkas_hud(self.packer, self.CAN.lkas, self.CP, hud_control, CC.latActive,

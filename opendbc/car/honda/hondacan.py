@@ -147,14 +147,16 @@ def create_bosch_supplemental_1(packer, CAN):
   return packer.make_can_msg("BOSCH_SUPPLEMENTAL_1", CAN.lkas, values)
 
 
-def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, hud_v_cruise, is_metric, acc_hud, braking):
+def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, lead_present, hud_v_cruise, is_metric,
+                   acc_hud, braking):
   acc_hud_values = {
     'CRUISE_SPEED': 255 if not enabled else (hud_v_cruise if not braking else 252),
     'ENABLE_MINI_CAR': 1 if enabled else 0,
     # only moves the lead car without ACC_ON
-    'HUD_DISTANCE': hud_control.leadDistanceBars,  # wraps to 0 at 4 bars
+    'HUD_DISTANCE': hud_control.leadDistanceBars if lead_present else 0,  # wraps to 0 at 4 bars; hidden when no lead
     'IMPERIAL_UNIT': int(not is_metric),
-    'HUD_LEAD': 2 if enabled and hud_control.leadVisible else 1 if enabled else 0,
+    # 2=solid lead car (radar-fixed), 1=dashed ghost (vision-only lead), 0=no car (no lead or ACC off)
+    'HUD_LEAD': 2 if enabled and hud_control.leadVisible else 1 if enabled and lead_present else 0,
     'SET_ME_X01_2': 1,
   }
 
