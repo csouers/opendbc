@@ -150,6 +150,10 @@ class CarState(CarStateBase):
       if not (self.CP.flags & HondaFlags.BOSCH):
         ret.carFaultedNonCritical = bool(cp_cam.vl["ACC_HUD"]["ACC_PROBLEM"] or cp_cam.vl["LKAS_HUD"]["LKAS_PROBLEM"])
 
+    # TEMP(2026-11-06): mask cruise fault bits — force accFaulted off. User-requested,
+    # remove when done (revert this commit).
+    ret.accFaulted = False
+
     ret.espDisabled = cp.vl["VSA_STATUS"]["ESP_DISABLED"] != 0
 
     if self.CP.carFingerprint not in (CAR.HONDA_ODYSSEY_TWN,):
