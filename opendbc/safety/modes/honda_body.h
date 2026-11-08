@@ -20,7 +20,7 @@ static bool honda_body_tx_hook(const CANPacket_t *msg) {
 
 static safety_config honda_body_init(uint16_t param) {
   SAFETY_UNUSED(param);
-  controls_allowed = false;
+  safety.controls_allowed = false;
   // forwarding is the point of this mode
   return (safety_config){NULL, 0, NULL, 0, false};  // NOLINT(readability/braces)
 }
