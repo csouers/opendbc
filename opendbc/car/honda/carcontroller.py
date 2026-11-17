@@ -16,7 +16,7 @@ BLINKER_INTERVAL_CANCEL = 20 # frames
 BLINKER_INTERVAL = 30 # frames. The real interval is 0.350 seconds but ours must be shorter
 FOG_INTERVAL = 100 # 15 seconds
 FACTOR_TORQUE_TO_ACCEL = 0.015
-MAX_GAS_DIFF = 1.0
+MAX_GAS_DIFF = 1.0  # stock step, now speed-scheduled via CarControllerParams.BOSCH_GAS_DIFF_V
 
 
 def torque_accel(accel, speed, torque):
@@ -367,7 +367,10 @@ class CarController(CarControllerBase):
           self.accel = float(np.clip(accel, self.params.BOSCH_ACCEL_MIN, self.params.BOSCH_ACCEL_MAX))
 
           gas = float(np.interp(accel, self.params.BOSCH_GAS_LOOKUP_BP, self.params.BOSCH_GAS_LOOKUP_V))
-          self.gas = min(gas, self.last_gas + MAX_GAS_DIFF)
+          # speed-scheduled step limit: 50 gas/s at cruise, 150 gas/s below 15 mph (see values.py)
+          gas_step = float(np.interp(CS.out.vEgo * CV.MS_TO_MPH,
+                                     self.params.BOSCH_GAS_DIFF_BP, self.params.BOSCH_GAS_DIFF_V))
+          self.gas = min(gas, self.last_gas + gas_step)
           self.last_gas = self.gas
 
           stopping = actuators.longControlState == LongCtrlState.stopping

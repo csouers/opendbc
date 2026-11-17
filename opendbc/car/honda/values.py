@@ -46,6 +46,12 @@ class CarControllerParams:
   BOSCH_GAS_LOOKUP_BP = [-0.3,         -0.1, 0.0, 1.0, 2.0,           3.0]
   BOSCH_GAS_LOOKUP_V =  [BOSCH_GAS_MIN,   0,  10,  41,  88, BOSCH_GAS_MAX]
 
+  # Gas step limit per 50 Hz update. Stock is 1.0 (50 gas/s), which needs ~1.5 s to go from idle to
+  # a low-speed launch command (~88) - most of the "slow from a stop" feel. Allow a much faster step
+  # below ~30 mph; above that the launch command is small and stock feels fine.
+  BOSCH_GAS_DIFF_BP = [0., 15., 30.]   # mph
+  BOSCH_GAS_DIFF_V = [3.0, 2.5, 1.0]   # per 50 Hz frame -> 150 / 125 / 50 gas/s
+
   STEER_STEP = 1  # 100 Hz
   STEER_DELTA_UP = 3  # min/max in 0.33s for all Honda
   STEER_DELTA_DOWN = 3
