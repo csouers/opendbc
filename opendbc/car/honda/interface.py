@@ -96,8 +96,12 @@ class CarInterface(CarInterfaceBase):
     ret.steerActuatorDelay = 0.1
 
     if ret.flags & HondaFlags.BOSCH:
-      # ret.longitudinalTuning.kpV = [0.3]  # 0.5
-      # ret.longitudinalTuning.kiV = [0.09]  # 0.025
+      # long kp is hardcoded to 0 (upstream deprecation), so this integral is the only accel feedback
+      # term, and the Bosch gas lookup was fitted lazily assuming a closed loop. Small gain: it trims
+      # the steady-state error over a few seconds instead of charging through a set-speed ramp
+      # (LongControl freezes it while the planner is asking for a real acceleration).
+      ret.longitudinalTuning.kiBP = [0.]
+      ret.longitudinalTuning.kiV = [0.09]
       # ret.stoppingDecelRate = 0.30  # 0.075 # brake_travel/s while trying to stop
       # ret.vEgoStopping = 0.35
       # ret.vEgoStarting = 0.35
