@@ -39,7 +39,7 @@ static bool honda_body_fwd_hook(int bus_num, int addr) {
   return block;
 }
 
-const safety_hooks honda_body_hooks = {
+static const safety_hooks honda_body_hooks = {
   .init = honda_body_init,
   .rx = honda_body_rx_hook,
   .tx = honda_body_tx_hook,
@@ -59,7 +59,7 @@ static safety_config honda_body_test_init(uint16_t param) {
   return ret;
 }
 
-const safety_hooks honda_body_test_hooks = {
+static const safety_hooks honda_body_test_hooks = {
   .init = honda_body_test_init,
   .rx = honda_body_rx_hook,
   .tx = honda_body_tx_hook,
